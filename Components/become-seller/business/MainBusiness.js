@@ -309,7 +309,7 @@ const MainBusiness = ({ goNext, savedData }) => {
         <div className="mt-4 flex justify-end gap-4 sm:gap-8 px-6 pb-8">
           <button
             onClick={reset}
-            className={`btn px-8 sm:px-16 ${
+            className={`btn px-8 sm:px-16 w-28 ${
               completedSection.length < 1 &&
               "opacity-30 saturate-0 pointer-events-none"
             }`}
@@ -318,7 +318,7 @@ const MainBusiness = ({ goNext, savedData }) => {
           </button>
           <button
             onClick={goToNext}
-            className={`btn btn-primary px-8 sm:px-16 ${
+            className={`btn btn-primary px-8 sm:px-16 w-28 ${
               completedSection.length < 1 &&
               "opacity-30 saturate-0 pointer-events-none"
             }`}
