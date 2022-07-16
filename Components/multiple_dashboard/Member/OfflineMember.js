@@ -7,6 +7,7 @@ import axios from "axios";
 import LoadingScreen from "@components/global/LoadingScreen";
 import { Menu } from "@headlessui/react";
 import { HiDotsVertical } from "react-icons/hi";
+import toast from "react-hot-toast";
 
 const OfflineMember = () => {
   const [members, setMembers] = useState([]);
@@ -18,6 +19,33 @@ const OfflineMember = () => {
   const filteredMembers = members.filter((member) =>
     member.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const handelDeleteMember = async (id) => {
+    const userAction = confirm(`Are you sure you want to delete this member?`);
+    if (userAction) {
+      const Request = async () => {
+        try {
+          const res = await axios.delete(
+            `${process.env.NEXT_PUBLIC_API_URL}/members/offline/delete/${id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          setDoRefresh(!doRefresh);
+          return "Member deleted successfully!";
+        } catch (error) {
+          throw new Error(error.response?.data?.msg);
+        }
+      };
+      toast.promise(Request(), {
+        loading: <b>Deleting... Please wait...</b>,
+        success: (data) => <b>{data}</b>,
+        error: (err) => <b>{err.toString()}</b>,
+      });
+    }
+  };
 
   useEffect(() => {
     const fetchMembers = async () => {
@@ -104,7 +132,7 @@ const OfflineMember = () => {
 
                   <Menu as="div" className=" relative">
                     <Menu.Button>
-                      <HiDotsVertical />
+                      <HiDotsVertical className="text-xl" />
                     </Menu.Button>
                     <Menu.Items className="flex flex-col items-center absolute -ml-20 bg-white shadow-3xl  rounded-md px-3 py-1">
                       <Menu.Item>
@@ -123,6 +151,7 @@ const OfflineMember = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <a
+                            onClick={() => handelDeleteMember(member.id)}
                             className={`${
                               active
                                 ? "bg-primary-300 text-white"
