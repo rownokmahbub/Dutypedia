@@ -904,10 +904,10 @@ const MainIt = ({ goNext, savedData }) => {
                 />
               </div>
 
-              <div className="mt-4 flex justify-end gap-8 px-6 pb-8">
+              <div className="mt-4 flex justify-end gap-4 sm:gap-8 px-6 pb-8">
                 <button
                   onClick={() => reset(activeParentCat)}
-                  className={`btn px-16 ${
+                  className={`btn px-8 sm:px-16 ${
                     completedSection[activeParentCat].length < 1 &&
                     "opacity-30 saturate-0 pointer-events-none"
                   }`}
@@ -916,7 +916,7 @@ const MainIt = ({ goNext, savedData }) => {
                 </button>
                 <button
                   onClick={() => onClickDone(activeParentCat)}
-                  className={`btn btn-primary px-16`}
+                  className={`btn btn-primary px-8 sm:px-16`}
                 >
                   Done
                 </button>
