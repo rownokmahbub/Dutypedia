@@ -136,7 +136,7 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-saturate-200 backdrop-blur-sm" />
+            <div className="fixed inset-0 bg-black bg-opacity-75 backdrop-saturate-200" />
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
