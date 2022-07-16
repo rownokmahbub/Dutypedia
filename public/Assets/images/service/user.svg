@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85.352" height="85.352" viewBox="0 0 85.352 85.352">
+  <defs>
+    <linearGradient id="linear-gradient" x2="1" y2="0.049" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#677b9c"/>
+      <stop offset="1" stop-color="#b51a20"/>
+    </linearGradient>
+  </defs>
+  <path id="Icon_awesome-user-alt" data-name="Icon awesome-user-alt" d="M42.676,48.011A24.005,24.005,0,1,0,18.671,24.005,24.012,24.012,0,0,0,42.676,48.011Zm21.338,5.335H54.829a29.019,29.019,0,0,1-24.305,0H21.338A21.336,21.336,0,0,0,0,74.683V77.35a8,8,0,0,0,8,8H77.35a8,8,0,0,0,8-8V74.683A21.336,21.336,0,0,0,64.014,53.345Z" fill="url(#linear-gradient)"/>
+</svg>

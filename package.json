@@ -1,0 +1,49 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.6.2",
+    "axios": "^0.26.1",
+    "daisyui": "^2.14.3",
+    "formik": "^2.2.9",
+    "framer-motion": "^6.3.3",
+    "hoist-non-react-statics": "^3.3.2",
+    "i": "^0.3.7",
+    "jwt-decode": "^3.1.2",
+    "moment": "^2.29.3",
+    "nanoid": "^3.3.4",
+    "next": "12.1.4",
+    "npm": "^8.12.2",
+    "react": "18.0.0",
+    "react-autocomplete": "^1.8.1",
+    "react-calendar": "^3.7.0",
+    "react-datepicker": "^4.8.0",
+    "react-dom": "18.0.0",
+    "react-hot-toast": "^2.2.0",
+    "react-icons": "^4.3.1",
+    "react-modal": "^3.14.4",
+    "react-redux": "^7.2.8",
+    "react-slick": "^0.29.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.5",
+    "swiper": "^8.1.5",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.0",
+    "autoprefixer": "^10.4.7",
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.4",
+    "postcss": "^8.4.7",
+    "tailwindcss": "^3.0.24"
+  }
+}

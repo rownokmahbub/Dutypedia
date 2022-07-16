@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  scroll-behavior: smooth;
+}
+body {
+  /* background: #fff1f2; */
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  color: #333333;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ReactModal__Overlay {
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(0.5vw);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* scroll bar styling custom table */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 10px;
+  background: #F1F1F1;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  margin:7px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(90, 90, 90);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-button:single-button {
+  background-color: white;
+  display: block;
+  border-style: solid;
+  height: 1.5vw;
+  width: 1vw;
+}
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  border-width: 5px;
+  border-color: transparent grey transparent transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 5px;
+  border-color: grey transparent transparent;
+}
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+  border-width: 5px;
+  border-color: transparent transparent transparent grey;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 5px;
+  border-color: transparent transparent grey;
+}
+.calender__year__changeing__left {
+  width: 1.5vw;
+  height: 2.5vw;
+  background: url(/Assets/images/dashboard/LEFT\ GREY.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.calender__year__changeing__left:hover {
+  background: url(/Assets/images/dashboard/LEFT\ RED.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.calender__year__changeing__right {
+  width: 1.5vw;
+  height: 2.5vw;
+  background: url(/Assets/images/dashboard/RIGHT\ GREY.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.calender__year__changeing__right:hover {
+  background: url(/Assets/images/dashboard/RIGHT\ RED.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* text stroke */
+.text-stroke{
+  -webkit-text-stroke: .7px #dfdfdf;
+  text-shadow: 12px rgba(255, 255, 255, 0.579);
+}
+
+/* react switch */
+
+.react-switch-checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.react-switch-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 38px;
+  height: 22px;
+  background: gray;
+  border-radius: 100px;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.react-switch-label .react-switch-button {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  width: 18px;
+  height: 17px;
+  border-radius: 45px;
+  transition: 0.2s;
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+}
+
+.react-switch-checkbox:checked + .react-switch-label .react-switch-button {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.react-switch-label:active .react-switch-button {
+  width: 60px;
+}
+
+
+/* Slick slider */
+@layer components {
+  .hero-slider-nav .slick-slide{
+    @apply pr-4 !max-w-[180px]
+  }
+  .p-cat-slider .slick-slide{
+    @apply px-2 md:px-3
+  }
+  .cat-slider .slick-list{
+    @apply -mx-2
+  }
+  .cat-slider .slick-slide{
+    @apply px-2
+  }
+  .type-slider .slick-list{
+    @apply -mx-3 overflow-visible
+  }
+  .type-slider .slick-slide{
+    @apply px-3
+  }
+  .type-slider .slick-track{
+    @apply ml-[initial]
+  }
+}
+.type-slider .slider-wrapper {
+  width: calc(100% + 30px);
+  padding: 0 15px;
+  margin-left: -15px;
+  overflow: hidden;
+}
+.type-slider .slick-list {
+  overflow: visible;
+}
+
+.loader-line {
+  width: 100%;
+  height: 4px;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.loader-line:before {
+  content: "";
+  position: absolute;
+  left: -50%;
+  height: 4px;
+  width: 170%;
+  background-color: #da1e37;
+  animation: lineAnim 10s  cubic-bezier(0.7, 0, 0.3, 1) infinite;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+@keyframes lineAnim {
+  0% {
+      left: 0;
+    width: 0%;
+  }
+  50% {
+      left: 0%;
+      width: 100%;
+  }
+  100% {
+      left: 100%;
+      width: 100%;
+  }
+}
+
+/* Select color */
+.select-primary{
+  overflow: hidden;
+  position: relative;
+}
+.select-primary:after{
+  width: 0; 
+  height: 0; 
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #DA1E38;
+  position: absolute;
+  top: 40%;
+  right: 5px;
+  content: "";
+  z-index: 98;
+ }
+.select-primary select{
+  width: 220px;
+  border: 0;
+  position: relative;
+  z-index: 99;
+  background: none;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.type-slider .slick-track {
+  display: flex !important;
+}
+
+.type-slider .slick-slide {
+  height: auto;
+}
+.type-slider .slick-slide div {
+  height: 100%;
+}
+
+.slick-dots .slick-active .slik-custom-dot {
+  background: #DA1E38 !important;
+}
