@@ -24,21 +24,21 @@ const Welcome = () => {
             <div className="flex items-center gap-4 mt-4 flex-wrap">
               <div className="w-24 aspect-[161/113] relative overflow-hidden rounded-md">
                 <Image
-                  src="/Assets/images/feed/1.jpg"
+                  src="/Assets/images/feed/it.jpg"
                   layout="fill"
                   objectFit="cover"
                 />
               </div>
               <div className="w-24 aspect-[161/113] relative overflow-hidden rounded-md">
                 <Image
-                  src="/Assets/images/feed/2.jpg"
+                  src="/Assets/images/feed/ent.jpg"
                   layout="fill"
                   objectFit="cover"
                 />
               </div>
               <div className="w-24 aspect-[161/113] relative overflow-hidden rounded-md">
                 <Image
-                  src="/Assets/images/feed/1.jpg"
+                  src="/Assets/images/feed/bs.jpg"
                   layout="fill"
                   objectFit="cover"
                 />
@@ -55,9 +55,9 @@ const Welcome = () => {
             what you need
           </h1>
           <p className="text-gray-500 mt-2">
-            Todays most search : 
+            Today's most search : 
             <a className="link pl-2 ">It & Technology,</a>
-            <a className="link pl-2 ">Online Tution,</a>
+            <a className="link pl-2 ">Online Tuition,</a>
             <a className="link pl-2 ">Lawyer Service,</a>
             <a className="link pl-2 ">Business Service</a>
           </p>

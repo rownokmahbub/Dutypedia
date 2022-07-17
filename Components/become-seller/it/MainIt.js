@@ -939,7 +939,7 @@ const MainIt = ({ goNext, savedData }) => {
                 >
                   <div className="w-full aspect-video relative">
                     <Image
-                      src={`/Assets/images/lawyer/p-${category}.svg`}
+                      src={`/Assets/images/it/p-${category}.svg`}
                       layout="fill"
                       objectFit="contain"
                     />

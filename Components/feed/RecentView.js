@@ -10,7 +10,7 @@ export const Views = [
     author: "Omar Ekram",
     status: "Verified",
     images: [
-      "/Assets/images/feed/5.jpg",
+      "/Assets/images/feed/ent.jpg",
       "/Assets/images/feed/2.jpg",
       "/Assets/images/feed/3.jpg",
     ],
@@ -22,7 +22,7 @@ export const Views = [
     author: "John Doe",
     status: "Verified",
     images: [
-      "/Assets/images/feed/6.jpg",
+      "/Assets/images/feed/it.jpg",
       "/Assets/images/feed/2.jpg",
       "/Assets/images/feed/3.jpg",
     ],
@@ -34,7 +34,7 @@ export const Views = [
     author: "John Doe",
     status: "Verified",
     images: [
-      "/Assets/images/feed/7.jpg",
+      "/Assets/images/feed/bu.jpg",
       "/Assets/images/feed/5.jpg",
       "/Assets/images/feed/6.jpg",
     ],
@@ -46,7 +46,7 @@ export const Views = [
     author: "John Doe",
     status: "Verified",
     images: [
-      "/Assets/images/feed/6.jpg",
+      "/Assets/images/feed/bs.jpg",
       "/Assets/images/feed/7.jpg",
       "/Assets/images/feed/5.jpg",
     ],
@@ -58,7 +58,7 @@ export const Views = [
     author: "John Doe",
     status: "Verified",
     images: [
-      "/Assets/images/feed/7.jpg",
+      "/Assets/images/feed/law.jpg",
       "/Assets/images/feed/2.jpg",
       "/Assets/images/feed/3.jpg",
     ],
@@ -70,7 +70,7 @@ export const Views = [
     author: "John Doe",
     status: "Verified",
     images: [
-      "/Assets/images/feed/6.jpg",
+      "/Assets/images/feed/salon.jpg",
       "/Assets/images/feed/2.jpg",
       "/Assets/images/feed/3.jpg",
     ],
@@ -82,7 +82,7 @@ export const Views = [
     author: "John Doe",
     status: "Verified",
     images: [
-      "/Assets/images/feed/5.jpg",
+      "/Assets/images/feed/salon2.jpg",
       "/Assets/images/feed/6.jpg",
       "/Assets/images/feed/7.jpg",
     ],
@@ -94,7 +94,7 @@ export const Views = [
     author: "John Doe",
     status: "Verified",
     images: [
-      "/Assets/images/feed/6.jpg",
+      "/Assets/images/feed/lb-1.jpg",
       "/Assets/images/feed/5.jpg",
       "/Assets/images/feed/7.jpg",
     ],
@@ -106,7 +106,7 @@ export const Views = [
     author: "John Doe",
     status: "Verified",
     images: [
-      "/Assets/images/feed/7.jpg",
+      "/Assets/images/feed/music.jpg",
       "/Assets/images/feed/6.jpg",
       "/Assets/images/feed/5.jpg",
     ],
