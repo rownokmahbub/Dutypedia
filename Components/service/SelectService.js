@@ -312,11 +312,11 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                   min="1"
                   max="100000"
                 />
-                <div className="h-[42px] w-8 absolute right-0 top-0 bg-primary pointer-events-none flex flex-col justify-between items-center cursor-pointer py-1 rounded-r">
+                {/* <div className="h-[42px] w-8 absolute right-0 top-0 bg-primary pointer-events-none flex flex-col justify-between items-center cursor-pointer py-1 rounded-r">
                   <FiChevronUp className="text-white cursor-pointer" />
                   <span className="w-4 h-[1px] bg-white" />
                   <FiChevronDown className="text-white" />
-                </div>
+                </div> */}
               </div>
             </div>
 
