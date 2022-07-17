@@ -120,7 +120,9 @@ const OfflineMember = () => {
                 <div className="flex-1 flex items-center gap-4">
                   <span className="relative">
                     <img
-                      src={member.profilePhoto}
+                      src={
+                        member.profilePhoto || "/Assets/images/service/user.svg"
+                      }
                       className="w-12 h-12 rounded-md object-cover"
                     />
                   </span>
