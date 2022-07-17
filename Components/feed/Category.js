@@ -159,8 +159,8 @@ const Category = () => {
       {
         breakpoint: 380,
         settings: {
-          slidesToShow: totalSlides > 1 ? 1 : totalSlides,
-          slidesToScroll: totalSlides > 1 ? 1 : totalSlides,
+          slidesToShow: totalSlides > 3 ? 3 : totalSlides,
+          slidesToScroll: totalSlides > 3 ? 3 : totalSlides,
         },
       },
     ],
@@ -197,7 +197,7 @@ const Category = () => {
                 <Image src={category.image} layout="fill" objectFit="cover" />
               </div>
               <span className="absolute inset-0 w-full h-full bg-gray-800/50" />
-              <h4 className="absolute bottom-0 p-4 font-light text-white">
+              <h4 className="absolute bottom-0 p-4 font-light text-white text-[12px] md:text-[16px]">
                 {category.name} {currentSlide} - {mainSlider?.state.breakpoint}
               </h4>
             </div>

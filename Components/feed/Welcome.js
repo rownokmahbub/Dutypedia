@@ -46,7 +46,7 @@ const Welcome = () => {
             </div>
           </div>
         </div>
-        <div className="w-full h-full flex flex-col items-start justify-center pr-4 gap-4 ">
+        <div className="w-full h-full flex flex-col items-start justify-center md:pr-4 gap-4 ">
           <h1 className="w-full capitalize text-3xl font-semibold leading-snug">
             Hello{" "}
             <span className="text-white bg-black px-2 py-1">Easin Arafat</span>

@@ -6,10 +6,10 @@ const Cta = () => {
     <div className="bg-white container mx-auto max-w-screen-xl -mb-7">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div className="flex flex-col">
-          <p className="text-3xl font-bold">
+          <p className="md:text-3xl font-bold">
             Hello Good Morning Find Service <br /> What You Need
           </p>
-          <p className="font-normal text-sm text-[#666666] mt-5">
+          <p className="font-normal text-sm text-[#666666] mt-5 hidden md:block">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
             necessitatibus saepe reprehenderit. Neque quaerat molestias.
           </p>
