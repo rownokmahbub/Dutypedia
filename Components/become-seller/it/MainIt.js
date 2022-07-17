@@ -961,7 +961,7 @@ const MainIt = ({ goNext, savedData }) => {
             <div className="mt-4 flex justify-end gap-4 sm:gap-8 px-6 pb-8">
               <button
                 onClick={resetAll}
-                className={`btn px-8 sm:px-16 ${
+                className={`btn px-8 sm:px-16 w-28  ${
                   isAllEmpty && "opacity-30 saturate-0 pointer-events-none"
                 }`}
               >
@@ -969,7 +969,7 @@ const MainIt = ({ goNext, savedData }) => {
               </button>
               <button
                 onClick={goToNext}
-                className={`btn-primary btn px-8 sm:px-16 ${
+                className={`btn-primary btn px-8 sm:px-16 w-28 ${
                   isAllEmpty && "opacity-30 saturate-0 pointer-events-none"
                 }`}
               >
