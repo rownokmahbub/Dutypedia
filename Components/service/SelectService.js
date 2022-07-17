@@ -329,9 +329,9 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                   type="date"
                   name="startDate"
                 />
-                <span className="bg-primary text-white absolute right-0 top-0 h-[40px] w-10 flex justify-center items-center text-xl rounded-r-md pointer-events-none">
+                {/* <span className="bg-primary text-white absolute right-0 top-0 h-[40px] w-10 flex justify-center items-center text-xl rounded-r-md pointer-events-none">
                   <img className=" scale-90" src="/Assets/icon/calendar.svg" />
-                </span>
+                </span> */}
               </div>
             </div>
 
