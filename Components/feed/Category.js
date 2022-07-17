@@ -152,8 +152,8 @@ const Category = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: totalSlides > 2 ? 2 : totalSlides,
-          slidesToScroll: totalSlides > 2 ? 2 : totalSlides,
+          slidesToShow: totalSlides > 3 ? 3 : totalSlides,
+          slidesToScroll: totalSlides > 3 ? 3 : totalSlides,
         },
       },
       {
