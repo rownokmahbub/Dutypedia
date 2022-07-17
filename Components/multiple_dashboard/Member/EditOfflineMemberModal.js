@@ -29,44 +29,62 @@ const Schema = Yup.object().shape({
   gender: Yup.string().required("Gender is required"),
 });
 
-const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
+const EditOfflineMemberModal = ({ data, isOpen, closeModal, onSuccess }) => {
   const { token } = useContext(AuthContext);
   const [profilePhoto, setProfilePhoto] = useState(null);
-  const [profilePhotoPreview, setProfilePhotoPreview] = useState(null);
+  const [profilePhotoPreview, setProfilePhotoPreview] = useState(
+    data.profilePhoto || null
+  );
   const [wallPhoto, setWallPhoto] = useState(null);
-  const [wallPhotoPreview, setWallPhotoPreview] = useState(null);
+  const [wallPhotoPreview, setWallPhotoPreview] = useState(
+    data.wallPhoto || null
+  );
   const profilePhotoRef = useRef(null);
   const wallPhotoRef = useRef(null);
   const [showMore, setShowMore] = useState(false);
 
   const [city, setCity] = useState([]);
   const [area, setArea] = useState([]);
-  const [selectedCity, setSelectedCity] = useState(null);
-  const [selectedArea, setSelectedArea] = useState(null);
-  const [selectedState, setSelectedState] = useState(null);
-  const [address, setAddress] = useState("");
+  const [selectedCity, setSelectedCity] = useState(data.city || null);
+  const [selectedArea, setSelectedArea] = useState(data.area || null);
+  const [selectedState, setSelectedState] = useState(data.region || null);
+  const [address, setAddress] = useState(data.address || "");
   const cityRef = useRef(null);
   const areaRef = useRef(null);
 
   const formik = useFormik({
     initialValues: {
-      name: "",
-      phone: "",
-      gender: "",
+      name: data.name || "",
+      phone: data.phone || "",
+      gender: data.gender || "",
     },
     validationSchema: Schema,
     onSubmit: async ({ name, phone, gender }) => {
+      if (
+        name === data.name &&
+        phone === data.phone &&
+        gender === data.gender &&
+        selectedCity === data.city &&
+        selectedArea === data.area &&
+        selectedState === data.region &&
+        address === data.address &&
+        !profilePhoto &&
+        !wallPhoto
+      ) {
+        return toast.error("Nothing to update!");
+      }
+
       try {
-        let profilePhotoUrl = null;
-        let wallPhotoUrl = null;
+        let profilePhotoUrl = data.profilePhoto || null;
+        let wallPhotoUrl = data.wallPhoto || null;
         if (profilePhoto) {
           profilePhotoUrl = await uploadImage(profilePhoto, token);
         }
         if (wallPhoto) {
           wallPhotoUrl = await uploadImage(wallPhoto, token);
         }
-        const { data } = await axios.post(
-          `${process.env.NEXT_PUBLIC_API_URL}/members/offline/create`,
+        const { data: updatedMember } = await axios.put(
+          `${process.env.NEXT_PUBLIC_API_URL}/members/offline/update/${data.id}`,
           {
             name,
             phone,
@@ -84,7 +102,7 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
             },
           }
         );
-        toast.success("Member added successfully!");
+        toast.success("Member updated successfully!");
         onSuccess();
       } catch (error) {
         console.log(error);
@@ -125,6 +143,15 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
     setWallPhotoPreview(objectUrl);
     return () => URL.revokeObjectURL(objectUrl);
   }, [wallPhoto]);
+
+  useEffect(() => {
+    if (data?.region) {
+      setCity(DistrictList[data.region]);
+    }
+    if (data?.city && data?.region) {
+      setArea(AreaList[data.region][data.city]);
+    }
+  }, []);
 
   return (
     <>
@@ -247,7 +274,7 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                             <Input
                               name="phone"
                               className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
-                              type="text"
+                              type="tel"
                               placeholder="Phone Number"
                             />
                           </div>
@@ -364,7 +391,7 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                               }`}
                               type="submit"
                             >
-                              Add Member
+                              Update Member
                             </button>
                             <a
                               onClick={closeModal}
@@ -387,4 +414,4 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
   );
 };
 
-export default AddOfflineMemberModal;
+export default EditOfflineMemberModal;
