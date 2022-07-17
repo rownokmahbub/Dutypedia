@@ -14,6 +14,8 @@ import toast from "react-hot-toast";
 import { uploadImage } from "@lib/utils";
 import axios from "axios";
 
+const phoneRegExp =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 const Schema = Yup.object().shape({
   name: Yup.string()
     .required("Name is required")
@@ -22,7 +24,8 @@ const Schema = Yup.object().shape({
   phone: Yup.string()
     .required("Phone is required")
     .min(10, "Phone must be at least 10 characters")
-    .max(16, "Phone must be less than 16 characters"),
+    .max(16, "Phone must be less than 16 characters")
+    .matches(phoneRegExp, "Phone must be a valid phone number"),
   gender: Yup.string().required("Gender is required"),
 });
 
@@ -271,7 +274,7 @@ const EditOfflineMemberModal = ({ data, isOpen, closeModal, onSuccess }) => {
                             <Input
                               name="phone"
                               className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
-                              type="text"
+                              type="tel"
                               placeholder="Phone Number"
                             />
                           </div>
