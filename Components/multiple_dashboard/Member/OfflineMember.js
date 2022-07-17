@@ -8,6 +8,7 @@ import LoadingScreen from "@components/global/LoadingScreen";
 import { Menu } from "@headlessui/react";
 import { HiDotsVertical } from "react-icons/hi";
 import toast from "react-hot-toast";
+import EditOfflineMemberModal from "./EditOfflineMemberModal";
 
 const OfflineMember = () => {
   const [members, setMembers] = useState([]);
@@ -16,6 +17,9 @@ const OfflineMember = () => {
   const [doRefresh, setDoRefresh] = useState(false);
   const { token } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedMember, setSelectedMember] = useState(null);
+  const [showEditMember, setShowEditMember] = useState(false);
+
   const filteredMembers = members.filter((member) =>
     member.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -138,6 +142,10 @@ const OfflineMember = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <a
+                            onClick={() => {
+                              setSelectedMember(member);
+                              setShowEditMember(true);
+                            }}
                             className={`${
                               active
                                 ? "bg-gray-200 text-black "
@@ -179,6 +187,17 @@ const OfflineMember = () => {
           onSuccess={() => {
             setDoRefresh(!doRefresh);
             setShowAddMember(false);
+          }}
+        />
+      )}
+      {showEditMember && selectedMember && (
+        <EditOfflineMemberModal
+          data={selectedMember}
+          isOpen={showEditMember}
+          closeModal={() => setShowEditMember(false)}
+          onSuccess={() => {
+            setDoRefresh(!doRefresh);
+            setShowEditMember(false);
           }}
         />
       )}
