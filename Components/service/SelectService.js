@@ -327,7 +327,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                 <Input
                   className="border border-primary focus:outline-primary rounded-md px-2 py-1.5"
                   type="date"
-                  name="startDate"
+                  name="startDate" placeholder="17/07/2022"
                 />
                 {/* <span className="bg-primary text-white absolute right-0 top-0 h-[40px] w-10 flex justify-center items-center text-xl rounded-r-md pointer-events-none">
                   <img className=" scale-90" src="/Assets/icon/calendar.svg" />
