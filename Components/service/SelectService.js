@@ -335,7 +335,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
               </div>
             </div>
 
-            <div className="flex mt-5 mb-3 justify-between items-center">
+            <div className="flex mt-5 mb-2 justify-between items-center">
               <p className="mb-1 text-lg">Working Time</p>
               <div className="flex gap-2 items-center justify-center">
                 <p className=" text-md ">24/7 open</p>
@@ -346,15 +346,15 @@ const SelectService = ({ goNext, goBack, savedData }) => {
             {!t47 && (
               <>
                 <div className="px-3 bg-white py-4 rounded-lg shadow-3xl mb-5">
-                  <div className="grid grid-cols-3 bg-primary py-2 items-center px-3 rounded-lg text-white">
+                  <div className="md:grid grid-cols-3 bg-primary py-2 items-center px-3 rounded-lg text-white hidden">
                     <p className=" text-md ">Day</p>
                     <p className=" text-md text-center">Open Time</p>
                     <p className=" text-md text-right">Closing Time</p>
                   </div>
 
                   {Days.map((day, index) => (
-                    <div className="flex mt-4 justify-between items-center">
-                      <div className="flex flex-1 items-center">
+                    <div className="flex flex-col md:flex-row mt-4 md:justify-between md:items-center">
+                      <div className="flex flex-1 items-center mt-4">
                         <CheckBox
                           value={workingTime.some((item) => item.day === day)}
                           onChange={() => {
@@ -363,7 +363,9 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                         />
                         <p className=" text-md ">{day}</p>
                       </div>
-                      <div className="flex flex-1">
+                      <div className="flex gap-12 md:gap-20 mt-3">
+                      <div className="flex md:flex-1 flex-col">
+                        <p className="md:hidden mb-2">opening time</p>
                         <div className="relative">
                           <Input
                             className="border border-primary focus:outline-primary rounded-md px-2 py-1.5 w-32"
@@ -387,7 +389,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                               );
                             }}
                           />
-                          <span className="bg-primary text-white absolute right-0 top-0 h-[40px] w-10 flex justify-center items-center text-xl rounded-r-md pointer-events-none">
+                          <span className="bg-primary text-white absolute right-0 top-0 h-[40px] w-10  justify-center items-center text-xl rounded-r-md pointer-events-none hidden lg:flex">
                             <img
                               className=" scale-90"
                               src="/Assets/icon/clock.svg"
@@ -395,7 +397,8 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                           </span>
                         </div>
                       </div>
-                      <div className="flex">
+                      <div className="flex md:flex-1 flex-col">
+                        <p className="md:hidden mb-2">Closing time</p>
                         <div className="relative">
                           <Input
                             className="border border-primary focus:outline-primary rounded-md px-2 py-1.5 w-32"
@@ -419,7 +422,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                               );
                             }}
                           />
-                          <span className="bg-primary text-white absolute right-0 top-0 h-[40px] w-10 flex justify-center items-center text-xl rounded-r-md pointer-events-none">
+                          <span className="bg-primary text-white absolute right-0 top-0 h-[40px] w-10 lg:flex justify-center items-center text-xl rounded-r-md pointer-events-none hidden ">
                             <img
                               className=" scale-90"
                               src="/Assets/icon/clock.svg"
@@ -427,6 +430,8 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                           </span>
                         </div>
                       </div>
+                      </div>
+                    
                     </div>
                   ))}
                 </div>
@@ -443,11 +448,11 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                   min="1"
                   max="100000"
                 />
-                <div className="h-[42px] w-8 absolute right-0 top-0 bg-primary pointer-events-none flex flex-col justify-between items-center cursor-pointer py-1 rounded-r">
+                {/* <div className="h-[42px] w-8 absolute right-0 top-0 bg-primary pointer-events-none flex flex-col justify-between items-center cursor-pointer py-1 rounded-r">
                   <FiChevronUp className="text-white cursor-pointer" />
                   <span className="w-4 h-[1px] bg-white" />
                   <FiChevronDown className="text-white" />
-                </div>
+                </div> */}
               </div>
             </div>
 
