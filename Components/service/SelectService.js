@@ -310,7 +310,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                   className="w-32 py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
                   type="number"
                   min="1"
-                  max="100000"
+                  max="100000" inputmode="numeric" pattern="[0-9]*"
                 />
                 {/* <div className="h-[42px] w-8 absolute right-0 top-0 bg-primary pointer-events-none flex flex-col justify-between items-center cursor-pointer py-1 rounded-r">
                   <FiChevronUp className="text-white cursor-pointer" />
