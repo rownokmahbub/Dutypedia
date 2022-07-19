@@ -54,8 +54,8 @@ const LoginForm = () => {
           <div className="divider">OR</div>
           <input
             required
-            type="email"
-            placeholder="Email"
+            type="text"
+            placeholder="Email/Username"
             className="input input-ghost w-full rounded-none input-bordered "
             value={email}
             onChange={(e) => setEmail(e.target.value)}

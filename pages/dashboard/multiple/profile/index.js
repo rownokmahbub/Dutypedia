@@ -219,14 +219,14 @@ const ProfilePage = () => {
   if (loading) {
     return (
       <div className="bg-white min-h-screen">
-        <LoadingScreen fullScreen={false} />;
+        <LoadingScreen fullScreen={false} />
       </div>
     );
   }
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto max-w-[1920px] py-8">
+      <div className="mx-auto max-w-[1920px] md:p-8 sm:p-4 px-4">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
           <div className="grid h-max gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 flex-shrink-0 w-full lg:w-96">
             <ProfileRender
