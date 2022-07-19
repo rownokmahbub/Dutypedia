@@ -26,7 +26,7 @@ const Categories = [
   {
     id: 5,
     name: "Entertainment",
-    image: "/Assets/images/feed/salon.jpg",
+    image: "/Assets/images/feed/ent-1.png",
   },
   {
     id: 6,
