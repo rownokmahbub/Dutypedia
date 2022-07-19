@@ -35,7 +35,7 @@ const Categories = [
   },
   {
     id: 7,
-    name: "It and Technology",
+    name: "It & Technology",
     image: "/Assets/images/feed/it.jpg",
   },
   {
