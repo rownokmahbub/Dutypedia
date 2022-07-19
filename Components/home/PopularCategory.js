@@ -65,7 +65,7 @@ const PopularCategory = ({ container = true }) => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: totalSlides > 2 ? 2 : totalSlides,
+          slidesToShow: totalSlides > 3 ? 3 : totalSlides,
         },
       },
     ],
@@ -81,7 +81,7 @@ const PopularCategory = ({ container = true }) => {
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
         </p>
       </div>
-      <div className="p-cat-slider mt-8 relative px-8 lg:px-[83px]">
+      <div className="p-cat-slider mt-8 relative px-1 lg:px-[83px]">
         <div className="relative w-full h-full">
           <span
             onClick={goNext}
@@ -106,7 +106,7 @@ const PopularCategory = ({ container = true }) => {
                   <Image src={category.image} layout="fill" objectFit="cover" />
                 </div>
                 <span className="absolute inset-0 w-full h-full bg-primary/30" />
-                <h4 className="relative p-4 font-semibold text-white md:text-lg">
+                <h4 className="relative p-4 font-semibold text-white md:text-lg text-[12px]">
                   {category.name}
                 </h4>
               </div>

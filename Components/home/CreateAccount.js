@@ -7,10 +7,10 @@ const CreateAccount = () => {
       <div className="container  px-8 max-w-screen-lg py-5 mx-auto bg-[#ffcfd5] rounded-2xl mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
           <div className="">
-            <p className="text-[28px] text-[#1e1e1e] font-semibold pb-4">
-              Grow your business in one month <br /> 100% grantee
+            <p className="text-[18px] md:text-[28px] text-[#1e1e1e] font-semibold pb-4">
+              Grow your business in one month <br className="hidden md:block" /> 100% grantee
             </p>
-            <p>
+            <p className="hidden md:block">
               {`"`}Our map help you to find any service or shop near of your
               area.
               {`"`}

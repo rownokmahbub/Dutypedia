@@ -6,83 +6,66 @@ const Categories = [
   {
     id: 1,
     name: "Builder Service",
-    image: "/Assets/images/feed/builder.jpg",
+    image: "/Assets/images/feed/bu.jpg",
   },
   {
     id: 2,
     name: "Business Service",
-    image: "/Assets/images/feed/bu.jpg",
+    image: "/Assets/images/feed/bs.jpg",
   },
   {
     id: 3,
     name: "Cooker Service",
-    image: "/Assets/images/categories/3.jpg",
+    image: "/Assets/images/feed/ck.jpg",
   },
   {
     id: 4,
     name: "Electrician & Mechanician",
-    image: "/Assets/images/categories/4.jpg",
+    image: "/Assets/images/feed/en-1.jpg",
   },
   {
     id: 5,
     name: "Entertainment",
-    image: "/Assets/images/categories/5.jpg",
+    image: "/Assets/images/feed/ent.jpg",
   },
   {
     id: 6,
     name: "House Keeper",
-    image: "/Assets/images/categories/1.jpg",
+    image: "/Assets/images/feed/hc-1.jpg",
   },
   {
     id: 7,
     name: "It and Technology",
-    image: "/Assets/images/categories/2.jpg",
+    image: "/Assets/images/feed/it.jpg",
   },
   {
     id: 8,
     name: "Lawyer Service",
-    image: "/Assets/images/categories/3.jpg",
+    image: "/Assets/images/feed/law.jpg",
   },
   {
     id: 9,
-    name: "Lawyer Service",
-    image: "/Assets/images/categories/4.jpg",
+    name: "Labor",
+    image: "/Assets/images/feed/lb-1.jpg",
   },
   {
     id: 10,
-    name: "Mechanician",
-    image: "/Assets/images/categories/5.jpg",
+    name: "Music and Audio Service",
+    image: "/Assets/images/feed/music.jpg",
   },
+
   {
     id: 11,
-    name: "Music and Audio Service",
-    image: "/Assets/images/categories/5.jpg",
+    name: "Painter",
+    image: "/Assets/images/feed/ppt.jpg",
   },
   {
     id: 12,
-    name: "Music and Audio Service",
-    image: "/Assets/images/categories/5.jpg",
-  },
-  {
-    id: 13,
-    name: "Painter",
-    image: "/Assets/images/categories/5.jpg",
-  },
-  {
-    id: 14,
     name: "Parlor & Saloon",
-    image: "/Assets/images/categories/5.jpg",
+    image: "/Assets/images/feed/salon2.jpg",
   },
-  {
-    id: 15,
-    name: "Real State",
-    image: "/Assets/images/categories/5.jpg",
-  },
-  {
-    id: 16,
-    name: "Labor",
-    image: "/Assets/images/categories/5.jpg",
-  },
+
+
 ];
 const Category = () => {
   const totalSlides = Categories?.length || 1;
@@ -152,15 +135,15 @@ const Category = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: totalSlides > 2 ? 2 : totalSlides,
-          slidesToScroll: totalSlides > 2 ? 2 : totalSlides,
+          slidesToShow: totalSlides > 3 ? 3 : totalSlides,
+          slidesToScroll: totalSlides > 3 ? 3 : totalSlides,
         },
       },
       {
         breakpoint: 380,
         settings: {
-          slidesToShow: totalSlides > 1 ? 1 : totalSlides,
-          slidesToScroll: totalSlides > 1 ? 1 : totalSlides,
+          slidesToShow: totalSlides > 3 ? 3 : totalSlides,
+          slidesToScroll: totalSlides > 3 ? 3 : totalSlides,
         },
       },
     ],
@@ -197,8 +180,8 @@ const Category = () => {
                 <Image src={category.image} layout="fill" objectFit="cover" />
               </div>
               <span className="absolute inset-0 w-full h-full bg-gray-800/50" />
-              <h4 className="absolute bottom-0 p-4 font-light text-white">
-                {category.name} {currentSlide} - {mainSlider?.state.breakpoint}
+              <h4 className="absolute bottom-0 p-4 font-light text-white text-[12px] md:text-[16px]">
+                {category.name} 
               </h4>
             </div>
           ))}
