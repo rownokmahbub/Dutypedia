@@ -28,7 +28,7 @@ const ViewCard = ({ view }) => {
     mainSlider?.slickPrev();
   };
   return (
-    <div className=" group rounded-lg  overflow-hidden shadow-card-shadow">
+    <div className=" group rounded-lg  overflow-hidden shadow-card-shadow bg-white">
       {view.images && (
         <div className="relative">
           <span
@@ -91,7 +91,8 @@ const ViewCard = ({ view }) => {
             <p className="text-xs text-[#a8a1a6] italic font-medium">{view.author}</p>
           </div>
           <div className="text-sm font-medium mr-[6px]">
-            {view.status}
+            <img src={view.status} alt="" />
+            
           </div>
         </div>
           <div className="flex capitalize items-center">

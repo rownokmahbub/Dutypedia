@@ -116,7 +116,7 @@ export const Views = [
     price: "500",
     order: "10",
     author: "John Doe",
-    status: "Verified",
+    status: "/Assets/images/feed/verify.svg",
     images: [
       "/Assets/images/feed/5.jpg",
       "/Assets/images/feed/6.jpg",
