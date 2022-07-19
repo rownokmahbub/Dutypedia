@@ -91,7 +91,7 @@ const MultipleOptionsViewer = ({
           }}
         />
       ))}
-      <div className="mt-4 flex justify-end pb-16 max-w-xl mx-auto mr-5 sm:mr-0">
+      <div className="mt-4 flex justify-end pb-16 max-w-xl mx-auto mr-5">
         <button
           disabled={isBtnDisabled}
           onClick={submit}
