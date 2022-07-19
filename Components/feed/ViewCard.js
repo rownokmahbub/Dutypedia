@@ -112,8 +112,8 @@ const ViewCard = ({ view }) => {
               <img  className="w-5 text-[#707070] flex-shrink-0 font-light"  src="/Assets/images/feed/heart-border.svg" alt="" />
            
             </button>
-            <button className="border border-[#087096] w-[73px] h-10 rounded-[2px] flex justify-center items-center">
-            <p className="text-[#087096] font-bold text-[16px]">View</p>
+            <button className="border border-[#eb8592] hover:bg-[#eb8592] w-[73px] h-10 rounded-[2px] flex justify-center items-center">
+            <p className="text-[#eb8592] font-bold text-[16px] hover:text-white">View</p>
             </button>
           </div>
        </div>
