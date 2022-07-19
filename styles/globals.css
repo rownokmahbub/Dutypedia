@@ -1,7 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@font-face {
+  font-family: "Infinite";
+  src: url(/public/Assets/fonts/Infinite_Stroke.otf);
+}
 html{
   scroll-behavior: smooth;
 }

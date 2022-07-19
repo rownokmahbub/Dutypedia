@@ -91,7 +91,7 @@ const ViewCard = ({ view }) => {
             <p className="text-xs text-[#a8a1a6] italic font-medium">{view.author}</p>
           </div>
           <div className="text-sm font-medium mr-[6px]">
-            <img src={view.status} alt="" />
+            <img className="w-[63px]" src={view.status} alt="" />
             
           </div>
         </div>
