@@ -161,6 +161,7 @@ const ServiceDesc = ({
           <Truncate
             str={description}
             length={readAll ? description.length : limit}
+            color="text-red-500"
             ending={
               <button onClick={() => setReadAll(true)} className="text-primary">
                 ...Read more....
