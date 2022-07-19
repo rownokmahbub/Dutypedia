@@ -136,8 +136,8 @@ const AddOnlineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                                   </div>
                                   <div>
                                     <p>{`${user.firstName} ${user.lastName}`}</p>
-                                    <p className="uppercase text-xs text-gray-400">
-                                      Id : {user.id}
+                                    <p className="text-xs text-gray-400">
+                                      @{user.username}
                                     </p>
                                   </div>
                                 </div>

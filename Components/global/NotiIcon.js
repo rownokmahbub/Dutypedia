@@ -28,6 +28,69 @@ const NotiIcon = () => {
       url: "/",
       bg: "bg-pink-400",
     },
+    {
+      title: "A new monthly report is ready",
+      date: "December 12, 2019",
+      icon: <FaUserEdit />,
+      url: "/",
+      bg: "bg-green-400",
+    },
+    {
+      title: "You have a new notification",
+      date: "December 12, 2019",
+      icon: <BsHeartFill />,
+      url: "/",
+      bg: "bg-yellow-400",
+    },
+    {
+      title: "Payment was successful",
+      date: "December 12, 2019",
+      icon: <IoMdExit />,
+      url: "/",
+      bg: "bg-pink-400",
+    },
+    {
+      title: "A new monthly report is ready",
+      date: "December 12, 2019",
+      icon: <FaUserEdit />,
+      url: "/",
+      bg: "bg-green-400",
+    },
+    {
+      title: "You have a new notification",
+      date: "December 12, 2019",
+      icon: <BsHeartFill />,
+      url: "/",
+      bg: "bg-yellow-400",
+    },
+    {
+      title: "Payment was successful",
+      date: "December 12, 2019",
+      icon: <IoMdExit />,
+      url: "/",
+      bg: "bg-pink-400",
+    },
+    {
+      title: "A new monthly report is ready",
+      date: "December 12, 2019",
+      icon: <FaUserEdit />,
+      url: "/",
+      bg: "bg-green-400",
+    },
+    {
+      title: "You have a new notification",
+      date: "December 12, 2019",
+      icon: <BsHeartFill />,
+      url: "/",
+      bg: "bg-yellow-400",
+    },
+    {
+      title: "Payment was successful",
+      date: "December 12, 2019",
+      icon: <IoMdExit />,
+      url: "/",
+      bg: "bg-pink-400",
+    },
   ];
 
   return (
@@ -46,10 +109,16 @@ const NotiIcon = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute -right-20 sm:right-0 w-72 mt-2 origin-top-right bg-white divide-y divide-gray-100  rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none overflow-hidden">
+        <Menu.Items className="fixed right-0 w-full max-w-sm mt-2 origin-top-right bg-white divide-y divide-gray-100 h-[calc(100vh-49px)] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none overflow-x-hidden overflow-y-auto">
           <Menu.Item>
-            <div className="bg-primary px-4 py-2 text-white">
-              Notification Center
+            <div className="px-4">
+              <p className="font-semibold pt-2 text-xl text-gray-600">
+                Notifications
+              </p>
+              <div className="flex justify-between items-center">
+                <p className="font-medium">New</p>
+                <a className="btn btn-link">See all</a>
+              </div>
             </div>
           </Menu.Item>
           {MenuItems.map((item, idx) => (
