@@ -17,6 +17,7 @@
     "hoist-non-react-statics": "^3.3.2",
     "i": "^0.3.7",
     "jwt-decode": "^3.1.2",
+    "lodash.debounce": "^4.0.8",
     "moment": "^2.29.3",
     "nanoid": "^3.3.4",
     "next": "12.1.4",

@@ -2,6 +2,7 @@ import { nanoid } from "nanoid";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { IoSearchSharp } from "react-icons/io5";
 import { useState } from "react";
+import AddOnlineMemberModal from "./AddOnlineMemberModal";
 const Members = [
   {
     id: nanoid(8),
@@ -52,7 +53,8 @@ const Members = [
 
 const OnlineMember = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
+  const [doRefresh, setDoRefresh] = useState(false);
+  const [showAddMember, setShowAddMember] = useState(false);
   const filteredMembers = Members.filter((member) =>
     member.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -72,7 +74,10 @@ const OnlineMember = () => {
           <IoSearchSharp className="absolute right-4 top-1/2 -translate-y-1/2 text-xl text-gray-400" />
         </div>
 
-        <a className="flex gap-2 items-center cursor-pointer text-gray-500 hover:text-black duration-200">
+        <a
+          onClick={() => setShowAddMember(true)}
+          className="flex gap-2 items-center cursor-pointer text-gray-500 hover:text-black duration-200"
+        >
           <span className="capitalize text-lg">Add Member</span>
           <AiOutlinePlusCircle className="text-3xl text-primary" />
         </a>
@@ -134,6 +139,17 @@ const OnlineMember = () => {
           <div className="text-center py-16 text-gray-500">No Member Found</div>
         )}
       </div>
+
+      {showAddMember && (
+        <AddOnlineMemberModal
+          isOpen={showAddMember}
+          closeModal={() => setShowAddMember(false)}
+          onSuccess={() => {
+            setDoRefresh(!doRefresh);
+            setShowAddMember(false);
+          }}
+        />
+      )}
     </div>
   );
 };

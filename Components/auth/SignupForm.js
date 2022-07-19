@@ -1,8 +1,9 @@
 import AuthContext from "@lib/authContext";
 import { GlobalContext } from "@lib/globalContext";
 import axios from "axios";
+import debounce from "lodash.debounce";
 import { useRouter } from "next/router";
-import { useContext, useState } from "react";
+import { useContext, useMemo, useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { IoMdClose } from "react-icons/io";
 import GoogleLoginButton from "./GoogleLoginButton";
@@ -12,16 +13,95 @@ const SignupForm = () => {
   const { setUser, setToken } = useContext(AuthContext);
   const router = useRouter();
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [usernameIsChecking, setUsernameIsChecking] = useState(false);
+  const [isValid, setIsValid] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const restrictedUsernames = [
+    "admin",
+    "administrator",
+    "root",
+    "superuser",
+    "superadmin",
+    "super",
+    "moderator",
+    "mod",
+  ];
+
+  const handleChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const debouncedResults = useMemo(() => {
+    return debounce(handleChange, 500);
+  }, []);
+
+  const checkUsername = async () => {
+    try {
+      setUsernameIsChecking(true);
+      if (!username) {
+        setIsValid(false);
+        setErrorMessage("");
+        return;
+      }
+      if (username.length < 3) {
+        setIsValid(false);
+        setErrorMessage("Username must be at least 3 characters long");
+        return;
+      }
+      if (username.length > 20) {
+        setIsValid(false);
+        setErrorMessage("Username must be less than 20 characters long");
+        return;
+      }
+      if (restrictedUsernames.includes(username.toLowerCase().trim())) {
+        setIsValid(false);
+        setErrorMessage("Username is restricted");
+        return;
+      }
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/auth/check-username/${username}`
+      );
+      if (data.username) {
+        setErrorMessage("Username is already taken");
+        setIsValid(false);
+      } else {
+        setErrorMessage(null);
+        setIsValid(true);
+      }
+    } catch (error) {
+      console.log(error);
+      setIsValid(false);
+      setErrorMessage("Username is restricted");
+    } finally {
+      setUsernameIsChecking(false);
+    }
+  };
+
+  useEffect(() => {
+    checkUsername();
+  }, [username]);
+
+  useEffect(() => {
+    return () => {
+      debouncedResults.cancel();
+    };
+  });
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       setIsLoading(true);
+      if (!isValid) {
+        return toast.error("Invalid username!");
+      }
       const { data } = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/auth/register`,
         {
@@ -29,6 +109,7 @@ const SignupForm = () => {
           lastName,
           email,
           password,
+          username: username.trim(),
           age,
           gender,
         }
@@ -58,7 +139,11 @@ const SignupForm = () => {
       </a>
       <div className="flex gap-12 items-center justify-center flex-col text-center">
         {/* <Logo className="w-20" /> */}
-        <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
+        <form
+          autoComplete="off"
+          onSubmit={handleSubmit}
+          className="w-full flex flex-col gap-4"
+        >
           <input
             required
             type="text"
@@ -83,6 +168,27 @@ const SignupForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          <div>
+            <input
+              required
+              type="text"
+              placeholder="Username"
+              className="input input-ghost w-full rounded-none input-bordered "
+              onChange={debouncedResults}
+            />
+
+            {usernameIsChecking ? (
+              <p className="text-left text-xs mt-1">Checking...</p>
+            ) : !isValid ? (
+              <p className="text-xs text-left text-red-500 mt-1">
+                {errorMessage}
+              </p>
+            ) : (
+              <p className="text-xs text-left text-green-500 mt-1">
+                Username is available
+              </p>
+            )}
+          </div>
           <input
             required
             type="password"
