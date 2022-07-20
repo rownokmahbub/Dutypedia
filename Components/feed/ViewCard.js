@@ -1,6 +1,7 @@
 import RatingRender from "@components/global/Rating/RatingRender";
 import Image from "next/image";
 import { useState } from "react";
+import { AiOutlineHeart } from "react-icons/ai";
 import { BsFillEyeFill } from "react-icons/bs";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { IoMdHeartEmpty } from "react-icons/io";
@@ -91,7 +92,7 @@ const ViewCard = ({ view }) => {
             <p className="text-xs text-[#a8a1a6] italic font-medium">{view.author}</p>
           </div>
           <div className="text-sm font-medium mr-[6px]">
-            <img src={view.status} alt="" />
+            <img className="w-[60px]" src={view.status} alt="" />
             
           </div>
         </div>
@@ -108,14 +109,18 @@ const ViewCard = ({ view }) => {
             </div>
              <p className="text-[13px] text-[#8c8a8a] pb-[9px]">100k view</p>
           </div>
-          <div className="flex gap-[7px] mr-[6px]">
-            <button className="border border-[#707070] w-[42px] h-10 rounded-[2px] flex justify-center items-center">
-              <img  className="w-5 text-[#707070] flex-shrink-0 font-light"  src="/Assets/images/feed/heart-border.svg" alt="" />
-           
-            </button>
-            <button className="border border-[#eb8592] hover:bg-[#eb8592] w-[73px] h-10 rounded-[2px] flex justify-center items-center">
-            <p className="text-[#eb8592] font-bold text-[16px] hover:text-white">View</p>
-            </button>
+          <div className="flex gap-[7px] mr-[6px] relative">
+         <div className="w-14 h-10 relative">
+         <span className="absolute border border-[#707070] w-full h-full z-10 text-[#707070] hover:text-white rounded-[2px] flex justify-center items-center hover:bg-[#eb8592] ">
+             <IoMdHeartEmpty className="text-[24px]  border:text-white cursor-pointer"/>
+             </span>
+         </div>
+          
+        
+          
+            
+            <p className="text-[#eb8592] font-bold text-[16px] hover:text-white border border-[#eb8592] hover:bg-[#eb8592]  w-[73px] h-10 rounded-[2px] flex justify-center items-center cursor-pointer">View</p>
+            
           </div>
        </div>
      

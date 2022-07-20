@@ -17,6 +17,7 @@ module.exports = {
     fontFamily: {
       body: ["aller", "sans-serif"],
       pop: ["Poppins", "sans-serif"],
+      infinite: ["Infinite", "sans-serif"],
     },
     extend: {
       boxShadow: {
