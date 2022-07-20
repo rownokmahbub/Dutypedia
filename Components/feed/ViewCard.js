@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsFillEyeFill } from "react-icons/bs";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { IoMdHeartEmpty } from "react-icons/io";
+import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
 import Slider from "react-slick/lib/slider";
 
 const ViewCard = ({ view }) => {
@@ -110,9 +110,16 @@ const ViewCard = ({ view }) => {
              <p className="text-[13px] text-[#8c8a8a] pb-[9px]">100k view</p>
           </div>
           <div className="flex gap-[7px] mr-[6px] relative">
-         <div className="w-14 h-10 relative">
-         <span className="absolute border border-[#707070] w-full h-full z-10 text-[#707070] hover:text-white rounded-[2px] flex justify-center items-center hover:bg-[#eb8592] ">
-             <IoMdHeartEmpty className="text-[24px]  border:text-white cursor-pointer"/>
+         <div className="w-14 h-10 relative cursor-pointer">
+         <span className="absolute border border-[#707070] hover:text-[#eb8592]  w-full h-full z-10 rounded-[2px] flex justify-center items-center ">
+         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+</svg>
+             </span>
+             <span className="absolute  text-white  hover:text-[#eb8592]  hover:border-[#eb8592] w-full h-full z-10   rounded-[2px] flex justify-center items-center ">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+  <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+</svg>
              </span>
          </div>
           
