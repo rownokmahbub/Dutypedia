@@ -4,8 +4,10 @@ import { BsHeartFill } from "react-icons/bs";
 import { FaUserEdit } from "react-icons/fa";
 import { IoMdExit } from "react-icons/io";
 import Link from "next/link";
+import socketIOClient from "socket.io-client";
 
 const NotiIcon = () => {
+  const [notifications, setNotifications] = useState([]);
   const MenuItems = [
     {
       title: "A new monthly report is ready",
@@ -92,6 +94,11 @@ const NotiIcon = () => {
       bg: "bg-pink-400",
     },
   ];
+
+  useEffect(() => {
+    const socket = socketIOClient(process.env.NEXT_PUBLIC_API_URL);
+    console.log(socket);
+  }, []);
 
   return (
     <Menu as="div" className="relative inline-block text-left mt-1">
