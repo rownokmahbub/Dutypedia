@@ -17,7 +17,7 @@ const ExpenceCreate = ({goNext}) => {
                     />
       </div>
 
-     <p className='text-center  md:text-2xl mt-5 '>Create A Expenses List</p>
+     <p className='text-center  md:text-2xl mt-5 '>Create A Employee List</p>
 
      
     </div>
