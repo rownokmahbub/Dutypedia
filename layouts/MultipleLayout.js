@@ -5,9 +5,12 @@ import AuthContext from "@lib/authContext";
 import LoadingScreen from "@components/global/LoadingScreen";
 import { useRouter } from "next/router";
 import { useContext, useEffect } from "react";
+import { GlobalContext } from "@lib/globalContext";
+import { socket } from "@lib/socket";
 
 const MultipleDashboardLayout = ({ children }) => {
   const { user, authenticating } = useContext(AuthContext);
+  const { uiDispatch, useUi } = useContext(GlobalContext);
   const router = useRouter();
 
   useEffect(() => {
@@ -23,6 +26,16 @@ const MultipleDashboardLayout = ({ children }) => {
     };
     redirect();
   }, [user, authenticating]);
+
+  useEffect(() => {
+    console.log(useUi.connected);
+    if (user) {
+      if (!useUi.connected) {
+        socket.emit("setup", user);
+        uiDispatch({ type: "SOCKET_CONNECTED" });
+      }
+    }
+  }, [user]);
 
   if (authenticating || !user || user.loginAs !== "VENDOR")
     return <LoadingScreen />;

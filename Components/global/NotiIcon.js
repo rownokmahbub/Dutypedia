@@ -4,10 +4,13 @@ import { BsHeartFill } from "react-icons/bs";
 import { FaUserEdit } from "react-icons/fa";
 import { IoMdExit } from "react-icons/io";
 import Link from "next/link";
-import socketIOClient from "socket.io-client";
+import AuthContext from "@lib/authContext";
+import { socket } from "@lib/socket";
+import toast from "react-hot-toast";
 
 const NotiIcon = () => {
   const [notifications, setNotifications] = useState([]);
+  const { user } = useContext(AuthContext);
   const MenuItems = [
     {
       title: "A new monthly report is ready",
@@ -37,67 +40,13 @@ const NotiIcon = () => {
       url: "/",
       bg: "bg-green-400",
     },
-    {
-      title: "You have a new notification",
-      date: "December 12, 2019",
-      icon: <BsHeartFill />,
-      url: "/",
-      bg: "bg-yellow-400",
-    },
-    {
-      title: "Payment was successful",
-      date: "December 12, 2019",
-      icon: <IoMdExit />,
-      url: "/",
-      bg: "bg-pink-400",
-    },
-    {
-      title: "A new monthly report is ready",
-      date: "December 12, 2019",
-      icon: <FaUserEdit />,
-      url: "/",
-      bg: "bg-green-400",
-    },
-    {
-      title: "You have a new notification",
-      date: "December 12, 2019",
-      icon: <BsHeartFill />,
-      url: "/",
-      bg: "bg-yellow-400",
-    },
-    {
-      title: "Payment was successful",
-      date: "December 12, 2019",
-      icon: <IoMdExit />,
-      url: "/",
-      bg: "bg-pink-400",
-    },
-    {
-      title: "A new monthly report is ready",
-      date: "December 12, 2019",
-      icon: <FaUserEdit />,
-      url: "/",
-      bg: "bg-green-400",
-    },
-    {
-      title: "You have a new notification",
-      date: "December 12, 2019",
-      icon: <BsHeartFill />,
-      url: "/",
-      bg: "bg-yellow-400",
-    },
-    {
-      title: "Payment was successful",
-      date: "December 12, 2019",
-      icon: <IoMdExit />,
-      url: "/",
-      bg: "bg-pink-400",
-    },
   ];
 
   useEffect(() => {
-    const socket = socketIOClient(process.env.NEXT_PUBLIC_API_URL);
-    console.log(socket);
+    socket.on("notification received", (newNotification) => {
+      console.log(newNotification);
+      toast.success("New notification received");
+    });
   }, []);
 
   return (
@@ -116,7 +65,7 @@ const NotiIcon = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="fixed right-0 w-full max-w-sm mt-2 origin-top-right bg-white divide-y divide-gray-100 h-[calc(100vh-49px)] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none overflow-x-hidden overflow-y-auto">
+        <Menu.Items className="fixed right-0 top-[42px] w-full max-w-sm mt-2 origin-top-right bg-white divide-y divide-gray-100 h-[calc(100vh-50px)] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none overflow-x-hidden overflow-y-auto">
           <Menu.Item>
             <div className="px-4">
               <p className="font-semibold pt-2 text-xl text-gray-600">
@@ -147,11 +96,6 @@ const NotiIcon = () => {
               </Link>
             </Menu.Item>
           ))}
-          <Menu.Item>
-            <div className="text-center text-gray-400 text-xs py-2 px-4">
-              Show all notifications
-            </div>
-          </Menu.Item>
         </Menu.Items>
       </Transition>
     </Menu>

@@ -1,6 +1,7 @@
 import LoadingScreen from "@components/global/LoadingScreen";
 import { Dialog, Transition } from "@headlessui/react";
 import AuthContext from "@lib/authContext";
+import { emitNotification } from "@lib/socket";
 import axios from "axios";
 import debounce from "lodash.debounce";
 import Image from "next/image";
@@ -10,7 +11,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import { RiUserAddFill } from "react-icons/ri";
 
 const AddOnlineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
-  const { token } = useContext(AuthContext);
+  const { token, user: logedInUser } = useContext(AuthContext);
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -142,7 +143,12 @@ const AddOnlineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                                   </div>
                                 </div>
 
-                                <button className="btn btn-primary btn-sm sm:btn-md gap-2 capitalize font-medium">
+                                <button
+                                  onClick={() => {
+                                    emitNotification(user.id, logedInUser);
+                                  }}
+                                  className="btn btn-primary btn-sm sm:btn-md gap-2 capitalize font-medium"
+                                >
                                   <RiUserAddFill />
                                   Add to Member
                                 </button>
