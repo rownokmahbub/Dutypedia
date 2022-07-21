@@ -1,10 +1,11 @@
+import Heart from "@components/global/Heart";
 import RatingRender from "@components/global/Rating/RatingRender";
 import Image from "next/image";
 import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsFillEyeFill } from "react-icons/bs";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { IoMdHeartEmpty } from "react-icons/io";
+import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
 import Slider from "react-slick/lib/slider";
 
 const ViewCard = ({ view }) => {
@@ -44,7 +45,7 @@ const ViewCard = ({ view }) => {
           >
             <FiChevronLeft />
           </span>
-          
+
           <Slider
             ref={(slider1) => setMainSlider(slider1)}
             {...mainSliderSettings}
@@ -72,58 +73,52 @@ const ViewCard = ({ view }) => {
             <p className="text-[15px] leading-tight  font-semibold text-[#222325]">
               {view.title}
             </p>
-           
           </div>
           <div className="flex justify-between items-center py-[6px]">
-          <div className="flex items-center gap-2 ">
-            <div className="relative">
-            <div className="flex w-6 h-6 overflow-hidden bg-primary  rounded-full border-primary border items-center justify-center ">
-              <img
-                className="object-cover rounded-full"
-                src="https://api.lorem.space/image/face?hash=3174"
-                alt="love"
-              />
-             
-            </div>
-            <div className="absolute w-2 h-2 bg-gray-300 rounded-full right-0 bottom-0"></div>
-            </div>
-         
+            <div className="flex items-center gap-2 ">
+              <div className="relative">
+                <div className="flex w-6 h-6 overflow-hidden bg-primary  rounded-full border-primary border items-center justify-center ">
+                  <img
+                    className="object-cover rounded-full"
+                    src="https://api.lorem.space/image/face?hash=3174"
+                    alt="love"
+                  />
+                </div>
+                <div className="absolute w-2 h-2 bg-gray-300 rounded-full right-0 bottom-0"></div>
+              </div>
 
-            <p className="text-xs text-[#a8a1a6] italic font-medium">{view.author}</p>
+              <p className="text-xs text-[#a8a1a6] italic font-medium">
+                {view.author}
+              </p>
+            </div>
+            <div className="text-sm font-medium mr-[6px]">
+              <img className="w-[60px]" src={view.status} alt="" />
+            </div>
           </div>
-          <div className="text-sm font-medium mr-[6px]">
-            <img className="w-[60px]" src={view.status} alt="" />
-            
-          </div>
-        </div>
           <div className="flex capitalize items-center">
-            <p className="text-[16px] text-[#4d4d4d] font-bold">{view.price}৳</p>
-           
+            <p className="text-[16px] text-[#4d4d4d] font-bold">
+              {view.price}৳
+            </p>
           </div>
         </div>
-       <div className="flex justify-between  px-2">
+        <div className="flex justify-between  px-2">
           <div className="flex flex-col gap-2">
             <div className="flex flex-row items-center justify-center gap-1 -mb-[6px] -mt-[6px]">
-           <RatingRender rating={5}/>
+              <RatingRender rating={5} />
               <p className=" mt-1 text-[#a8a1a6]">5.0</p>
             </div>
-             <p className="text-[13px] text-[#8c8a8a] pb-[9px]">100k view</p>
+            <p className="text-[13px] text-[#8c8a8a] pb-[9px]">100k view</p>
           </div>
           <div className="flex gap-[7px] mr-[6px] relative">
-         <div className="w-14 h-10 relative">
-         <span className="absolute border border-[#707070] w-full h-full z-10 text-[#707070] hover:text-white rounded-[2px] flex justify-center items-center hover:bg-[#eb8592] ">
-             <IoMdHeartEmpty className="text-[24px]  border:text-white cursor-pointer"/>
-             </span>
-         </div>
-          
-        
-          
-            
-            <p className="text-[#eb8592] font-bold text-[16px] hover:text-white border border-[#eb8592] hover:bg-[#eb8592]  w-[73px] h-10 rounded-[2px] flex justify-center items-center cursor-pointer">View</p>
-            
-          </div>
-       </div>
      
+              <Heart className=""/>
+           
+
+            <p className="text-[#eb8592] font-bold text-[16px] hover:text-white border border-[#eb8592] hover:bg-[#eb8592]  w-[73px] h-10 rounded-[2px] flex justify-center items-center cursor-pointer">
+              View
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
