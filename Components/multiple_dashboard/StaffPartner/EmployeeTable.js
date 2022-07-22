@@ -79,8 +79,15 @@ const EmployeeTable = ({goNext}) => {
   return (
     <div className="container max-w-screen-xl mx-auto relative my-5">
       <div className="mt-16 h-auto rounded-2xl shadow-4xl md:shadow-3xl bg-white py-5 md:py-10 px-2 md:px-12">
+      <div className="flex justify-end items-center mr-4 cursor-pointer">
+        <div onClick={goNext} className="flex items-center">
+        <p className="text-lg">Add Employee</p>
+      <img className="w-10" src="/Assets/icon/roundedplus.svg" alt="" />
+        </div>
 
-        
+      <img className="w-10" src="/Assets/icon/roundedplus.svg" alt="" />
+      </div>
+       
           <div className="grid grid-cols-5 mx-[13px] -mr-[1px] mt-6 md:mx-3 md:mr-[22px] text-center bg-primary py-4  text-white text-xl rounded-t-md sticky top-0 z-10">
             <p className="text-[16px] md:text-xl"> Name</p>
             <p className="text-[16px] md:text-xl"> Position</p>

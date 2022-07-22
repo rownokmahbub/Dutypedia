@@ -8,7 +8,7 @@ import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import CheckBox from "@components/global/CheckBox";
 
-const InviteEmployee = ({ goNext }) => {
+const UpdateEmployee = ({ goNext }) => {
   const Expence = [
     {
       Id: 1,
@@ -211,4 +211,4 @@ const InviteEmployee = ({ goNext }) => {
   );
 };
 
-export default InviteEmployee;
+export default UpdateEmployee;
