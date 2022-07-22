@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.6.2",
     "axios": "^0.26.1",
     "daisyui": "^2.14.3",
+    "date-fns": "^2.29.1",
     "formik": "^2.2.9",
     "framer-motion": "^6.3.3",
     "hoist-non-react-statics": "^3.3.2",

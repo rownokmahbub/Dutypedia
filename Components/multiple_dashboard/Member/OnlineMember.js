@@ -3,7 +3,6 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { IoSearchSharp } from "react-icons/io5";
 import { useState } from "react";
 import AddOnlineMemberModal from "./AddOnlineMemberModal";
-import Heart from "@components/global/Heart";
 const Members = [
   {
     id: nanoid(8),
@@ -151,7 +150,6 @@ const OnlineMember = () => {
           }}
         />
       )}
-      <Heart />
     </div>
   );
 };

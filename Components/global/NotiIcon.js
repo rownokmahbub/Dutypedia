@@ -1,11 +1,11 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useContext, useState, useEffect } from "react";
-import Link from "next/link";
 import AuthContext from "@lib/authContext";
 import { socket } from "@lib/socket";
 import axios from "axios";
 import { useRefEffect } from "react-use-ref-effect";
 import { CgSpinner } from "react-icons/cg";
+import NotificationItem from "@components/multiple_dashboard/Notification/NotificationItem";
 
 const NotiIcon = () => {
   const [notifications, setNotifications] = useState([]);
@@ -41,7 +41,7 @@ const NotiIcon = () => {
     try {
       setIsLoading(true);
       const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/notification/get-unread-notifications`,
+        `${process.env.NEXT_PUBLIC_API_URL}/notification/get-notifications`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -119,21 +119,7 @@ const NotiIcon = () => {
           ) : (
             notifications.map((item, idx) => (
               <Menu.Item key={idx}>
-                <Link href="#">
-                  <a className="flex items-center gap-4 p-3">
-                    <span
-                      className={`w-10 aspect-square rounded-full flex justify-center items-center text-white ${item.bg}`}
-                    >
-                      {item.icon}
-                    </span>
-                    <div>
-                      <p className="text-gray-400 text-xs">{item.createdAt}</p>
-                      <h4 className="font-medium text-sm text-gray-700">
-                        {item.message}
-                      </h4>
-                    </div>
-                  </a>
-                </Link>
+                <NotificationItem item={item} />
               </Menu.Item>
             ))
           )}
