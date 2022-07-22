@@ -28,14 +28,17 @@ const MultipleDashboardLayout = ({ children }) => {
   }, [user, authenticating]);
 
   useEffect(() => {
-    console.log(useUi.connected);
-    if (user) {
-      if (!useUi.connected) {
-        socket.emit("setup", user);
-        uiDispatch({ type: "SOCKET_CONNECTED" });
-      }
-    }
-  }, [user]);
+    const setupSocket = () => {
+      if (useUi.connected) return;
+      if (!user) return;
+      socket.emit("setup", user);
+      uiDispatch({ type: "SOCKET_CONNECTED" });
+    };
+    setupSocket();
+    return () => {
+      socket.off("setup", user);
+    };
+  }, [socket]);
 
   if (authenticating || !user || user.loginAs !== "VENDOR")
     return <LoadingScreen />;

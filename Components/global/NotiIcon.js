@@ -1,60 +1,90 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useContext, useState, useEffect } from "react";
-import { BsHeartFill } from "react-icons/bs";
-import { FaUserEdit } from "react-icons/fa";
-import { IoMdExit } from "react-icons/io";
 import Link from "next/link";
 import AuthContext from "@lib/authContext";
 import { socket } from "@lib/socket";
-import toast from "react-hot-toast";
+import axios from "axios";
+import { useRefEffect } from "react-use-ref-effect";
+import { CgSpinner } from "react-icons/cg";
 
 const NotiIcon = () => {
   const [notifications, setNotifications] = useState([]);
-  const { user } = useContext(AuthContext);
-  const MenuItems = [
-    {
-      title: "A new monthly report is ready",
-      date: "December 12, 2019",
-      icon: <FaUserEdit />,
-      url: "/",
-      bg: "bg-green-400",
-    },
-    {
-      title: "You have a new notification",
-      date: "December 12, 2019",
-      icon: <BsHeartFill />,
-      url: "/",
-      bg: "bg-yellow-400",
-    },
-    {
-      title: "Payment was successful",
-      date: "December 12, 2019",
-      icon: <IoMdExit />,
-      url: "/",
-      bg: "bg-pink-400",
-    },
-    {
-      title: "A new monthly report is ready",
-      date: "December 12, 2019",
-      icon: <FaUserEdit />,
-      url: "/",
-      bg: "bg-green-400",
-    },
-  ];
+  const { user, token } = useContext(AuthContext);
+  const [unreadCount, setUnreadCount] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const notiMenu = useRefEffect((element) => {
+    setIsOpen(true);
+    return () => {
+      setIsOpen(false);
+    };
+  }, []);
+
+  const refreshNotificationsBadge = async () => {
+    try {
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/notification/get-unread-count`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setUnreadCount(data.count);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchNotifications = async () => {
+    try {
+      setIsLoading(true);
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/notification/get-unread-notifications`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setNotifications(data.notifications);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
+    if (isOpen) {
+      fetchNotifications();
+      setUnreadCount(0);
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    refreshNotificationsBadge();
     socket.on("notification received", (newNotification) => {
-      console.log(newNotification);
-      toast.success("New notification received");
+      refreshNotificationsBadge();
+      if (isOpen) {
+        fetchNotifications();
+        setUnreadCount(0);
+      }
     });
   }, []);
 
   return (
     <Menu as="div" className="relative inline-block text-left mt-1">
-      <Menu.Button className="">
+      <Menu.Button className="relative">
         <a>
           <img src="/Assets/icon/bell.svg" />
         </a>
+        {unreadCount > 0 && (
+          <span className="flex top-0 right-0 absolute w-5 aspect-square rounded-full bg-primary justify-center items-center text-xs font-semibold text-white translate-x-1/2 -translate-y-1/2">
+            {unreadCount}
+          </span>
+        )}
       </Menu.Button>
       <Transition
         as={Fragment}
@@ -68,7 +98,10 @@ const NotiIcon = () => {
         <Menu.Items className="fixed right-0 top-[42px] w-full max-w-sm mt-2 origin-top-right bg-white divide-y divide-gray-100 h-[calc(100vh-50px)] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none overflow-x-hidden overflow-y-auto">
           <Menu.Item>
             <div className="px-4">
-              <p className="font-semibold pt-2 text-xl text-gray-600">
+              <p
+                ref={notiMenu}
+                className="font-semibold pt-2 text-xl text-gray-600"
+              >
                 Notifications
               </p>
               <div className="flex justify-between items-center">
@@ -77,25 +110,33 @@ const NotiIcon = () => {
               </div>
             </div>
           </Menu.Item>
-          {MenuItems.map((item, idx) => (
-            <Menu.Item key={idx}>
-              <Link href={item.url}>
-                <a className="flex items-center gap-4 p-3">
-                  <span
-                    className={`w-10 aspect-square rounded-full flex justify-center items-center text-white ${item.bg}`}
-                  >
-                    {item.icon}
-                  </span>
-                  <div>
-                    <p className="text-gray-400 text-xs">{item.date}</p>
-                    <h4 className="font-medium text-sm text-gray-700">
-                      {item.title}
-                    </h4>
-                  </div>
-                </a>
-              </Link>
-            </Menu.Item>
-          ))}
+          {isLoading ? (
+            <div className="w-full h-[150px] flex justify-center items-center bg-white">
+              <span className="text-primary text-4xl animate-spin">
+                <CgSpinner />
+              </span>
+            </div>
+          ) : (
+            notifications.map((item, idx) => (
+              <Menu.Item key={idx}>
+                <Link href="#">
+                  <a className="flex items-center gap-4 p-3">
+                    <span
+                      className={`w-10 aspect-square rounded-full flex justify-center items-center text-white ${item.bg}`}
+                    >
+                      {item.icon}
+                    </span>
+                    <div>
+                      <p className="text-gray-400 text-xs">{item.createdAt}</p>
+                      <h4 className="font-medium text-sm text-gray-700">
+                        {item.message}
+                      </h4>
+                    </div>
+                  </a>
+                </Link>
+              </Menu.Item>
+            ))
+          )}
         </Menu.Items>
       </Transition>
     </Menu>
