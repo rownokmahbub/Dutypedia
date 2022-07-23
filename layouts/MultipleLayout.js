@@ -43,6 +43,10 @@ const MultipleDashboardLayout = ({ children }) => {
   if (authenticating || !user || user.loginAs !== "VENDOR")
     return <LoadingScreen />;
 
+  useEffect(() => {
+    uiDispatch({ type: "SIDEBAR_LEAVE" });
+  }, []);
+
   return (
     <>
       <div className="mx-auto h-screen relative w-full bg-[#FFF1F2]">
