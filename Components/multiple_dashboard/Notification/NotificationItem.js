@@ -50,8 +50,8 @@ const NotificationItem = ({ item }) => {
 
   if (item.notificationType === "MEMBER_REQUEST") {
     return (
-      <a className="flex items-start gap-4 p-3">
-        <span
+      <a className="flex items-start gap-4 p-3 relative">
+        <div
           className={`w-10 relative aspect-square rounded-full flex justify-center items-center text-white ${item.bg}`}
         >
           <Image
@@ -61,14 +61,19 @@ const NotificationItem = ({ item }) => {
             layout="fill"
             objectFit="cover"
           />
-        </span>
+          <div className="absolute  -bottom-2 -right-3">
+         <img className="w-4" src="/Assets/icon/member.svg" alt="" objectFit="cover"/>
+          </div>
+           
+        </div>
         <div>
-          <p className="text-gray-400 text-xs">
-            {format(new Date(item.createdAt), "MM-dd-yyyy h:mm a")}
-          </p>
+         
           <h4 className="font-medium text-sm text-gray-700 line-clamp-2">
             {item.message}
           </h4>
+          <p className="text-gray-400 text-xs my-2">
+            {format(new Date(item.createdAt), "MM-dd-yyyy h:mm a")}
+          </p>
           {!item.archived && (
             <div className="flex items-center gap-2 mt-1">
               <button
@@ -76,7 +81,7 @@ const NotificationItem = ({ item }) => {
                   memberRequestAcceptIsLoading || memberRequestRejectIsLoading
                 }
                 onClick={() => handelMemberRequest("APPROVED")}
-                className={`btn rounded btn-sm btn-success capitalize font-medium ${
+                className={`btn rounded-xl border-none btn-sm bg-[#29c86e] shadow-3xl capitalize font-medium ${
                   memberRequestAcceptIsLoading && "loading"
                 }`}
               >
@@ -87,7 +92,7 @@ const NotificationItem = ({ item }) => {
                   memberRequestRejectIsLoading || memberRequestAcceptIsLoading
                 }
                 onClick={() => handelMemberRequest("REJECTED")}
-                className={`btn rounded btn-sm btn-error capitalize font-medium ${
+                className={`btn rounded-xl btn-sm shadow-sm bg-primary-400 border-primary hover:border-primary hover:bg-white hover:text-primary capitalize font-medium ${
                   memberRequestRejectIsLoading && "loading"
                 }`}
               >
