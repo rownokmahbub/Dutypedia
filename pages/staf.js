@@ -1,4 +1,4 @@
-import AccessFunction from '@components/multiple_dashboard/StaffPartner/AccessFunction'
+
 import CreateEmployee from '@components/multiple_dashboard/StaffPartner/CreateEmployee'
 import EmployeeTable from '@components/multiple_dashboard/StaffPartner/EmployeeTable'
 import InvitationDone from '@components/multiple_dashboard/StaffPartner/InvitationDone'
