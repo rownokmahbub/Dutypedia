@@ -15,12 +15,11 @@ const staf = () => {
       
         <>{step === 1 && <CreateEmployee goNext={() => setStep(2)} />}</>
         <>{step === 2 && <InviteEmployee goNext={() => setStep(3)} />}</>
-        <>{step === 3 && <InvitationDone goNext={() => setStep(4)} />}</>
+        <>{step === 3 && <EmployeeTable goNext={() => setStep(4)} />}</>
         <>{step === 4 && <EmployeeTable goNext={() => setStep(5)} />}</>
         <>{step === 5 && <InviteEmployee goNext={() => setStep(4)} />}</>
         <>{step === 6 && <UpdateEmployee goNext={() => setStep(4)} />}</>
-        {/* <SearchEmployee/>
-        <AccessFunction/> */}
+       
     
      
        
