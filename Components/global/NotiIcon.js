@@ -6,6 +6,7 @@ import axios from "axios";
 import { useRefEffect } from "react-use-ref-effect";
 import { CgSpinner } from "react-icons/cg";
 import NotificationItem from "@components/multiple_dashboard/Notification/NotificationItem";
+import { GlobalContext } from "@lib/globalContext";
 
 const NotiIcon = () => {
   const [notifications, setNotifications] = useState([]);
@@ -13,6 +14,7 @@ const NotiIcon = () => {
   const [unreadCount, setUnreadCount] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const { useUi } = useContext(GlobalContext);
 
   const notiMenu = useRefEffect((element) => {
     setIsOpen(true);
@@ -61,7 +63,7 @@ const NotiIcon = () => {
       fetchNotifications();
       setUnreadCount(0);
     }
-  }, [isOpen]);
+  }, [isOpen, useUi.refresh]);
 
   useEffect(() => {
     refreshNotificationsBadge();

@@ -1,63 +1,46 @@
 import { nanoid } from "nanoid";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { IoSearchSharp } from "react-icons/io5";
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import AddOnlineMemberModal from "./AddOnlineMemberModal";
-const Members = [
-  {
-    id: nanoid(8),
-    name: "John Doe",
-    image: "https://i.pravatar.cc/300?img=1",
-  },
-  {
-    id: nanoid(8),
-    name: "Harry Potter",
-    image: "https://i.pravatar.cc/300?img=2",
-  },
-  {
-    id: nanoid(8),
-    name: "Bruce Wayne",
-    image: "https://i.pravatar.cc/300?img=3",
-  },
-  {
-    id: nanoid(8),
-    name: "Clark Kent",
-    image: "https://i.pravatar.cc/300?img=4",
-  },
-  {
-    id: nanoid(8),
-    name: "Diana Prince",
-    image: "https://i.pravatar.cc/300?img=5",
-  },
-  {
-    id: nanoid(8),
-    name: "Elon Musk",
-    image: "https://i.pravatar.cc/300?img=6",
-  },
-  {
-    id: nanoid(8),
-    name: "Clark Kent",
-    image: "https://i.pravatar.cc/300?img=4",
-  },
-  {
-    id: nanoid(8),
-    name: "Diana Prince",
-    image: "https://i.pravatar.cc/300?img=5",
-  },
-  {
-    id: nanoid(8),
-    name: "Elon Musk",
-    image: "https://i.pravatar.cc/300?img=6",
-  },
-];
+import AuthContext from "@lib/authContext";
+import LoadingScreen from "@components/global/LoadingScreen";
+import axios from "axios";
 
 const OnlineMember = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const { token } = useContext(AuthContext);
+  const [isLoading, setIsLoading] = useState(true);
+  const [members, setMembers] = useState([]);
   const [doRefresh, setDoRefresh] = useState(false);
   const [showAddMember, setShowAddMember] = useState(false);
-  const filteredMembers = Members.filter((member) =>
-    member.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredMembers = members.filter((member) =>
+    member.user.firstName.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  useEffect(() => {
+    const fetchMembers = async () => {
+      try {
+        setIsLoading(true);
+        const { data } = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/members/online`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        setMembers(data.members);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchMembers();
+  }, [doRefresh]);
+
+  if (isLoading) return <LoadingScreen fullScreen={false} />;
 
   return (
     <div>
@@ -102,16 +85,24 @@ const OnlineMember = () => {
                 </span>
                 <div className="flex-1 flex items-center gap-4">
                   <span className="relative">
-                    <img src={member.image} className="w-12 h-12 rounded-md" />
+                    <img
+                      src={
+                        member.user.profilePicture ||
+                        "/Assets/images/service/user.svg"
+                      }
+                      className="w-12 h-12 rounded-md"
+                    />
                     <img
                       src="/Assets/icon/online.svg"
                       className="absolute w-6 right-0 bottom-0 translate-x-1/2 translate-y-1/3"
                     />
                   </span>
                   <div>
-                    <p className="md:text-lg">{member.name}</p>
-                    <p className="text-xs md:text-sm text-gray-400 uppercase">
-                      ID : {member.id}
+                    <p className="md:text-lg">
+                      {member.user.firstName} {member.user.lastName}
+                    </p>
+                    <p className="text-xs md:text-sm text-gray-400">
+                      @{member.user.username}
                     </p>
                     <div className="gap-2 md:gap-4 flex sm:hidden mt-2">
                       <span className="w-8 aspect-square rounded-full flex items-center justify-center shadow-3xl">

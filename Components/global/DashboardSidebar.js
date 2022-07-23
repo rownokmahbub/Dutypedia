@@ -1,16 +1,20 @@
 import DropdownMenu from "Components/global/DropdownMenu";
 import Image from "next/image";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
+import { GlobalContext } from "@lib/globalContext";
 
 const DashboardSidebar = ({ data }) => {
-  const [isGroupHovered, setIsGroupHovered] = useState(false);
+  const { uiDispatch, useUi } = useContext(GlobalContext);
+
   return (
     <aside
-      onMouseEnter={() => setIsGroupHovered(true)}
-      onMouseLeave={() => setIsGroupHovered(false)}
-      className="hover:w-80 group hidden duration-300 ease-in-out-expo w-[55px] bg-white/70 backdrop-blur-lg backdrop-saturate-150 items-center lg:items-baseline overflow-x-hidden lg:overflow-hidden shadow-md sm:flex flex-col z-40 h-full"
+      onMouseEnter={() => uiDispatch({ type: "SIDEBAR_HOVER" })}
+      onMouseLeave={() => uiDispatch({ type: "SIDEBAR_LEAVE" })}
+      className={`hover:w-80 group hidden duration-300 ease-in-out-expo w-[55px] bg-white/70 backdrop-blur-lg backdrop-saturate-150 items-center lg:items-baseline overflow-x-hidden lg:overflow-hidden shadow-md sm:flex flex-col z-40 h-full ${
+        useUi.expandSidebar && "absolute"
+      }`}
     >
       <div className="w-full py-4 px-8 mx-auto flex-col justify-center items-center text-center gap-2 hidden group-hover:flex">
         <div className=" relative w-20 aspect-square overflow-hidden rounded-xl"></div>
@@ -33,7 +37,7 @@ const DashboardSidebar = ({ data }) => {
                   </a>
                 }
                 menuItems={item.dropdownList}
-                isGroupHovered={isGroupHovered}
+                isGroupHovered={useUi.expandSidebar}
               />
             ) : (
               <div className="px-2">

@@ -49,7 +49,11 @@ const MultipleDashboardLayout = ({ children }) => {
         <TopNavBar />
         <div className="flex h-[calc(100vh-49.5px)] overflow-hidden">
           <DashboardSidebar data={multipleDashboardData} />
-          <div className="sm:px-5 py-5 h-full overflow-y-auto flex-1">
+          <div
+            className={`sm:px-5 duration-300 py-5 h-full overflow-y-auto flex-1 ${
+              useUi.expandSidebar && "translate-x-[320px]"
+            }`}
+          >
             {children}
           </div>
         </div>
