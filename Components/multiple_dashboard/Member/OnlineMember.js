@@ -6,6 +6,8 @@ import AddOnlineMemberModal from "./AddOnlineMemberModal";
 import AuthContext from "@lib/authContext";
 import LoadingScreen from "@components/global/LoadingScreen";
 import axios from "axios";
+import { FaRegTrashAlt } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const OnlineMember = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,6 +19,33 @@ const OnlineMember = () => {
   const filteredMembers = members.filter((member) =>
     member.user.firstName.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const handelDeleteMember = async (id) => {
+    const userAction = confirm(`Are you sure you want to delete this member?`);
+    if (userAction) {
+      const Request = async () => {
+        try {
+          const res = await axios.delete(
+            `${process.env.NEXT_PUBLIC_API_URL}/members/online/delete/${id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          setDoRefresh(!doRefresh);
+          return "Member deleted successfully!";
+        } catch (error) {
+          throw new Error(error.response?.data?.msg);
+        }
+      };
+      toast.promise(Request(), {
+        loading: <b>Deleting... Please wait...</b>,
+        success: (data) => <b>{data}</b>,
+        error: (err) => <b>{err.toString()}</b>,
+      });
+    }
+  };
 
   useEffect(() => {
     const fetchMembers = async () => {
@@ -121,6 +150,12 @@ const OnlineMember = () => {
                   </span>
                   <span className="w-10 aspect-square rounded-full flex items-center justify-center shadow-3xl">
                     <img className="w-8" src="/Assets/icon/send.svg" />
+                  </span>
+                  <span
+                    onClick={() => handelDeleteMember(member.id)}
+                    className="w-10 cursor-pointer aspect-square rounded-full flex items-center justify-center shadow-3xl"
+                  >
+                    <FaRegTrashAlt className="text-red-500" />
                   </span>
                 </div>
               </div>

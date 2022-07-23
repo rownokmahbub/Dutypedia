@@ -40,12 +40,12 @@ const MultipleDashboardLayout = ({ children }) => {
     };
   }, [socket]);
 
-  if (authenticating || !user || user.loginAs !== "VENDOR")
-    return <LoadingScreen />;
-
   useEffect(() => {
     uiDispatch({ type: "SIDEBAR_LEAVE" });
   }, []);
+
+  if (authenticating || !user || user.loginAs !== "VENDOR")
+    return <LoadingScreen />;
 
   return (
     <>
