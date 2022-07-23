@@ -88,7 +88,7 @@ const EmployeeTable = ({goNext}) => {
       }
 
   return (
-    <>
+    <div className="mt-10">
      <div className="container max-w-screen-2xl mx-auto relative my-5">
       <div className="mt-16 h-auto rounded-2xl shadow-4xl md:shadow-3xl bg-white py-5 md:py-10 px-2 md:px-12">
       <div className="flex justify-end items-center mr-4 cursor-pointer">
@@ -251,7 +251,7 @@ const EmployeeTable = ({goNext}) => {
         </Dialog>
       </Transition>
   
-    </>
+    </div>
    
   );
 };
