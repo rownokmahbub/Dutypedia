@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="69.49" height="48.251" viewBox="0 0 69.49 48.251">
+  <g id="Group_7493" data-name="Group 7493" transform="translate(-405 -298.904)">
+    <g id="Group_7492" data-name="Group 7492" transform="translate(6.665 -13.596)">
+      <rect id="Rectangle_3873" data-name="Rectangle 3873" width="69" height="47" rx="8" transform="translate(398.335 313.298)" fill="#f5f5f5"/>
+      <line id="Line_3" data-name="Line 3" x2="22.074" transform="translate(398.345 329.21)" fill="none" stroke="#c7c7c7" stroke-width="1"/>
+      <line id="Line_10" data-name="Line 10" x2="22.074" transform="translate(420.419 320.933)" fill="none" stroke="#c7c7c7" stroke-width="1"/>
+      <path id="Path_18730" data-name="Path 18730" d="M0,0H16.628" transform="translate(451.042 336.798)" fill="none" stroke="#c7c7c7" stroke-width="1"/>
+      <line id="Line_12" data-name="Line 12" x2="24.833" transform="translate(442.492 328.176)" fill="none" stroke="#c7c7c7" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_7" data-name="Line 7" x2="68.49" transform="translate(398.835 345.421)" fill="none" stroke="#c7c7c7" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_5" data-name="Line 5" y2="14.155" transform="translate(420.418 346.096)" fill="none" stroke="#c7c7c7" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_8" data-name="Line 8" y2="15.886" transform="translate(410.071 329.21)" fill="none" stroke="#c7c7c7" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_14" data-name="Line 14" y2="13.796" transform="translate(431.455 346.455)" fill="none" stroke="#c7c7c7" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_13" data-name="Line 13" y2="17.245" transform="translate(451.042 328.176)" fill="none" stroke="#c7c7c7" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_9" data-name="Line 9" y2="16.21" transform="translate(420.419 313)" fill="none" stroke="#c7c7c7" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_6" data-name="Line 6" y2="15.176" transform="translate(441.802 345.421)" fill="none" stroke="#c7c7c7" stroke-width="1"/>
+      <line id="Line_11" data-name="Line 11" y2="15.176" transform="translate(442.492 313)" fill="none" stroke="#c7c7c7" stroke-linecap="round" stroke-width="1"/>
+      <g id="Union_46" data-name="Union 46" transform="translate(423.335 332.298)" fill="none">
+        <path d="M8,7.375a4.5,4.5,0,1,1,0-5.75,4.5,4.5,0,1,1,0,5.75Z" stroke="none"/>
+        <path d="M 11.47803211212158 8 C 13.41978168487549 8 14.99951171875 6.429910182952881 14.99951171875 4.5 C 14.99951171875 2.570090055465698 13.41978168487549 1 11.47803211212158 1 C 10.42748165130615 1 9.439281463623047 1.461480021476746 8.766831398010254 2.266119956970215 L 7.999281883239746 3.184540033340454 L 7.232011795043945 2.265889883041382 C 6.56007194519043 1.461400032043457 5.572121620178223 1 4.521481513977051 1 C 2.579461812973022 1 0.99951171875 2.570090055465698 0.99951171875 4.5 C 0.99951171875 6.429910182952881 2.579461812973022 8 4.521481513977051 8 C 5.5721116065979 8 6.560061931610107 7.538599967956543 7.232011795043945 6.734099864959717 L 7.999281883239746 5.815470218658447 L 8.766831398010254 6.733880043029785 C 9.439291954040527 7.538519859313965 10.42748165130615 8 11.47803211212158 8 M 11.47803211212158 9 C 10.07959175109863 9 8.8291015625 8.367799758911133 7.99951171875 7.375150203704834 C 7.170411586761475 8.367799758911133 5.919921875 9 4.521481513977051 9 C 2.024411678314209 9 -0.00048828125 6.985040187835693 -0.00048828125 4.5 C -0.00048828125 2.014960050582886 2.024411678314209 0 4.521481513977051 0 C 5.919921875 0 7.170411586761475 0.6321899890899658 7.99951171875 1.624850034713745 C 8.8291015625 0.6321899890899658 10.07959175109863 0 11.47803211212158 0 C 13.97510147094727 0 15.99951171875 2.014960050582886 15.99951171875 4.5 C 15.99951171875 6.985040187835693 13.97510147094727 9 11.47803211212158 9 Z" stroke="none" fill="#c7c7c7"/>
+      </g>
+    </g>
+  </g>
+</svg>
