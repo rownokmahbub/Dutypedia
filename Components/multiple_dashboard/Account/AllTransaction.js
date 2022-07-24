@@ -11,66 +11,100 @@ const AllTransaction = ({goNext}) => {
     const SearchEmp=[
         {
           Id: 1,
-          name: "Maliya Mouly",
+          name: "Maliya Mouly ",
           userid: "ID:7464735454",
           position:"Subscription",
           date:"20-01-2022",
+          amount:"5030 ৳",
           image1: "/Assets/icon/person1.svg",
           image2: "/Assets/icon/online.svg",
           tag: "",
         
         },
         {
-            Id: 1,
-            name: "Maliya Mouly",
-            userid: "ID:7464735454",
-            position:"Bargaining",
-            date:"20-01-2022",
-            image1: "/Assets/icon/person1.svg",
-            image2: "/Assets/icon/online.svg",
-            tag: "",
-          
-          },  {
-            Id: 1,
-            name: "Maliya Mouly",
-            userid: "ID:7464735454",
-            position:"Instalment",
-            date:"20-01-2022",
-            image1: "/Assets/icon/person1.svg",
-            image2: "/Assets/icon/online.svg",
-            tag: "",
-          
-          },  {
-            Id: 1,
-            name: "Maliya Mouly",
-            userid: "ID:7464735454",
-            position:"Fixed Price",
-            date:"20-01-2022",
-            image1: "/Assets/icon/person1.svg",
-            image2: "/Assets/icon/online.svg",
-            tag: "",
-          
-          },  {
-            Id: 1,
-            name: "Maliya Mouly",
-            userid: "ID:7464735454",
-            position:"Package",
-            date:"20-01-2022",
-            image1: "/Assets/icon/person1.svg",
-            image2: "/Assets/icon/online.svg",
-            tag: "",
-          
-          },  {
-            Id: 1,
-            name: "Maliya Mouly",
-            userid: "ID:7464735454",
-            position:"Software Engineer",
-            date:"20-01-2022",
-            image1: "/Assets/icon/person1.svg",
-            image2: "/Assets/icon/online.svg",
-            tag: "",
-          
-          },
+          Id: 1,
+          name: "Maliya Mouly",
+          userid: "ID:7464735454",
+          position:"Subscription",
+          date:"20-01-2022",
+          amount:"5030 ৳",
+          image1: "/Assets/icon/person1.svg",
+          image2: "/Assets/icon/online.svg",
+          tag: "",
+        
+        },
+        {
+          Id: 1,
+          name: "Maliya Mouly",
+          userid: "ID:7464735454",
+          position:"Subscription",
+          date:"20-01-2022",
+          amount:"5030 ৳",
+          image1: "/Assets/icon/person1.svg",
+          image2: "/Assets/icon/online.svg",
+          tag: "",
+        
+        },
+        {
+          Id: 1,
+          name: "Maliya Mouly",
+          userid: "ID:7464735454",
+          position:"Subscription",
+          date:"20-01-2022",
+          amount:"5030 ৳",
+          image1: "/Assets/icon/person1.svg",
+          image2: "/Assets/icon/online.svg",
+          tag: "",
+        
+        },
+        {
+          Id: 1,
+          name: "Maliya Mouly",
+          userid: "ID:7464735454",
+          position:"Subscription",
+          date:"20-01-2022",
+          amount:"5030 ৳",
+          image1: "/Assets/icon/person1.svg",
+          image2: "/Assets/icon/online.svg",
+          tag: "",
+        
+        },
+        {
+          Id: 1,
+          name: "Maliya Mouly",
+          userid: "ID:7464735454",
+          position:"Subscription",
+          date:"20-01-2022",
+          amount:"5030 ৳",
+          image1: "/Assets/icon/person1.svg",
+          image2: "/Assets/icon/online.svg",
+          tag: "",
+        
+        },
+        {
+          Id: 1,
+          name: "Maliya Mouly",
+          userid: "ID:7464735454",
+          position:"Subscription",
+          date:"20-01-2022",
+          amount:"5030 ৳",
+          image1: "/Assets/icon/person1.svg",
+          image2: "/Assets/icon/online.svg",
+          tag: "",
+        
+        },
+        {
+          Id: 1,
+          name: "Maliya Mouly",
+          userid: "ID:7464735454",
+          position:"Subscription",
+          date:"20-01-2022",
+          amount:"5030 ৳",
+          image1: "/Assets/icon/person1.svg",
+          image2: "/Assets/icon/online.svg",
+          tag: "",
+        
+        },
       
       ];
       let [isOpen, setIsOpen] = useState(false);
@@ -94,7 +128,7 @@ const AllTransaction = ({goNext}) => {
   return (
     <div className="mt-20">
      <div className="container max-w-screen-xl mx-auto relative pt-1 bg-white h-auto rounded-xl shadow-4xl md:shadow-3xl ">
-        <div className="bg-gray-500 w-full flex justify-between px-10 rounded-lg mt-7">
+        <div className="bg-[#313131] w-full flex justify-between px-10 rounded-lg mt-7">
             <div className="">
             <p className="text-white py-6 text-lg">Offline Account Balance</p>
             <img className="py-4" src="/Assets/icon/dutycard.svg" alt="" />
@@ -108,11 +142,7 @@ const AllTransaction = ({goNext}) => {
             <p className="text-white py-6 text-lg">Account Balance Information</p>
             
             <p className="text-white ">Total Amount: 500 BDT</p>
-            <div onClick={goNext} className="flex items-center pt-20 -ml-1 cursor-pointer">
-            <img className="w-10" src="/Assets/icon/roundedplus.svg" alt="" />
-        <p className="text-white">Add Amount</p>
-    
-        </div>
+            
             </div>
         </div>
       <div className="py-5 md:py-10 px-2 ">
@@ -234,60 +264,8 @@ const AllTransaction = ({goNext}) => {
          <p className="items-center flex justify-center text-[16px] md:text-md px-2 text-[#666666]">
           {card.date}
          </p>
-         <p className="items-center flex justify-end text-[16px] md:text-lg">
-           <div className="flex items-center justify-end">
-            <div className="flex flex-col items-center">
-            <p className="items-center text-[15px] text-[#666666] cursor-pointer">
-               Invitation Sent
-             </p>
-             <p className="items-center text-[14px] text-primary cursor-pointer">
-               Cancel Request
-             </p>
-            </div>
-           
-             <Menu as="div" className=" relative ml-2">
-               <Menu.Button>
-                 <Image
-                   src="/Assets/icon/dothor.svg"
-                   className=""
-                   width={30}
-                   height={25}
-                   alt="calender"
-                 />
-               </Menu.Button>
-               <Menu.Items className=" flex flex-col items-center absolute -ml-20 -mt-10 bg-white shadow-3xl  rounded-md px-3 py-1">
-                 <Menu.Item>
-                   {({ active }) => (
-                   
-                          <a 
-                       className={`${
-                         active ? "bg-gray-200 text-black " : "text-gray-900"
-                       } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
-                       
-                     >
-                       <p  className="text-sm">Edit</p>
-                     </a>
-                   
-                
-                   )}
-                 </Menu.Item>
-                 <Menu.Item>
-                   {({ active }) => (
-                     <a onClick={openModal}
-                       className={`${
-                         active
-                           ? "bg-primary-300 text-white"
-                           : "text-gray-900"
-                       } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
-                      
-                     >
-                       <p className="text-sm">Delete</p>
-                     </a>
-                   )}
-                 </Menu.Item>
-               </Menu.Items>
-             </Menu>
-           </div>
+         <p className="items-center flex justify-center text-[16px] md:text-md px-2 text-[#666666]">
+         {card.amount}
          </p>
        </div>
         ))}
@@ -296,53 +274,14 @@ const AllTransaction = ({goNext}) => {
 
         </Wrapper>
 
-    
+        <div className=" mt-24 sticky absolute bottom-0 md:relative mr-3">
+          <div className="flex absolute right-2 text-xl bottom-0  gap-48 bg-primary px-6 py-3 md:py-4 rounded-md text-white">
+            <p>Total:</p>
+            <p className="">3000 ৳</p>
+          </div>
+        </div>
       </div>
     </div>
-    <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                <div className="flex flex-col">
-      <p className="text-lg flex justify-center">Are you sure want to delete this person ?</p>
-      <div className="flex justify-center mt-5 gap-3">
-            <button onClick={closeModal} className="btn btn-primary md:w-28 capitalize ">
-              Yes
-            </button>
-            <button onClick={closeModal}  className="btn text-primary bg-white border-primary hover:bg-primary-400 hover:text-white md:w-28 capitalize ">
-              Cancel
-            </button>
-          </div>
-    </div>
-                 
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition>
   
     </div>
    
