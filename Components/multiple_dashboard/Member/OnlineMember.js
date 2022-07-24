@@ -8,6 +8,8 @@ import LoadingScreen from "@components/global/LoadingScreen";
 import axios from "axios";
 import { FaRegTrashAlt } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { GrRefresh } from "react-icons/gr";
+import { IoMdRefresh } from "react-icons/io";
 
 const OnlineMember = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -86,13 +88,22 @@ const OnlineMember = () => {
           <IoSearchSharp className="absolute right-4 top-1/2 -translate-y-1/2 text-xl text-gray-400" />
         </div>
 
-        <a
-          onClick={() => setShowAddMember(true)}
-          className="flex gap-2 items-center cursor-pointer text-gray-500 hover:text-black duration-200"
-        >
-          <span className="capitalize text-lg">Add Member</span>
-          <AiOutlinePlusCircle className="text-3xl text-primary" />
-        </a>
+        <div className="flex gap-2 items-center">
+          <a
+            onClick={() => setShowAddMember(true)}
+            className="flex gap-2 items-center cursor-pointer text-gray-500 hover:text-black duration-200"
+          >
+            <span className="capitalize text-lg">Add Member</span>
+            <AiOutlinePlusCircle className="text-3xl text-primary" />
+          </a>
+
+          <button
+            onClick={() => setDoRefresh(!doRefresh)}
+            className="btn btn-circle btn-primary btn-sm text-xl text-white"
+          >
+            <IoMdRefresh />
+          </button>
+        </div>
       </div>
 
       <div className="mt-8">
