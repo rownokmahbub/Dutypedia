@@ -1,5 +1,5 @@
 import AuthIcon from "@components/global/AuthIcon";
-import NotiIcon from "@components/global/NotiIcon";
+import NotiIconVendor from "@components/global/NotiIconVendor";
 import AuthContext from "@lib/authContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -22,7 +22,7 @@ const TopNavBar = () => {
         <div className="flex items-center gap-6">
           {!router.pathname.includes("/become-seller") && (
             <>
-              <NotiIcon />
+              <NotiIconVendor />
 
               <a>
                 <img className="w-8" src="/Assets/icon/send.svg" />
