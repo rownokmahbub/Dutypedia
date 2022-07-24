@@ -1,5 +1,6 @@
 import AuthContext from "@lib/authContext";
 import { GlobalContext } from "@lib/globalContext";
+import { emitNotification } from "@lib/socket";
 import axios from "axios";
 import { format } from "date-fns";
 import Image from "next/image";
@@ -7,7 +8,7 @@ import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 
 const NotificationItem = ({ item }) => {
-  const { token } = useContext(AuthContext);
+  const { token, user } = useContext(AuthContext);
   const { uiDispatch } = useContext(GlobalContext);
   const [memberRequestAcceptIsLoading, setMemberRequestAcceptIsLoading] =
     useState(false);
@@ -33,6 +34,7 @@ const NotificationItem = ({ item }) => {
         }
       );
       toast.success(`Request ${status}!`);
+      emitNotification(data.userId, user);
       uiDispatch({
         type: "DO_REFRESH",
       });
@@ -56,18 +58,21 @@ const NotificationItem = ({ item }) => {
         >
           <Image
             src={
-              item.userFrom.profilePhoto || "/Assets/images/service/user.svg"
+              item.service?.profilePhoto || "/Assets/images/service/user.svg"
             }
             layout="fill"
             objectFit="cover"
           />
           <div className="absolute  -bottom-2 -right-3">
-         <img className="w-4" src="/Assets/icon/member.svg" alt="" objectFit="cover"/>
+            <img
+              className="w-4"
+              src="/Assets/icon/member.svg"
+              alt=""
+              objectFit="cover"
+            />
           </div>
-           
         </div>
         <div>
-         
           <h4 className="font-medium text-sm text-gray-700 line-clamp-2">
             {item.message}
           </h4>
@@ -113,7 +118,7 @@ const NotificationItem = ({ item }) => {
         >
           <Image
             src={
-              item.userFrom.profilePhoto || "/Assets/images/service/user.svg"
+              item.userFrom?.profilePhoto || "/Assets/images/service/user.svg"
             }
             layout="fill"
             objectFit="cover"
