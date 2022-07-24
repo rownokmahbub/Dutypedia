@@ -15,6 +15,7 @@ const Withdraw = ({goNext}) => {
           date:"13 sep 2022 , 10:00 AM",
           status:"Pending",
           time:"23:12:23",
+          reamain:"Remaining For Cancel",
           img:"/Assets/icon/timer.svg",
           tag: "",
         
@@ -23,7 +24,31 @@ const Withdraw = ({goNext}) => {
             Id: 1,
             amount:"5030 ৳",
             date:"13 sep 2022 , 10:00 AM",
-            status:"Pending",
+            status:"Canceled ",
+            tag: "",
+          
+          },
+          {
+            Id: 1,
+            amount:"5030 ৳",
+            date:"13 sep 2022 , 10:00 AM",
+            status:"Completed ",
+            tag: "",
+          
+          },
+          {
+            Id: 1,
+            amount:"5030 ৳",
+            date:"13 sep 2022 , 10:00 AM",
+            status:"Processing ",
+            tag: "",
+          
+          },
+          {
+            Id: 1,
+            amount:"5030 ৳",
+            date:"13 sep 2022 , 10:00 AM",
+            status:"Failed ",
             tag: "",
           
           },
@@ -39,7 +64,7 @@ const Withdraw = ({goNext}) => {
         setIsOpen(true);
       }
       const people = [
-        { name: 'Last 1 Day' },
+        { name: '' },
         { name: 'Last 7 Day' },
         { name: 'Last 15 Day' },
         { name: 'Last 1 Month' },
@@ -76,7 +101,7 @@ const Withdraw = ({goNext}) => {
         </div>
       <div className="py-5 md:py-10 px-2 ">
 
-    <p className="text-lg text-primary font-medium pb-5">All Transaction history</p>
+    <p className="text-lg text-primary font-medium pb-5">All Withdraw history</p>
       <div className="flex justify-between items-center px-3">
       <div className="relative text-gray-600 ">
             <input
@@ -105,7 +130,7 @@ const Withdraw = ({goNext}) => {
           <div className="mr-4">
           <Listbox  value={selected} onChange={setSelected}>
         <div className="relative mt-1 z-20">
-          <Listbox.Button className="relative w-full cursor-pointer rounded-lg bg-white py-2 pl-3 pr-10 text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm border border-primary">
+          <Listbox.Button className="relative w-full cursor-pointer rounded-lg bg-white h-10 pl-3 pr-10 text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm border border-primary">
             <span className="block truncate w-24">{selected.name}</span>
             <div className="absolute top-0 -bottom-[1px] right-0 flex  items-center px-2 pointer-events-none bg-primary rounded-r-lg">
                <img src="/Assets/icon/downarrow.svg" alt="" />
@@ -165,28 +190,30 @@ const Withdraw = ({goNext}) => {
           <div className="routine-table-body-section md:pr-3">
           {SearchEmp.map((card, i) => (
          
-         <div className="grid grid-cols-3 divide-x border border-b-2  px-2">
+         <div className="grid grid-cols-3 divide-x border border-b-2  px-2 h-20">
             <p className="items-center flex justify-center text-[16px] md:text-md px-2 text-[#666666]">
           {card.date}
          </p>
-         <p className="items-center flex justify-center text-[16px] md:text-md px-2 text-[#666666]">
+         <p className="items-center flex  justify-center text-[16px] md:text-md px-2 text-[#666666]">
           {card.amount}
          </p>
        
         
          <p className="items-center flex justify-end text-[16px] md:text-lg">
-           <div className="flex items-center justify-end">
-            <div className="flex flex-col items-center">
-            <p className="items-center text-[15px] text-[#666666] cursor-pointer">
+         <div className="flex items-center justify-end">
+           <div className="flex flex-col items-center">
+            <p className="items-center text-[15px] text-[#666666] cursor-pointer ">
                {card.status}
              </p>
-             <p className="items-center flex text-[14px] text-primary gap-1 h-10">
+             {card.time &&   <p  className="items-center flex text-[14px] text-primary gap-1 h-10 -mt-2">
               <img src={card.img} alt="" />
                <p>{card.time}</p>
-             </p>
-            </div>
+              
+             </p>}
+             {card.reamain &&   <p className="text-[12px] text-primary -mt-3">{card.reamain}</p>}
+            </div> 
            
-             <Menu as="div" className=" relative ml-2">
+           {card.status=="Pending" &&  <Menu as="div" className=" relative ml-2">
                <Menu.Button>
                  <Image
                    src="/Assets/icon/dothor.svg"
@@ -197,21 +224,7 @@ const Withdraw = ({goNext}) => {
                  />
                </Menu.Button>
                <Menu.Items className=" flex flex-col items-center absolute -ml-20 -mt-10 bg-white shadow-3xl  rounded-md px-3 py-1">
-                 <Menu.Item>
-                   {({ active }) => (
-                   
-                          <a 
-                       className={`${
-                         active ? "bg-gray-200 text-black " : "text-gray-900"
-                       } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
-                       
-                     >
-                       <p  className="text-sm">Edit</p>
-                     </a>
-                   
                 
-                   )}
-                 </Menu.Item>
                  <Menu.Item>
                    {({ active }) => (
                      <a onClick={openModal}
@@ -222,12 +235,12 @@ const Withdraw = ({goNext}) => {
                        } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
                       
                      >
-                       <p className="text-sm">Delete</p>
+                       <p className="text-sm">Cancel</p>
                      </a>
                    )}
                  </Menu.Item>
                </Menu.Items>
-             </Menu>
+             </Menu>}
            </div>
          </p>
        </div>
@@ -267,7 +280,7 @@ const Withdraw = ({goNext}) => {
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                 <div className="flex flex-col">
-      <p className="text-lg flex justify-center">Are you sure want to delete this person ?</p>
+      <p className="text-lg flex justify-center">Are you  want to Cancel this Transaction ?</p>
       <div className="flex justify-center mt-5 gap-3">
             <button onClick={closeModal} className="btn btn-primary md:w-28 capitalize ">
               Yes
