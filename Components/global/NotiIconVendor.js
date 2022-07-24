@@ -26,7 +26,7 @@ const NotiIconVendor = () => {
   const refreshNotificationsBadge = async () => {
     try {
       const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/notification/get-unread-count-vendor`,
+        `${process.env.NEXT_PUBLIC_API_URL}/notification/get-vendor-unread-count`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ const NotiIconVendor = () => {
     try {
       setIsLoading(true);
       const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/notification/get-notifications-vendor`,
+        `${process.env.NEXT_PUBLIC_API_URL}/notification/get-vendor-notifications`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
