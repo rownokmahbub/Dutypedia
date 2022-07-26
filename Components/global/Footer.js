@@ -108,7 +108,7 @@ const FooterLinks = {
 
 const Footer = () => {
   return (
-    <div className="bg-white dark:bg-black dark:text-white">
+    <div className="bg-white dark:bg-[#272727] dark:text-white">
       <div className="container mx-auto max-w-screen-2xl">
         <div className="md:border-t py-16">
           {/* Mobile version */}

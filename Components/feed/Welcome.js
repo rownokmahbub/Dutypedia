@@ -5,7 +5,7 @@ const Welcome = () => {
   return (
     <div className="pt-4 pb-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 relative">
-        <span className="absolute hidden md:block left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-1/3 bg-gray-200 dark:bg-slate-300" />
+        <span className="absolute hidden md:block left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-1/3 bg-gray-200 dark:bg-[#272727]" />
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:w-64 relative lg:absolute lg:ml-10 flex-shrink-0 rounded-md aspect-video lg:aspect-[420/540] overflow-hidden ">
             <Image
@@ -14,7 +14,7 @@ const Welcome = () => {
               objectFit="cover"
             />
           </div>
-          <div className="bg-white dark:bg-black lg:ml-40 rounded-md relative lg:mt-44 lg:pl-10 py-4">
+          <div className="bg-white dark:bg-[#2e2e2e] lg:ml-40 rounded-md relative lg:mt-44 lg:pl-10 py-4">
             <p className="text-sm text-gray-500 dark:text-white md:max-w-[350px] ">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
@@ -66,7 +66,7 @@ const Welcome = () => {
             <input
               type="text"
               placeholder="Search…"
-              className="input focus:ring-0 dark:bg-black focus:border-0 active:border-0 active:ring-0 focus:outline-none w-full"
+              className="input focus:ring-0 dark:bg-[#272727] focus:border-0 active:border-0 active:ring-0 focus:outline-none w-full"
             />
           </div>
         </div>

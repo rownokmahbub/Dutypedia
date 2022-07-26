@@ -83,7 +83,7 @@ const SubHeader = () => {
     ],
   };
   return (
-    <div className="bg-[#fafafa] dark:bg-black max-w-screen-md mx-auto relative hidden sm:block">
+    <div className="bg-[#fafafa] dark:bg-[#272727] max-w-screen-md mx-auto relative hidden sm:block">
       <span
         onClick={goNext}
         className="text-2xl text-gray-400 absolute -right-4 cursor-pointer top-1/2 -translate-y-1/2"

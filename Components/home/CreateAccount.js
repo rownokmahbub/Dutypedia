@@ -3,7 +3,7 @@ import React from "react";
 
 const CreateAccount = () => {
   return (
-    <div className="bg-[#fafafa] dark:bg-black py-16">
+    <div className="bg-[#fafafa] dark:bg-[#272727] py-16">
       <div className="container  px-8 max-w-screen-lg py-5 mx-auto bg-[#ffcfd5] rounded-2xl mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
           <div className="">

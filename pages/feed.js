@@ -13,9 +13,9 @@ const FeedPage = () => {
     <>
       <Category />
       <div className="container mx-auto max-w-screen-2xl pb-16">
-        <div className="bg-[#fafafa] dark:bg-black py-8 px-4 sm:px-6 rounded-lg shadow-md">
+        <div className="bg-[#fafafa] dark:bg-[#272727] py-8 px-4 sm:px-6 rounded-lg shadow-md">
           <Welcome />
-          <div className="sticky top-12 z-10 py-5 bg-[#fafafa]  dark:bg-black w-full">
+          <div className="sticky top-12 z-10 py-5 bg-[#fafafa]  dark:bg-[#272727] w-full">
             <SubHeader />
           </div>
           
