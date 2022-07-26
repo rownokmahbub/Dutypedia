@@ -25,9 +25,10 @@ module.exports = {
         "4xl": " 0vw 0vw 0.5vw 0vw rgb(32 32 32 / 20%)",
         "5xl": " 0vw 0.5vw 0.5vw 0vw rgb(32 32 32 / 16%)",
         "glass":"0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+        "glass-card":"0 16px 12px 0 rgba( 31, 32, 32, 0.37 )",
         "card-shadow": "0px 0px 12px #CCCCCC",
-        "dark-shadow": "0px 0px 12px rgb(32 32 32 / 100%)",
       },
+    
       colors: {
         primary: {
           DEFAULT: "#DA1E37",
