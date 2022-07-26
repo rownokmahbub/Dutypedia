@@ -75,7 +75,7 @@ const PopularCategory = ({ container = true }) => {
       className={`mx-auto max-w-screen-2xl py-8 ${container && "container"}`}
     >
       <div className="text-center mx-auto max-w-sm space-y-4">
-        <h4 className="text-3xl font-semibold">Popular Category</h4>
+        <h4 className="text-3xl font-semibold dark:text-white">Popular Category</h4>
         <p className="text-gray-500 text-sm">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.

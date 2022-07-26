@@ -5,7 +5,7 @@ const Welcome = () => {
   return (
     <div className="pt-4 pb-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 relative">
-        <span className="absolute hidden md:block left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-1/3 bg-gray-200" />
+        <span className="absolute hidden md:block left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-1/3 bg-gray-200 dark:bg-slate-300" />
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:w-64 relative lg:absolute lg:ml-10 flex-shrink-0 rounded-md aspect-video lg:aspect-[420/540] overflow-hidden ">
             <Image
@@ -14,8 +14,8 @@ const Welcome = () => {
               objectFit="cover"
             />
           </div>
-          <div className="bg-white lg:ml-40 relative lg:mt-44 lg:pl-10 py-4">
-            <p className="text-sm text-gray-500 md:max-w-[350px]">
+          <div className="bg-white dark:bg-black lg:ml-40 rounded-md relative lg:mt-44 lg:pl-10 py-4">
+            <p className="text-sm text-gray-500 dark:text-white md:max-w-[350px] ">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
               erat, sed diam voluptua. At vero eos et accusam et justo duo
@@ -47,14 +47,14 @@ const Welcome = () => {
           </div>
         </div>
         <div className="w-full h-full flex flex-col items-start justify-center md:pr-4 gap-4 ">
-          <h1 className="w-full capitalize text-3xl font-semibold leading-snug">
+          <h1 className="w-full capitalize text-3xl font-semibold leading-snug dark:text-white">
             Hello{" "}
-            <span className="text-white bg-black px-2 py-1">Easin Arafat</span>
+            <span className="text-white bg-black dark:bg-slate-900 px-2 py-1">Easin Arafat</span>
             <br />
             find service <br />
             what you need
           </h1>
-          <p className="text-gray-500 mt-2">
+          <p className="text-gray-500 dark:text-white mt-2">
             Today's most search : 
             <a className="link pl-2 ">It & Technology,</a>
             <a className="link pl-2 ">Online Tuition,</a>
@@ -66,7 +66,7 @@ const Welcome = () => {
             <input
               type="text"
               placeholder="Search…"
-              className="input focus:ring-0 focus:border-0 active:border-0 active:ring-0 focus:outline-none w-full"
+              className="input focus:ring-0 dark:bg-black focus:border-0 active:border-0 active:ring-0 focus:outline-none w-full"
             />
           </div>
         </div>

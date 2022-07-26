@@ -83,7 +83,7 @@ const SubHeader = () => {
     ],
   };
   return (
-    <div className="bg-[#fafafa] max-w-screen-md mx-auto relative hidden sm:block">
+    <div className="bg-[#fafafa] dark:bg-black max-w-screen-md mx-auto relative hidden sm:block">
       <span
         onClick={goNext}
         className="text-2xl text-gray-400 absolute -right-4 cursor-pointer top-1/2 -translate-y-1/2"
@@ -104,7 +104,7 @@ const SubHeader = () => {
         </div>
         {Slides.map((slide, i) => (
           <div key={i} className="w-full flex justify-center items-center">
-            <p className="hover:bg-[#eb8592] text-center px-2 py-1 rounded-lg hover:text-white cursor-pointer w-full">
+            <p className="hover:bg-[#eb8592] dark:text-white text-center px-2 py-1 rounded-lg hover:text-white cursor-pointer w-full">
               {slide.title}
             </p>
           </div>

@@ -75,13 +75,13 @@ const Withdraw = ({goNext}) => {
       const [selected, setSelected] = useState(people[0])
   return (
     <div className="mt-20">
-     <div className="container max-w-screen-xl mx-auto relative pt-1 bg-white h-auto rounded-xl shadow-4xl md:shadow-3xl">
-        <div className="bg-gray-500 w-full flex justify-between px-10 rounded-lg mt-7">
+     <div className="container max-w-screen-xl mx-auto relative pt-1  h-auto rounded-xl shadow-4xl md:shadow-3xl">
+        <div className="bg-[#313131] w-full flex justify-between px-10 rounded-lg mt-7">
             <div className="">
-            <p className="text-white py-6 text-lg">Offline Account Balance</p>
+            <p className="text-white py-6 text-lg">Dutypedia User</p>
             <img className="py-4" src="/Assets/icon/dutycard.svg" alt="" />
             <p className="text-white pt-3">Card Holder: Rownok</p>
-            <p className="text-white pt-3 pb-5">Id No: D343fr34</p>
+            <p className="text-white pt-3 pb-5">ID No: D343fr34</p>
             </div>
             <div>
                 <img className="w-44" src="/Assets/icon/dutylogo.svg" alt=""/>

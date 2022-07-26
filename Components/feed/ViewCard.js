@@ -30,7 +30,7 @@ const ViewCard = ({ view }) => {
     mainSlider?.slickPrev();
   };
   return (
-    <div className=" group rounded-lg  overflow-hidden shadow-card-shadow bg-white">
+    <div className=" group rounded-lg  overflow-hidden shadow-card-shadow bg-white dark:bg-black">
       {view.images && (
         <div className="relative">
           <span
@@ -67,10 +67,10 @@ const ViewCard = ({ view }) => {
           </Slider>
         </div>
       )}
-      <div className="border border-t-0 pt-[22px] rounded-b-lg -mt-5">
+      <div className="border border-t-0  dark:border-none pt-[22px] rounded-b-lg -mt-5">
         <div className="px-2 pl-[10px]">
           <div className="flex capitalize items-start justify-between gap-2">
-            <p className="text-[15px] leading-tight  font-semibold text-[#222325]">
+            <p className="text-[15px] leading-tight  font-semibold text-[#222325] dark:text-white">
               {view.title}
             </p>
           </div>
@@ -96,7 +96,7 @@ const ViewCard = ({ view }) => {
             </div>
           </div>
           <div className="flex capitalize items-center">
-            <p className="text-[16px] text-[#4d4d4d] font-bold">
+            <p className="text-[16px] text-[#4d4d4d] font-bold dark:text-white">
               {view.price}৳
             </p>
           </div>

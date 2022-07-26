@@ -128,10 +128,10 @@ const RecentView = ({ title }) => {
   return (
     <div className="pb-8 pt-16 ">
       <div className="flex flex-col sm:flex-row  sm:justify-between items-center pb-8">
-        <h1 className="text-xl font-semibold">{title}</h1>
+        <h1 className="text-xl font-semibold dark:text-white">{title}</h1>
         <Link href="/services">
         
-          <a className="flex gap-2 cursor-pointer items-center ">
+          <a className="flex gap-2 cursor-pointer items-center dark:text-white">
             <span>View all</span> <BsChevronRight className="text-primary" />
           </a>
         </Link>

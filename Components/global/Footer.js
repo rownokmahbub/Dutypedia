@@ -108,7 +108,7 @@ const FooterLinks = {
 
 const Footer = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-black dark:text-white">
       <div className="container mx-auto max-w-screen-2xl">
         <div className="md:border-t py-16">
           {/* Mobile version */}
@@ -117,7 +117,7 @@ const Footer = () => {
               <div className="mt-2 space-y-2">
                 {FooterLinks.Categories.map((item, idx) => (
                   <Link key={idx} href={item.links}>
-                    <a className="text-gray-600 block transition-colors duration-300 hover:text-primary">
+                    <a className="text-gray-600 block dark:text-white transition-colors duration-300 hover:text-primary">
                       {item.title}
                     </a>
                   </Link>
@@ -125,10 +125,10 @@ const Footer = () => {
               </div>
             </Collapse>
             <Collapse title="About">
-              <div className="mt-2 space-y-2">
+              <div className="mt-2 space-y-2 dark:text-white">
                 {FooterLinks.About.map((item, idx) => (
                   <Link key={idx} href={item.links}>
-                    <a className="text-gray-600 block transition-colors duration-300 hover:text-primary">
+                    <a className="text-gray-600 dark:text-white block transition-colors duration-300 hover:text-primary">
                       {item.title}
                     </a>
                   </Link>
@@ -139,7 +139,7 @@ const Footer = () => {
               <div className="mt-2 space-y-2">
                 {FooterLinks.Support.map((item, idx) => (
                   <Link key={idx} href={item.links}>
-                    <a className="text-gray-600 block transition-colors duration-300 hover:text-primary">
+                    <a className="text-gray-600 dark:text-white block transition-colors duration-300 hover:text-primary">
                       {item.title}
                     </a>
                   </Link>

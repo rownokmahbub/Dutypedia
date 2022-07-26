@@ -39,7 +39,7 @@ const FeedLayout = ({ children }) => {
     return <LoadingScreen />;
 
   return (
-    <div className="bg-[#EDEDED]">
+    <div className="bg-[#EDEDED] dark:bg-[#202020]">
       <FeedHeader />
       {children}
     </div>

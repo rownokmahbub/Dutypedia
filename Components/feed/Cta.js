@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 const Cta = () => {
   return (
-    <div className="bg-[#fafafa] container mx-auto max-w-screen-xl -mb-7">
+    <div className="bg-[#fafafa] dark:bg-black container mx-auto max-w-screen-xl -mb-7">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div className="flex flex-col">
-          <p className="md:text-3xl text-[20px] font-bold">
+          <p className="md:text-3xl text-[20px] font-bold dark:text-white">
             Hello Good Morning Find Service <br className="hidden md:block" /> What You Need
           </p>
           <p className="font-normal text-sm text-[#666666] mt-5 hidden md:block">
