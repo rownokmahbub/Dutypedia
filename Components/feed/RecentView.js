@@ -9,6 +9,7 @@ export const Views = [
     order: "10",
     author: "Omar Ekram",
     status: "/Assets/images/feed/verified.svg",
+    status2: "/Assets/images/feed/verifydark.svg",
     images: [
       "/Assets/images/feed/ent.jpg",
       "/Assets/images/feed/2.jpg",
@@ -21,6 +22,7 @@ export const Views = [
     order: "10",
     author: "John Doe",
     status: "/Assets/images/feed/verified.svg",
+    status2: "/Assets/images/feed/verifydark.svg",
     images: [
       "/Assets/images/feed/it.jpg",
       "/Assets/images/feed/2.jpg",
@@ -33,6 +35,7 @@ export const Views = [
     order: "10",
     author: "John Doe",
     status: "/Assets/images/feed/verified.svg",
+    status2: "/Assets/images/feed/verifydark.svg",
     images: [
       "/Assets/images/feed/bu.jpg",
       "/Assets/images/feed/5.jpg",
@@ -45,6 +48,7 @@ export const Views = [
     order: "10",
     author: "John Doe",
     status: "/Assets/images/feed/verified.svg",
+    status2: "/Assets/images/feed/verifydark.svg",
     images: [
       "/Assets/images/feed/bs.jpg",
       "/Assets/images/feed/7.jpg",
@@ -57,6 +61,7 @@ export const Views = [
     order: "10",
     author: "John Doe",
     status: "/Assets/images/feed/verified.svg",
+    status2: "/Assets/images/feed/verifydark.svg",
     images: [
       "/Assets/images/feed/law.jpg",
       "/Assets/images/feed/2.jpg",
@@ -69,6 +74,7 @@ export const Views = [
     order: "10",
     author: "John Doe",
     status: "/Assets/images/feed/verified.svg",
+    status2: "/Assets/images/feed/verifydark.svg",
     images: [
       "/Assets/images/feed/salon.jpg",
       "/Assets/images/feed/2.jpg",
@@ -81,6 +87,7 @@ export const Views = [
     order: "10",
     author: "John Doe",
     status: "/Assets/images/feed/verified.svg",
+    status2: "/Assets/images/feed/verifydark.svg",
     images: [
       "/Assets/images/feed/salon2.jpg",
       "/Assets/images/feed/6.jpg",
@@ -93,6 +100,7 @@ export const Views = [
     order: "10",
     author: "John Doe",
     status: "/Assets/images/feed/verified.svg",
+    status2: "/Assets/images/feed/verifydark.svg",
     images: [
       "/Assets/images/feed/lb-1.jpg",
       "/Assets/images/feed/5.jpg",
@@ -105,6 +113,7 @@ export const Views = [
     order: "10",
     author: "John Doe",
     status: "/Assets/images/feed/verified.svg",
+    status2: "/Assets/images/feed/verifydark.svg",
     images: [
       "/Assets/images/feed/music.jpg",
       "/Assets/images/feed/6.jpg",
@@ -117,6 +126,7 @@ export const Views = [
     order: "10",
     author: "John Doe",
     status: "/Assets/images/feed/verified.svg",
+    status2: "/Assets/images/feed/verifydark.svg",
     images: [
       "/Assets/images/feed/5.jpg",
       "/Assets/images/feed/6.jpg",
