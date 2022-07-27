@@ -95,7 +95,7 @@ const MultipleOptionsViewer = ({
         <button
           disabled={isBtnDisabled}
           onClick={submit}
-          className="btn btn-primary px-16 mr-5 md:mr-0"
+          className="btn btn-primary px-16 mr-5 md:mr-0 dark:text-white"
         >
           Done
         </button>

@@ -203,18 +203,18 @@ const SelectService = ({ goNext, goBack, savedData }) => {
       <FormikProvider value={formik}>
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <div className="max-w-xl mx-auto">
-            <div className="mb-3 w-full">
-              <p className="mb-1 text-lg">Service center name</p>
+            <div className="mb-3 w-full dark:text-white">
+              <p className="mb-1 text-lg dark:text-white">Service center name</p>
               <Input
                 name="serviceName"
-                className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                 type="text"
                 placeholder="Type your service center name"
               />
             </div>
 
             <div className="mb-3 w-full">
-              <p className="mb-1 text-lg">Service provider information</p>
+              <p className="mb-1 text-lg dark:text-white">Service provider information</p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 flex-wrap">
                 <div className="relative">
                   <Autocomplete
@@ -224,7 +224,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                     inputProps={{
                       placeholder: "Title",
                       className:
-                        "w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300",
+                        "w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150] dark:text-white",
                       ...getFieldProps("providerTitle"),
                     }}
                     value={values.providerTitle}
@@ -237,7 +237,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                     renderItem={(item, isHighlighted) => (
                       <div
                         className={`cursor-pointer border-b p-1 ${
-                          isHighlighted ? "bg-gray-200" : "bg-white"
+                          isHighlighted ? "bg-gray-200" : "bg-white "
                         }`}
                       >
                         {item.label}
@@ -252,13 +252,13 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                 </div>
                 <Input
                   name="providerName"
-                  className="w-full col-span-2 py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                  className="w-full col-span-2 py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                   type="text"
                   placeholder="Name"
                 />
                 <Input
                   name="gender"
-                  className="w-full py-2 h-[42px]  px-1 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                  className="w-full py-2 h-[42px]  px-1 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150]"
                   as="select"
                 >
                   <option value="">Gender...</option>
@@ -273,7 +273,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                     inputProps={{
                       placeholder: "Position",
                       className:
-                        "w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300",
+                        "w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150] dark:text-white",
                       ...getFieldProps("position"),
                     }}
                     value={values.position}
@@ -286,7 +286,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                     renderItem={(item, isHighlighted) => (
                       <div
                         className={`cursor-pointer border-b p-1 ${
-                          isHighlighted ? "bg-gray-200" : "bg-white"
+                          isHighlighted ? "bg-gray-200" : "bg-white "
                         }`}
                       >
                         {item.label}
@@ -302,12 +302,12 @@ const SelectService = ({ goNext, goBack, savedData }) => {
             </div>
 
             <div className="mb-3 w-full">
-              <p className="mb-1 text-lg">How Many Team/Worker You Have?</p>
+              <p className="mb-1 text-lg dark:text-white">How Many Team/Worker You Have?</p>
 
               <div className="relative w-[128px]">
                 <Input
                   name="worker"
-                  className="w-32 py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                  className="w-32 py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                   type="number"
                   min="1"
                   max="100000" inputmode="numeric" pattern="[0-9]*"
@@ -321,11 +321,11 @@ const SelectService = ({ goNext, goBack, savedData }) => {
             </div>
 
             <div className="mb-3 w-full">
-              <p className="mb-1 text-lg">Eastablished Or Start Date</p>
+              <p className="mb-1 text-lg dark:text-white">Eastablished Or Start Date</p>
 
               <div className="w-40 relative">
                 <Input
-                  className="border border-primary focus:outline-primary rounded-md px-2 py-1.5"
+                  className="border border-primary focus:outline-primary rounded-md px-2 py-1.5 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                   type="date"
                   name="startDate" placeholder="17/07/2022"
                 />
@@ -336,7 +336,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
             </div>
 
             <div className="flex mt-5 mb-2 justify-between items-center">
-              <p className="mb-1 text-lg">Working Time</p>
+              <p className="mb-1 text-lg dark:text-white">Working Time</p>
               <div className="flex gap-2 items-center justify-center">
                 <p className=" text-md ">24/7 open</p>
                 <CheckBox value={t47} onChange={() => setT47(!t47)} />
@@ -345,7 +345,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
 
             {!t47 && (
               <>
-                <div className="px-3 bg-white py-4 rounded-lg shadow-3xl mb-5">
+                <div className="px-3 bg-white dark:bg-bg-200 dark:border-[#515150] dark:text-white py-4 rounded-lg shadow-3xl mb-5">
                   <div className="md:grid grid-cols-3 bg-primary py-2 items-center px-3 rounded-lg text-white hidden">
                     <p className=" text-md ">Day</p>
                     <p className=" text-md text-center">Open Time</p>
@@ -368,7 +368,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                         <p className="md:hidden mb-2">opening time</p>
                         <div className="relative">
                           <Input
-                            className="border border-primary focus:outline-primary rounded-md px-2 py-1.5 w-32"
+                            className="border border-primary focus:outline-primary dark:bg-bg-300 dark:border-[#515150] dark:text-white rounded-md px-2 py-1.5 w-32"
                             type="time"
                             name={`${day}Open`}
                             value={
@@ -401,7 +401,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                         <p className="md:hidden mb-2">Closing time</p>
                         <div className="relative">
                           <Input
-                            className="border border-primary focus:outline-primary rounded-md px-2 py-1.5 w-32"
+                            className="border border-primary focus:outline-primary dark:bg-bg-300 dark:border-[#515150] dark:text-white rounded-md px-2 py-1.5 w-32"
                             type="time"
                             name={`${day}Close`}
                             value={
@@ -439,11 +439,11 @@ const SelectService = ({ goNext, goBack, savedData }) => {
             )}
 
             <div className="mb-3 w-full">
-              <p className="mb-1 text-lg">Servic fee starting price</p>
+              <p className="mb-1 text-lg dark:text-white">Servic fee starting price</p>
               <div className="relative w-[128px]">
                 <Input
                   name="startingPrice"
-                  className="w-32 py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                  className="w-32 py-2 px-2 rounded bg-[#f8fafb] dark:bg-bg-300 dark:border-[#515150] dark:text-white border border-solid focus:outline-none border-gray-300"
                   type="number"
                   min="1"
                   max="100000"

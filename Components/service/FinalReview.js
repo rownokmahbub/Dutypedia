@@ -174,7 +174,7 @@ const FinalReview = ({ goBack, data }) => {
             t47={data.selectServiceData.t47}
           />
         </div>
-        <div className="flex-1 bg-white shadow-3xl p-6 rounded-xl">
+        <div className="flex-1 bg-white dark:bg-bg-300 dark:border-[#515150] dark:text-white shadow-3xl p-6 rounded-xl">
           <BsArrowLeftSquare
             onClick={() => goBack()}
             className="text-3xl cursor-pointer text-gray-400 mb-8"

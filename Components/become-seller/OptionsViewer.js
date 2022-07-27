@@ -94,13 +94,13 @@ const OptionsViewer = ({
             onClick={() => goBack()}
             className="text-3xl cursor-pointer text-gray-400 md:mx-20  md:mt-10"
           />
-          <h1 className="text-center text-xl pt-8">
+          <h1 className="text-center text-xl pt-8 dark:text-white">
             Choose your service from here
           </h1>
         </>
       )}
       <div className="max-w-xl mx-auto">
-        <div className=" rounded-lg overflow-hidden mt-8 border shadow-md bg-white">
+        <div className=" rounded-lg overflow-hidden mt-8 border shadow-md bg-white dark:bg-bg-200">
           <div className="flex bg-primary px-4 py-3">
             <div className="flex-1 text-white pl-4">{title}</div>
             <div className="flex-shrink-0 text-white pr-8 w-20 sm:w-40 text-center">
@@ -111,7 +111,7 @@ const OptionsViewer = ({
           <div className="divide-y-2">
             {sortOptions.map((option, i) => (
               <div key={i} className="flex px-8 divide-x-2">
-                <div className="flex-1 py-4 pr-4">{option.title}</div>
+                <div className="flex-1 py-4 pr-4 dark:text-white">{option.title}</div>
                 <div className=" flex-shrink-0 px-4 py-4 w-20 sm:w-40 text-center flex justify-center items-center">
                   <CheckBox
                     value={selectedOptions.some((d) => d.id === option.id)}
@@ -126,7 +126,7 @@ const OptionsViewer = ({
                 <input
                   type="text"
                   placeholder="Title"
-                  className=" bg-transparent py-4 flex-1 border-0 w-full pr-4 focus:outline-none"
+                  className=" bg-transparent py-4 flex-1 border-0 w-full pr-4 focus:outline-none dark:text-white"
                   onChange={(event) =>
                     updateCustomOption(option.id, event.target.value)
                   }
