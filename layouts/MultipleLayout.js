@@ -49,7 +49,7 @@ const MultipleDashboardLayout = ({ children }) => {
 
   return (
     <>
-      <div className="mx-auto h-screen relative w-full bg-[#FFF1F2]">
+      <div className="mx-auto h-screen relative w-full bg-[#FFF1F2] dark:bg-bg">
         <TopNavBar />
         <div className="flex h-[calc(100vh-49.5px)] overflow-hidden">
           <DashboardSidebar data={multipleDashboardData} />
