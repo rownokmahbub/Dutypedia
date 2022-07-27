@@ -151,7 +151,7 @@ const OfflineMember = () => {
                             className={`${
                               active
                                 ? "bg-gray-200 text-black dark:text-white "
-                                : "text-gray-900"
+                                : "text-gray-900 dark:text-white"
                             } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
                           >
                             <p className="text-sm">Edit</p>
@@ -165,7 +165,7 @@ const OfflineMember = () => {
                             className={`${
                               active
                                 ? "bg-primary-300 text-white"
-                                : "text-gray-900"
+                                : "text-gray-900 dark:text-white"
                             } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
                           >
                             <p className="text-sm">Delete</p>

@@ -75,9 +75,9 @@ const MultipleOptionsViewer = ({
       <div className="max-w-4xl mx-auto container pb-4">
         <BsArrowLeftSquare
           onClick={() => goBack()}
-          className="text-3xl cursor-pointer text-gray-400 md:mx-20  md:mt-10"
+          className="text-3xl cursor-pointer text-gray-400 dark:text-white md:mx-20  md:mt-10"
         />
-        <h1 className="text-center text-xl pt-8">
+        <h1 className="text-center text-xl pt-8 dark:text-white">
           Choose your service from here
         </h1>
       </div>

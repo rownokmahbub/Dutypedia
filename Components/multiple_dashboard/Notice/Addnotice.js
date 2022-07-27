@@ -8,7 +8,7 @@ import plus from '/public/Assets/icon/plus.svg'
 function Addnotice({goNext}) {
   return (
 
-    <div className="container max-w-screen-xl mx-auto relative ">
+    <div className="container max-w-screen-xl mx-auto relative dark:bg-bg">
       <div className=" flex justify-between w-full visible md:invisible">
         <h3 className='text-2xl font-bold text-[#313131] mt-5'>Notice</h3>
         <div className='flex flex-row mt-16' >

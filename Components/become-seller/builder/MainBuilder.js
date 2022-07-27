@@ -143,7 +143,7 @@ const MianBuilder = ({ goNext, savedData }) => {
 
   return (
     <div className="container max-w-4xl mx-auto">
-      <div className="w-full rounded-xl overflow-hidden bg-white">
+      <div className="w-full rounded-xl overflow-hidden bg-white dark:bg-bg-200">
         <div className="relative w-full h-40 overflow-hidden">
           <Image
             src="/Assets/images/service/builder.jpg"
@@ -183,7 +183,7 @@ const MianBuilder = ({ goNext, savedData }) => {
                       />
                     );
               }}
-              className="p-4 flex items-center justify-between gap-2 cursor-pointer text-gray-700 shadow text-center rounded-md bg-gray-50"
+              className="p-4 flex items-center dark:bg-bg-300 justify-between gap-2 cursor-pointer text-gray-700 shadow text-center rounded-md bg-gray-50 dark:text-white"
             >
               <div className="flex items-center gap-2">
                 {completedSection.some((d) => d.title === category.title) && (

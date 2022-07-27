@@ -75,7 +75,7 @@ const MultipleOptionsForm = ({
   return (
     <div className="container max-w-4xl mx-auto">
       <div className="max-w-xl mx-auto">
-        <div className=" rounded-lg overflow-hidden mt-4 border shadow-md bg-white">
+        <div className=" rounded-lg overflow-hidden mt-4 border shadow-md bg-white dark:bg-bg-300">
           <div className="flex bg-primary px-4 py-3">
             <div className="flex-1 text-white pl-4">{title}</div>
             <div className="flex-shrink-0 text-white pr-8 w-20 sm:w-40 text-center">

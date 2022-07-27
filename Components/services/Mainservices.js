@@ -141,14 +141,14 @@ const Mainservices = () => {
   });
 
   return (
-    <div className="bg-[#f5f5f5] container max-w-screen-xl mx-auto relative pb-8">
+    <div className="bg-[#f5f5f5] dark:bg-bg-200 container max-w-screen-xl mx-auto relative pb-8">
      <img className="pt-16 pl-10 pb-4" src="/Assets/icon/leftarrow.svg" alt="" />
       <div className="flex flex-col  md:flex-row justify-between items-start space-y-2 md:items-center px-2 md:px-10 -mt-2 mb-5">
       
-        <p className="text-2xl font-semibold">Select Your Service</p>
+        <p className="text-2xl font-semibold dark:text-white">Select Your Service</p>
         <div className="relative text-gray-600 md:w-64 w-full">
           <input
-            className=" h-10 px-5 pl-4 pr-8 w-full mx-auto rounded-lg text-sm focus:outline-none  outline-none border-2 border-solid border-[#ECECEC] bg-white"
+            className=" h-10 px-5 pl-4 pr-8 w-full mx-auto rounded-lg text-sm focus:outline-none  outline-none border-2 border-solid border-[#ECECEC] dark:border-[#515150] dark:bg-bg-300 bg-white"
             type="search"
             name="search"
             placeholder="Search"
@@ -163,13 +163,13 @@ const Mainservices = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:px-10">
         {filteredCard.map((card, i) => (
           <Link href={card.href || "#"} key={i}>
-            <a className="flex shadow-3xl pl-2 md:pl-10  items-center rounded-xl py-5 bg-white cursor-pointer gap-6">
+            <a className="flex shadow-3xl pl-2 md:pl-10  items-center rounded-xl py-5 bg-white dark:bg-bg-300 dark:shadow-glass-card cursor-pointer gap-6">
               <div
                 className={`${card.bgColor} w-14 h-14 flex flex-shrink-0 justify-center items-center rounded-full cursor-pointer`}
               >
                 <img className="w-10 h-10" src={card.image} alt="hghh" />
               </div>
-              <h1>{card.title}</h1>
+              <h1 className="dark:text-white">{card.title}</h1>
             </a>
           </Link>
         ))}

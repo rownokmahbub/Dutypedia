@@ -30,11 +30,11 @@ const AddNewCat = ({ onSubmit }) => {
       <div className="">
         <a
           onClick={openModal}
-          className="p-4 text-2xl w-full flex items-center justify-center gap-2 cursor-pointer text-gray-700 shadow text-center rounded-md bg-gray-50"
+          className="p-4 text-2xl w-full flex items-center justify-center gap-2 cursor-pointer text-gray-700 shadow text-center rounded-md bg-gray-50 dark:bg-bg-300"
         >
        
-          <FiPlusCircle className="text-primary" />
-          <p className="text-primary text-base">Add New</p>
+          <FiPlusCircle className="text-primary dark:text-gray-200" />
+          <p className="text-primary text-base dark:text-gray-200">Add New</p>
         </a>
       </div>
 
@@ -63,16 +63,16 @@ const AddNewCat = ({ onSubmit }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl dark:bg-bg-200 bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="text-lg font-medium leading-6 text-gray-900 dark:text-white"
                   >
                     Add New Category
                   </Dialog.Title>
                   <div className="mt-2 py-4">
                     <input
-                      className="input input-bordered w-full"
+                      className="input input-bordered w-full dark:bg-bg-300 dark:border-[#515150]"
                       type="text"
                       placeholder="Title"
                       value={title}
