@@ -123,7 +123,7 @@ const ProfileRender = ({
   };
 
   return (
-    <div className="shadow-3xl h-max bg-white rounded-xl overflow-hidden ">
+    <div className="shadow-3xl h-max bg-white dark:bg-[#2e2e2e] rounded-xl overflow-hidden ">
       <div className="bg-gradient-to-r from-[#d93baf] to-[#854a58] h-48 relative">
         {wallPhoto && <Image src={wallPhoto} layout="fill" objectFit="cover" />}
         <label className="flex justify-end pt-2 pr-2 cursor-pointer z-10 relative">
@@ -143,12 +143,12 @@ const ProfileRender = ({
           />
         </label>
         {wallPhotoUpdating && (
-          <div className="absolute bg-white/70 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+          <div className="absolute bg-white/70 dark:bg-[#272727]/70 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
             <div className="btn btn-link loading">Please wait...</div>
           </div>
         )}
       </div>
-      <div className="flex relative justify-center bg-white w-28 h-28 -mt-14 rounded-lg mx-auto shadow-3xl">
+      <div className="flex relative justify-center bg-white dark:bg-bg-300 w-28 h-28 -mt-14 rounded-lg mx-auto shadow-3xl">
         {profilePhoto ? (
           <div className="w-full h-full relative rounded-lg overflow-hidden">
             <Image src={profilePhoto} layout="fill" objectFit="cover" />
@@ -178,21 +178,21 @@ const ProfileRender = ({
           </div>
         )}
       </div>
-      <p className="flex justify-center float-right bg-[#d6d6d6] w-24 mr-3 -mt-12 rounded-xl text-sm">
+      <p className="flex justify-center float-right bg-[#d6d6d6]  w-24 mr-3 -mt-12 rounded-xl text-sm">
         New Seller
       </p>
       <div className="text-center py-8">
-        <p className="text-xl">{serviceCenterName}</p>
-        <p className="text-base">{speciality}</p>
-        <p className="text-xl">
+        <p className="text-xl dark:text-white">{serviceCenterName}</p>
+        <p className="text-base dark:text-white">{speciality}</p>
+        <p className="text-xl dark:text-white ">
           {profileData.name}{" "}
-          <span className="text-sm text-gray-500">({profileData.gender})</span>{" "}
+          <span className="text-sm text-gray-500 dark:text-white">({profileData.gender})</span>{" "}
         </p>
-        <p className="text-sm text-gray-500">({profileData.position})</p>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-500 dark:text-white">({profileData.position})</p>
+        <p className="text-sm text-gray-500 dark:text-white">
           {profileData.worker} worker & Team
         </p>
-        <p className="text-xs text-gray-500">Science 2022</p>
+        <p className="text-xs text-gray-500 dark:text-white">Science 2022</p>
       </div>
     </div>
   );

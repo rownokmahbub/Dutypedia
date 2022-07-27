@@ -97,12 +97,12 @@ const NotiIcon = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="fixed right-0 top-[42px] w-full max-w-sm mt-2 origin-top-right bg-white divide-y divide-gray-100 h-[calc(100vh-50px)] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none overflow-x-hidden overflow-y-auto">
+        <Menu.Items className="fixed right-0 top-[42px] w-full max-w-sm mt-2 origin-top-right dark:bg-[#202020] bg-white divide-y divide-gray-100 h-[calc(100vh-50px)] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none overflow-x-hidden overflow-y-auto">
           <Menu.Item>
             <div className="px-4">
               <p
                 ref={notiMenu}
-                className="font-semibold pt-2 text-xl text-gray-600"
+                className="font-semibold pt-2 text-xl text-gray-600 dark:text-gray-300"
               >
                 Notifications
               </p>

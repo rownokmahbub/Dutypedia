@@ -41,7 +41,7 @@ const ServiceDesc = ({
     switch (serviceType) {
       case "ONETIME":
         return (
-          <p className="text-primary underline decoration-gray-300 text-center text-xl mt-4">
+          <p className="text-primary underline decoration-gray-300 text-center text-xl mt-4 dark:text-white">
             Price {price} ৳
           </p>
         );
@@ -80,7 +80,7 @@ const ServiceDesc = ({
         return (
           <div>
             <div className="flex gap-4 mt-4">
-              <div className=" font-medium">
+              <div className=" font-medium dark:text-white">
                 <p>Total Amount</p>
                 {additionalData?.advancedPayment && <p>Advanced Payment</p>}
                 <p>
@@ -92,7 +92,7 @@ const ServiceDesc = ({
                 </p>
                 <p>Total Installment</p>
               </div>
-              <div className="text-gray-500">
+              <div className="text-gray-500 dark:text-white">
                 <p>{additionalData?.totalAmount}৳</p>
                 {additionalData?.advancedPayment &&
                   additionalData?.advancedPaymentAmount}
@@ -112,7 +112,7 @@ const ServiceDesc = ({
         );
       default:
         return (
-          <p className="text-primary underline decoration-gray-300 text-center text-xl mt-4">
+          <p className="text-primary underline decoration-gray-300 text-center text-xl mt-4 ">
             Starting Price {price} ৳
           </p>
         );

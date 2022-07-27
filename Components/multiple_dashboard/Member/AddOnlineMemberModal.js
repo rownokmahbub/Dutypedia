@@ -101,12 +101,12 @@ const AddOnlineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-6">
+                <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl dark:bg-bg-200 bg-white text-left align-middle shadow-xl transition-all p-6 dark:border-[#515050]">
                   <div className="">
                     <div>
-                      <div className="relative text-gray-600 w-full">
+                      <div className="relative text-gray-600 w-full"> 
                         <input
-                          className="px-4 w-full py-2 pr-8 rounded-lg text-sm focus:outline-none outline-none border-2 border-solid border-[#ECECEC]"
+                          className="px-4 w-full py-2 pr-8 rounded-lg dark:bg-bg-200 text-sm focus:outline-none outline-none border-2 border-solid border-[#ECECEC] dark:border-[#515050]"
                           type="search"
                           name="search"
                           placeholder="Search"
@@ -134,8 +134,8 @@ const AddOnlineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                                     />
                                   </div>
                                   <div>
-                                    <p>{`${user.firstName} ${user.lastName}`}</p>
-                                    <p className="text-xs text-gray-400">
+                                    <p className="dark:text-white">{`${user.firstName} ${user.lastName}`}</p>
+                                    <p className="text-xs text-gray-400 dark:text-white">
                                       @{user.username}
                                     </p>
                                   </div>

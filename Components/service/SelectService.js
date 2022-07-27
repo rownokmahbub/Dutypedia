@@ -195,7 +195,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
     getFieldProps,
   } = formik;
   return (
-    <div className="max-w-screen-lg mx-auto shadow-3xl my-8 rounded-lg py-4 bg-white px-3">
+    <div className="max-w-screen-lg mx-auto shadow-3xl my-8 rounded-lg py-4 bg-white dark:bg-bg-300 px-3">
       <BsArrowLeftSquare
         onClick={() => goBack()}
         className="text-3xl cursor-pointer text-gray-400 md:mx-20  md:mt-10"

@@ -61,7 +61,7 @@ const LoginToDashboardModal = ({ isOpen, closeModal }) => {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-10 dark:bg-[#272727]" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -85,10 +85,10 @@ const LoginToDashboardModal = ({ isOpen, closeModal }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl dark:bg-[#272727] bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="text-lg font-medium leading-6 text-gray-900 dark:text-white"
                   >
                     Choose Your Dashboard
                   </Dialog.Title>
@@ -98,7 +98,7 @@ const LoginToDashboardModal = ({ isOpen, closeModal }) => {
                     <div className="grid gap-4 mt-4">
                       {dashboards.map((dashboard, idx) => (
                         <div
-                          className="w-full cursor-pointer rounded-lg border-2 border-dashed flex justify-center items-center px-4 py-2"
+                          className="w-full dark:text-white cursor-pointer rounded-lg border-2 border-dashed flex justify-center items-center px-4 py-2"
                           key={idx}
                           onClick={() => loginToDashboard(dashboard.name)}
                         >
@@ -106,7 +106,7 @@ const LoginToDashboardModal = ({ isOpen, closeModal }) => {
                         </div>
                       ))}
                       <Link href="/become-seller">
-                        <a className="w-full cursor-pointer rounded-lg py-3 border-2 border-dashed flex justify-center items-center text-gray-400">
+                        <a className="w-full dark:text-white cursor-pointer rounded-lg py-3 border-2 border-dashed flex justify-center items-center text-gray-400">
                           <FaPlus />
                         </a>
                       </Link>

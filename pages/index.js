@@ -11,7 +11,7 @@ import State from "@components/home/State";
 
 const HomePage = () => {
   return (
-    <>
+    <div className="bg-white dark:bg-[#202020] ">
       <RandomMessage />
       <Hero />
       <State />
@@ -22,7 +22,7 @@ const HomePage = () => {
       <CreateAccount />
       <Feedback />
       <BackToTop/>
-    </>
+    </div>
   );
 };
 

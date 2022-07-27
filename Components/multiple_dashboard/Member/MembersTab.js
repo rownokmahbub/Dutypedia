@@ -16,14 +16,14 @@ const MembersTab = () => {
   ];
   return (
     <Tab.Group>
-      <Tab.List className="flex w-max">
+      <Tab.List className="flex w-max ">
         {Tabs.map((item, index) => (
           <Tab
             key={index}
             className={({ selected }) =>
               cn(
-                "w-full relative border-b px-2 py-2.5 focus:outline-none whitespace-nowrap",
-                selected ? "text-primary border-primary" : "hover:text-primary"
+                "w-full relative border-b dark:text-white px-2 py-2.5 focus:outline-none whitespace-nowrap",
+                selected ? "text-primary dark:text-primary border-primary" : "hover:text-primary"
               )
             }
           >

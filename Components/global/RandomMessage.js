@@ -12,7 +12,7 @@ const RandomMessage = () => {
         <div
           className={`${
             t.visible ? 'animate-enter' : 'animate-leave'
-          } max-w-xs w-full relative bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+          } max-w-xs w-full relative bg-white dark:bg-[2e2e2e] dark:shadow-glass-card shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
         >
         <div className="flex px-2 py-1 pb-4">
           <div className="rounded-full w-[45px] h-[45px] flex items-center mt-4">

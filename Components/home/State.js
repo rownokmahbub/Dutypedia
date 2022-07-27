@@ -89,7 +89,7 @@ const State = () => {
   }, [conTo]);
   return (
     <div className="container mx-auto max-w-screen-2xl">
-      <div className="w-full bg-white p-8 rounded-xl">
+      <div className="w-full bg-white dark:bg-[#272727] dark:shadow-glass-card p-8 rounded-xl">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {States.map((state, idx) => (
             <div
@@ -101,11 +101,11 @@ const State = () => {
               >
                 <img className=" scale-75" src={state.icon} />
               </div>
-              <h1 className="font-black font-pop text-4xl flex whitespace-nowrap">
+              <h1 className="font-black dark:text-white font-pop text-4xl flex whitespace-nowrap">
                 {state.value}{" "}
                 {state.live && <span className=" flex">.{state.live}</span>} K
               </h1>
-              <p className="text-sm">{state.name}</p>
+              <p className="text-sm dark:text-white">{state.name}</p>
             </div>
           ))}
         </div>

@@ -69,11 +69,11 @@ const AuthIcon = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute p-2 right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute p-2 right-0 w-56 mt-2 origin-top-right bg-white dark:bg-[#2e2e2e] divide-y divide-gray-100 dark:divide-gray-400 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             {user.loginAs === "VENDOR" && (
               <Menu.Item>
                 <a
-                  className={`group cursor-pointer flex rounded-md items-center w-full px-2 py-2 text-sm hover:text-primary text-gray-700 transition-colors duration-300 hover:bg-gray-100`}
+                  className={`group cursor-pointer dark:text-white flex rounded-md items-center w-full px-2 py-2 text-sm hover:text-primary text-gray-700  transition-colors duration-300 hover:bg-gray-100`}
                   onClick={() => logoutFromDashboard()}
                 >
                   <span className="mr-2" aria-hidden="true">
@@ -86,7 +86,7 @@ const AuthIcon = () => {
             {user.loginAs === "USER" && (
               <Menu.Item>
                 <a
-                  className={`group cursor-pointer flex rounded-md items-center w-full px-2 py-2 text-sm hover:text-primary text-gray-700 transition-colors duration-300 hover:bg-gray-100`}
+                  className={`group cursor-pointer flex dark:text-white rounded-md items-center w-full px-2 py-2 text-sm hover:text-primary text-gray-700 transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-300`}
                   onClick={() => setIsOpen(true)}
                 >
                   <span className="mr-2" aria-hidden="true">
@@ -98,7 +98,7 @@ const AuthIcon = () => {
             )}
             <Menu.Item>
               <a
-                className={`group cursor-pointer flex rounded-md items-center w-full px-2 py-2 text-sm hover:text-primary text-gray-700 transition-colors duration-300 hover:bg-gray-100`}
+                className={`group cursor-pointer flex dark:text-white rounded-md items-center w-full px-2 py-2 text-sm hover:text-primary text-gray-700 transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-300`}
                 onClick={() => logOut()}
               >
                 <span className="mr-2" aria-hidden="true">

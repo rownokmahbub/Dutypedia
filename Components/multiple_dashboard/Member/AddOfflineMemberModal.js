@@ -153,7 +153,7 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white dark:bg-bg-200 text-left align-middle shadow-xl transition-all">
                   <div className="">
                     <div>
                       <div className="bg-gradient-to-r from-[#d93baf] to-[#854a58] h-48 relative">
@@ -181,7 +181,7 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                           />
                         </label>
                       </div>
-                      <div className="flex relative justify-center bg-white w-28 h-28 -mt-14 rounded-lg mx-auto shadow-3xl">
+                      <div className="flex relative justify-center bg-white dark:bg-bg-300 w-28 h-28 -mt-14 rounded-lg mx-auto shadow-3xl">
                         {profilePhotoPreview ? (
                           <div className="w-full h-full relative rounded-lg overflow-hidden">
                             <Image
@@ -217,7 +217,7 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                       </div>
                     </div>
 
-                    <div className="p-6">
+                    <div className="p-6 dark:text-white">
                       <FormikProvider value={formik}>
                         <Form
                           autoComplete="off"
@@ -228,14 +228,14 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                           <div className="mt-2 grid sm:grid-cols-2 gap-x-8 gap-y-4">
                             <Input
                               name="name"
-                              className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                              className="w-full py-2 px-2 rounded bg-[#f8fafb] dark:bg-bg border border-solid focus:outline-none border-gray-300 dark:border-[#515050]"
                               type="text"
                               placeholder="Member Name"
                             />
                             <Input
                               name="gender"
                               as="select"
-                              className="w-full h-[42px] py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                              className="w-full h-[42px] py-2 px-2 rounded bg-[#f8fafb] dark:bg-bg border border-solid focus:outline-none border-gray-300 dark:border-[#515050]"
                             >
                               <option disabled value="">
                                 Gender...
@@ -246,7 +246,7 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                             </Input>
                             <Input
                               name="phone"
-                              className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                              className="w-full py-2 px-2 rounded bg-[#f8fafb] dark:bg-bg border border-solid focus:outline-none border-gray-300 dark:border-[#515050]"
                               type="text"
                               placeholder="Phone Number"
                             />
@@ -288,7 +288,7 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                                     setArea([]);
                                     setCity(DistrictList[event.target.value]);
                                   }}
-                                  className="w-full h-[42px] py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 sm:col-span-2"
+                                  className="w-full h-[42px] py-2 px-2 rounded bg-[#f8fafb] dark:bg-bg border border-solid focus:outline-none border-gray-300 dark:border-[#515050] sm:col-span-2"
                                 >
                                   <option value="" disabled selected>
                                     Division...
@@ -314,7 +314,7 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                                     );
                                   }}
                                   ref={cityRef}
-                                  className="w-full h-[42px] py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                                  className="w-full h-[42px] py-2 px-2 rounded bg-[#f8fafb] dark:bg-bg border border-solid focus:outline-none border-gray-300 dark:border-[#515050]"
                                 >
                                   <option value="" disabled selected>
                                     District...
@@ -332,7 +332,7 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                                   onChange={(event) =>
                                     setSelectedArea(event.target.value)
                                   }
-                                  className="w-full h-[42px] py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                                  className="w-full h-[42px] py-2 px-2 rounded bg-[#f8fafb] dark:bg-bg border border-solid focus:outline-none border-gray-300 dark:border-[#515050]"
                                 >
                                   <option value="" disabled selected>
                                     Area...
@@ -349,7 +349,7 @@ const AddOfflineMemberModal = ({ isOpen, closeModal, onSuccess }) => {
                                   onChange={(event) =>
                                     setAddress(event.target.value)
                                   }
-                                  className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 sm:col-span-2"
+                                  className="w-full py-2 px-2 rounded bg-[#f8fafb] dark:bg-bg border border-solid focus:outline-none border-gray-300 dark:border-[#515050] sm:col-span-2"
                                   rows="3"
                                   placeholder="Your Address"
                                 />

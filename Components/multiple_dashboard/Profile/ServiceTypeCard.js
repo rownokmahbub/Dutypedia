@@ -58,12 +58,12 @@ const ServiceTypeCard = ({ item, isSelected, isEnabled, parentServiceId }) => {
             shallow: true,
           })
         }
-        className={`w-full flex-shrink-0 cursor-pointer aspect-[16/12] shadow-3xl rounded-lg overflow-hidden relative p-4 ${
+        className={`w-full flex-shrink-0 dark:text-white cursor-pointer aspect-[16/12] shadow-3xl rounded-lg overflow-hidden relative p-4 ${
           enabled ? "saturate-100 opacity-100" : "saturate-0 opacity-50"
         } ${item.bgColor}`}
       >
         <div className="flex !h-max relative z-10 justify-between items-center">
-          <p className="text-sm">{item.title}</p>
+          <p className="text-sm dark:text-white">{item.title}</p>
         </div>
         <img className="z-0 absolute right-1 bottom-1 w-32" src={item.image} />
       </div>

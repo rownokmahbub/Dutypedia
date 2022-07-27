@@ -32,11 +32,11 @@ const FeedbackData = [
 ];
 const Feedback = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-[#272727]">
       <div className="container mx-auto max-w-screen-2xl py-16">
         <div className="text-center mx-auto max-w-sm space-y-4">
-          <h4 className="text-3xl font-semibold">Seller Feedback</h4>
-          <p className="text-gray-500 text-sm">
+          <h4 className="text-3xl font-semibold dark:text-white">Seller Feedback</h4>
+          <p className="text-gray-500 text-sm dark:text-gray-200">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat.
@@ -54,8 +54,8 @@ const Feedback = () => {
                 </div>
               </div>
               <div className="flex-1 space-y-4">
-                <p className="text-sm text-gray-500 font-light line-clamp-1">{`${feedback.author} | Category : ${feedback.category}`}</p>
-                <h1 className="text-xl font-semibold line-clamp-2">
+                <p className="text-sm text-gray-500 dark:text-white font-light line-clamp-1">{`${feedback.author} | Category : ${feedback.category}`}</p>
+                <h1 className="text-xl dark:text-gray-200 font-semibold line-clamp-2">
                   {feedback.heading}
                 </h1>
               </div>

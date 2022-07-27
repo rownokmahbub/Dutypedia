@@ -38,7 +38,7 @@ const ServiceListView = ({ data, facilites = [] }) => {
             <div className="flex flex-wrap gap-4">
               {facilites.selectedOptions.map((item, index) => (
                 <span
-                  className={`sm:px-8 text-primary px-4 py-2 border-2 text-sm sm:text-base rounded-full min-w-[70] sm:min-w-[150px] ${
+                  className={`sm:px-8 text-primary  px-4 py-2 border-2 text-sm sm:text-base rounded-full min-w-[70] sm:min-w-[150px] ${
                     Colors[index % Colors.length]
                   }`}
                 >

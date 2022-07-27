@@ -30,6 +30,11 @@ module.exports = {
       },
     
       colors: {
+        bg:{
+          DEFAULT: "#202020",
+          200: "#272727",
+          300: "#2e2e2e",
+        },
         primary: {
           DEFAULT: "#DA1E37",
           50: "#F7C6C6",

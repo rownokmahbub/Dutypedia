@@ -218,7 +218,7 @@ const ProfilePage = () => {
 
   if (loading) {
     return (
-      <div className="bg-white min-h-screen">
+      <div className="bg-white  min-h-screen">
         <LoadingScreen fullScreen={false} />
       </div>
     );
@@ -263,7 +263,7 @@ const ProfilePage = () => {
                 ))}
               </Slider>
             </div>
-            <div className="w-full bg-white shadow-3xl p-6 rounded-xl">
+            <div className="w-full bg-white dark:bg-bg-300  shadow-3xl p-6 rounded-xl">
               {gigsIsLoading ? (
                 <LoadingScreen fullScreen={false} />
               ) : gigData ? (
@@ -306,7 +306,7 @@ const ProfilePage = () => {
                           }}
                         >
                           <a className="flex h-full gap-2 shadow-3xl w-full aspect-[10.7/16] border rounded-xl p-4 justify-center items-center">
-                            <AiOutlinePlusCircle className="text-xl" />
+                            <AiOutlinePlusCircle className="text-xl dark:text-white" />
                             Create Service
                           </a>
                         </Link>
@@ -327,7 +327,7 @@ const ProfilePage = () => {
                   <div className="">
                     <div className="flex justify-end gap-2 py-4">
                       <button>
-                        <FiEdit className="text-xl text-gray-500" />
+                        <FiEdit className="text-xl text-gray-500 dark:text-white" />
                       </button>
                       {serviceType !== "STARTING" && (
                         <button onClick={() => handelDeleteGig(gigData?.id)}>
@@ -357,8 +357,8 @@ const ProfilePage = () => {
                   </div>
                 </>
               ) : (
-                <div className="bg-white w-full min-h-[384px]">
-                  <p className="text-xl">No service found</p>
+                <div className="bg-white dark:bg-bg-300 w-full min-h-[384px]">
+                  <p className="text-xl dark:text-white">No service found</p>
                   <div className="flex flex-col lg:flex-row gap-4 mt-8 justify-between items-center">
                     <img
                       className="max-w-sm"

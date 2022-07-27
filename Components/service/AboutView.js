@@ -27,7 +27,7 @@ const AboutView = ({ about, address }) => {
     },
   ];
   return (
-    <div className="shadow-3xl h-max  bg-white rounded-xl overflow-hidden p-4">
+    <div className="shadow-3xl h-max  bg-white dark:bg-bg-300 rounded-xl overflow-hidden p-4">
       <Tab.Group>
         <Tab.List className="flex max-w-md mx-auto">
           {Tabs.map((item, index) => (
@@ -35,21 +35,21 @@ const AboutView = ({ about, address }) => {
               key={index}
               className={({ selected }) =>
                 cn(
-                  "w-full relative border-b px-4 py-2.5 text-sm focus:outline-none whitespace-nowrap",
+                  "w-full relative border-b px-4 py-2.5 text-sm focus:outline-none whitespace-nowrap dark:text-white",
                   selected
-                    ? "text-primary border-primary"
+                    ? "text-primary dark:text-primary border-primary"
                     : "hover:text-primary"
                 )
               }
             >
               {index < Tabs.length - 1 && (
-                <span className=" absolute right-0 w-[1px] h-6 top-1/2 -translate-y-1/2 bg-gray-100" />
+                <span className=" absolute right-0 w-[1px] h-6 top-1/2 -translate-y-1/2 bg-gray-100 dark:text-white" />
               )}
               {item.name}
             </Tab>
           ))}
         </Tab.List>
-        <Tab.Panels className="pt-4">
+        <Tab.Panels className="pt-4 dark:text-white">
           {Tabs.map((item, index) => (
             <Tab.Panel>
               {item.name === "About" && (

@@ -105,20 +105,20 @@ const Hero = () => {
         <div className="relative">
           <div className="z-20 absolute inset-0 h-full flex flex-col gap-4 justify-center w-max mx-auto">
             <h1 className="text-white text-4xl font-bold px-3 md:px-0">Make your duty</h1>
-            <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-center md:rounded-md overflow-hidden px-3 md:px-0">
-              <div className="flex items-center h-full rounded overflow-hidden md:rounded-none">
+            <div className="flex flex-col  gap-4 md:gap-0 md:flex-row items-center md:rounded-md overflow-hidden px-3 md:px-0">
+              <div className="flex  items-center h-full rounded overflow-hidden md:rounded-none">
                 <input
-                  className="text-xs sm:text-base md:w-80 border-r py-6 sm:py-4 md:py-2 px-4 border-0 focus:outline-none"
+                  className="text-xs dark:bg-[#272727]  sm:text-base md:w-80 border-r py-6 sm:py-4 md:py-2 px-4 border-0 focus:outline-none"
                   type="text"
                   placeholder="Search your service"
                 />
-                <div className="h-full pr-4 bg-white flex items-center">
+                <div className="h-full pr-4 bg-white dark:bg-[#272727] flex items-center">
                   <img
                     className=" scale-75 px-2"
                     src="/Assets/icon/listalt.svg"
                   />
                   <select
-                    className="py-2 text-xs sm:text-base text-gray-400 border-none outline-none h-full active:outline-none focus:outline-none"
+                    className="py-2 text-xs sm:text-base dark:bg-[#272727]  text-gray-400 border-none outline-none h-full active:outline-none focus:outline-none"
                     defaultValue=""
                   >
                     <option value="" disabled selected>

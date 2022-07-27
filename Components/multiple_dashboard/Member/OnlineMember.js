@@ -78,7 +78,7 @@ const OnlineMember = () => {
       <div className="flex flex-col md:flex-row gap-4 justify-between items-end md:items-center">
         <div className="relative text-gray-600 w-full md:max-w-xs">
           <input
-            className="px-4 w-full py-2 pr-8 rounded-lg text-sm focus:outline-none outline-none border-2 border-solid border-[#ECECEC]"
+            className="px-4 w-full py-2 pr-8 rounded-lg text-sm focus:outline-none outline-none border-2 border-solid border-[#ECECEC] dark:border-[#515050] dark:bg-bg-200"
             type="search"
             name="search"
             placeholder="Search"
@@ -93,7 +93,7 @@ const OnlineMember = () => {
             onClick={() => setShowAddMember(true)}
             className="flex gap-2 items-center cursor-pointer text-gray-500 hover:text-black duration-200"
           >
-            <span className="capitalize text-lg">Add Member</span>
+            <span className="capitalize text-lg dark:text-white">Add Member</span>
             <AiOutlinePlusCircle className="text-3xl text-primary" />
           </a>
 
@@ -138,7 +138,7 @@ const OnlineMember = () => {
                     />
                   </span>
                   <div>
-                    <p className="md:text-lg">
+                    <p className="md:text-lg dark:text-white">
                       {member.user.firstName} {member.user.lastName}
                     </p>
                     <p className="text-xs md:text-sm text-gray-400">

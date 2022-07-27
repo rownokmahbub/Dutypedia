@@ -79,8 +79,8 @@ const OfflineMember = () => {
     <div>
       <div className="flex flex-col md:flex-row gap-4 justify-between items-end md:items-center">
         <div className="relative text-gray-600 w-full md:max-w-xs">
-          <input
-            className="px-4 w-full py-2 pr-8 rounded-lg text-sm focus:outline-none outline-none border-2 border-solid border-[#ECECEC]"
+        <input
+            className="px-4 w-full py-2 pr-8 rounded-lg text-sm focus:outline-none outline-none border-2 border-solid border-[#ECECEC] dark:border-[#515050] dark:bg-bg-200"
             type="search"
             name="search"
             placeholder="Search"
@@ -94,7 +94,7 @@ const OfflineMember = () => {
           onClick={() => setShowAddMember(true)}
           className="flex gap-2 items-center cursor-pointer text-gray-500 hover:text-black duration-200"
         >
-          <span className="capitalize text-lg">Add Member</span>
+          <span className="capitalize text-lg dark:text-white">Add Member</span>
           <AiOutlinePlusCircle className="text-3xl text-primary" />
         </a>
       </div>
@@ -114,7 +114,7 @@ const OfflineMember = () => {
                 key={idx}
                 className="shadow-3xl rounded-md px-4 py-3 flex items-center"
               >
-                <span className="w-12 md:w-24 flex-shrink-0">
+                <span className="w-12 md:w-24 flex-shrink-0 dark:text-white">
                   {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                 </span>
                 <div className="flex-1 flex items-center gap-4">
@@ -127,7 +127,7 @@ const OfflineMember = () => {
                     />
                   </span>
                   <div>
-                    <p className="md:text-lg">{member.name}</p>
+                    <p className="md:text-lg dark:text-white">{member.name}</p>
                   </div>
                 </div>
 
@@ -140,7 +140,7 @@ const OfflineMember = () => {
                     <Menu.Button>
                       <HiDotsVertical className="text-xl" />
                     </Menu.Button>
-                    <Menu.Items className="flex flex-col items-center absolute -ml-20 bg-white shadow-3xl  rounded-md px-3 py-1">
+                    <Menu.Items className="flex flex-col items-center absolute -ml-20 bg-white dark:bg-bg shadow-3xl  rounded-md px-3 py-1">
                       <Menu.Item>
                         {({ active }) => (
                           <a
@@ -150,7 +150,7 @@ const OfflineMember = () => {
                             }}
                             className={`${
                               active
-                                ? "bg-gray-200 text-black "
+                                ? "bg-gray-200 text-black dark:text-white "
                                 : "text-gray-900"
                             } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
                           >

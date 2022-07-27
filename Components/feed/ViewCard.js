@@ -30,7 +30,7 @@ const ViewCard = ({ view }) => {
     mainSlider?.slickPrev();
   };
   return (
-    <div className=" group rounded-lg  overflow-hidden shadow-card-shadow dark:shadow-glass-card bg-white dark:bg-[#2e2e2e]">
+    <div className=" group rounded-lg overflow-hidden shadow-card-shadow dark:shadow-glass-card bg-white dark:bg-[#2e2e2e]">
       {view.images && (
         <div className="relative">
           <span
