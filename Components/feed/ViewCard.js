@@ -1,6 +1,7 @@
 import Heart from "@components/global/Heart";
 import RatingRender from "@components/global/Rating/RatingRender";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsFillEyeFill } from "react-icons/bs";
@@ -69,31 +70,41 @@ const ViewCard = ({ view }) => {
       )}
       <div className="border border-t-0  dark:border-none pt-[22px] rounded-b-lg -mt-5">
         <div className="px-2 pl-[10px]">
-          <div className="flex capitalize items-start justify-between gap-2">
-            <p className="text-[15px] leading-tight  font-semibold text-[#222325] dark:text-white">
-              {view.title}
-            </p>
-          </div>
+          <Link href={`/feed/service/${view.id}`}>
+            <a className="flex items-start justify-between gap-2">
+              <span className="text-[15px] capitalize leading-tight  font-semibold text-[#222325] dark:text-white">
+                {view.title}
+              </span>
+            </a>
+          </Link>
           <div className="flex justify-between items-center py-[6px]">
             <div className="flex items-center gap-2 ">
               <div className="relative">
                 <div className="flex w-6 h-6 overflow-hidden bg-primary  rounded-full border-primary border items-center justify-center ">
                   <img
                     className="object-cover rounded-full"
-                    src="https://api.lorem.space/image/face?hash=3174"
+                    src={view.service.profilePhoto}
                     alt="love"
                   />
                 </div>
                 <div className="absolute w-2 h-2 bg-gray-300 rounded-full right-0 bottom-0"></div>
               </div>
 
-              <p className="text-xs text-[#a8a1a6] italic font-medium">
-                {view.author}
+              <p className="text-xs text-[#a8a1a6] italic font-medium capitalize">
+                {view.service.serviceCenterName}
               </p>
             </div>
             <div className="text-sm font-medium mr-[6px]">
-              <img className="w-[60px] dark:hidden" src={view.status} alt="" />
-              <img className="w-[60px] hidden dark:block" src={view.status2} alt="" />
+              <img
+                className="w-[60px] dark:hidden"
+                src="/Assets/images/feed/verified.svg"
+                alt=""
+              />
+              <img
+                className="w-[60px] hidden dark:block"
+                src="/Assets/images/feed/verifydark.svg"
+                alt=""
+              />
             </div>
           </div>
           <div className="flex capitalize items-center">
@@ -111,13 +122,13 @@ const ViewCard = ({ view }) => {
             <p className="text-[13px] text-[#8c8a8a] pb-[9px]">100k view</p>
           </div>
           <div className="flex gap-[7px] mr-[6px] relative">
-     
-              <Heart className=""/>
-           
+            <Heart className="" />
 
-            <p className="text-[#eb8592] font-bold text-[16px] hover:text-white border border-[#eb8592] hover:bg-[#eb8592]  w-[73px] h-10 rounded-[2px] flex justify-center items-center cursor-pointer">
-              View
-            </p>
+            <Link href={`/feed/service/${view.id}`}>
+              <a className="text-[#eb8592] font-bold text-[16px] hover:text-white border border-[#eb8592] hover:bg-[#eb8592]  w-[73px] h-10 rounded-[2px] flex justify-center items-center cursor-pointer">
+                View
+              </a>
+            </Link>
           </div>
         </div>
       </div>
