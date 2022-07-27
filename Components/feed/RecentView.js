@@ -1,4 +1,7 @@
+import LoadingScreen from "@components/global/LoadingScreen";
+import axios from "axios";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { BsChevronRight } from "react-icons/bs";
 import ListView from "./ListView";
 
@@ -135,18 +138,41 @@ export const Views = [
   },
 ];
 const RecentView = ({ title }) => {
+  const [gigs, setGigs] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchGigs = async () => {
+      try {
+        setLoading(true);
+        const { data } = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/services/gigs/starting/10`
+        );
+        setGigs(data.gigs);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchGigs();
+  }, []);
+
+  if (loading) {
+    return <LoadingScreen fullScreen={false} />;
+  }
+
   return (
     <div className="pb-8 pt-16 ">
       <div className="flex flex-col sm:flex-row  sm:justify-between items-center pb-8">
         <h1 className="text-xl font-semibold dark:text-white">{title}</h1>
         <Link href="/services">
-        
           <a className="flex gap-2 cursor-pointer items-center dark:text-white">
             <span>View all</span> <BsChevronRight className="text-primary" />
           </a>
         </Link>
       </div>
-      <ListView views={Views} />
+      <ListView views={gigs} />
     </div>
   );
 };
