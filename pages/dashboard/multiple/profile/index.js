@@ -24,31 +24,31 @@ const servicesType = [
   {
     id: "STARTING",
     title: "Starting",
-    bgColor: "bg-[#EEFFFB]",
+    bgColor: "dark:bg-bg-300",
     image: "/Assets/images/dashboard/multiple/bargaining.svg",
   },
   {
     id: "ONETIME",
     title: "Fixed Price",
-    bgColor: "bg-[#EBFAFF]",
+    bgColor: "dark:bg-bg-300",
     image: "/Assets/images/dashboard/multiple/fixed.svg",
   },
   {
     id: "PACKAGE",
     title: "Package",
-    bgColor: "bg-[#CCFCFF]",
+    bgColor: "dark:bg-bg-300",
     image: "/Assets/images/dashboard/multiple/package.svg",
   },
   {
     id: "SUBS",
     title: "Subscription",
-    bgColor: "bg-[#EEFFFB]",
+    bgColor: "dark:bg-bg-300",
     image: "/Assets/images/dashboard/multiple/subscribtion.svg",
   },
   {
     id: "INSTALLMENT",
     title: "Installment",
-    bgColor: "bg-[#EEFFFB]",
+    bgColor: "dark:bg-bg-300",
     image: "/Assets/images/dashboard/multiple/bargaining.svg",
   },
 ];
