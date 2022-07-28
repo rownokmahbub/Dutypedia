@@ -117,7 +117,7 @@ const pricingSliderSettings = {
 };
 
 const ProfilePage = () => {
-  const { token } = useContext(AuthContext);
+  const { token, logOut } = useContext(AuthContext);
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [gigsIsLoading, setGigsLoading] = useState(true);
@@ -174,6 +174,7 @@ const ProfilePage = () => {
       } catch (error) {
         console.log(error);
         toast.error(error.response?.data?.msg);
+        logOut();
       } finally {
         setLoading(false);
       }
