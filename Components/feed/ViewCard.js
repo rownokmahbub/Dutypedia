@@ -70,7 +70,7 @@ const ViewCard = ({ view }) => {
       )}
       <div className="border border-t-0  dark:border-none pt-[22px] rounded-b-lg -mt-5">
         <div className="px-2 pl-[10px]">
-          <Link href={`/feed/service/${view.id}`}>
+          <Link href={`/feed/service/${view.service.id}`}>
             <a className="flex items-start justify-between gap-2 h-10">
               <span className="text-[15px] capitalize leading-tight  font-semibold text-[#222325] dark:text-white line-clamp-2">
                 {view.title}
