@@ -113,15 +113,9 @@ const Cards = [
     href: "/become-seller/parlor",
   },
 
+
   {
     Id: 14,
-    bgColor: "bg-[#fbe8eb]",
-    title: "Real State",
-    image: "/Assets/icon/services/rent.svg",
-    tag: "",
-  },
-  {
-    Id: 15,
     bgColor: "bg-[#fbe8eb]",
     title: "Labor",
     image: "/Assets/icon/services/rent.svg",
