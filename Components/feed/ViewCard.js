@@ -31,7 +31,7 @@ const ViewCard = ({ view }) => {
     mainSlider?.slickPrev();
   };
   return (
-    <div className=" group rounded-lg overflow-hidden shadow-card-shadow dark:shadow-glass-card bg-white dark:bg-[#2e2e2e]">
+    <div className=" group rounded-lg overflow-hidden  shadow-card-shadow dark:shadow-glass-card bg-white dark:bg-[#2e2e2e]">
       {view.images && (
         <div className="relative">
           <span
@@ -71,8 +71,8 @@ const ViewCard = ({ view }) => {
       <div className="border border-t-0  dark:border-none pt-[22px] rounded-b-lg -mt-5">
         <div className="px-2 pl-[10px]">
           <Link href={`/feed/service/${view.id}`}>
-            <a className="flex items-start justify-between gap-2">
-              <span className="text-[15px] capitalize leading-tight  font-semibold text-[#222325] dark:text-white">
+            <a className="flex items-start justify-between gap-2 h-10">
+              <span className="text-[15px] capitalize leading-tight  font-semibold text-[#222325] dark:text-white line-clamp-2">
                 {view.title}
               </span>
             </a>
@@ -90,7 +90,7 @@ const ViewCard = ({ view }) => {
                 <div className="absolute w-2 h-2 bg-gray-300 rounded-full right-0 bottom-0"></div>
               </div>
 
-              <p className="text-xs text-[#a8a1a6] italic font-medium capitalize">
+              <p className="text-xs text-[#a8a1a6] italic font-medium capitalize line-clamp-1 pr-3">
                 {view.service.serviceCenterName}
               </p>
             </div>

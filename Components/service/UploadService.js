@@ -143,7 +143,7 @@ const UploadService = ({ goNext, goBack, savedData }) => {
       {(formik) => (
         <>
           <form className="pb-8" onSubmit={formik.handleSubmit}>
-            <div className="max-w-screen-lg container mx-auto shadow-3xl rounded-lg py-8  bg-white">
+            <div className="max-w-screen-lg container mx-auto shadow-3xl rounded-lg py-8  bg-white dark:bg-bg-300 dark:border-[#515150] dark:text-white">
               <BsArrowLeftSquare
                 onClick={() => goBack()}
                 className="text-3xl cursor-pointer text-gray-400"
@@ -162,7 +162,7 @@ const UploadService = ({ goNext, goBack, savedData }) => {
                     <div className="mb-3 w-full">
                       <Input
                         name="title"
-                        className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                        className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                         type="text"
                         placeholder="I will give you the best law service."
                       />
@@ -179,7 +179,7 @@ const UploadService = ({ goNext, goBack, savedData }) => {
                   <Input
                     name="speciality"
                     type="text"
-                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none "
+                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                     placeholder="Ex: Graphic Designer, Web Developer, Lawyer, etc."
                   />
                 </div>
@@ -195,7 +195,7 @@ const UploadService = ({ goNext, goBack, savedData }) => {
                   <Input
                     name="description"
                     as="textarea"
-                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none "
+                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                     rows="5"
                     placeholder="Write Something About Your Service...…."
                   />
@@ -212,7 +212,7 @@ const UploadService = ({ goNext, goBack, savedData }) => {
                   <Input
                     name="about"
                     as="textarea"
-                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none "
+                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                     rows="5"
                     placeholder="Write Something About Your Service...…."
                   />

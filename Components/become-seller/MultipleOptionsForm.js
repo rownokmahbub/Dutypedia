@@ -76,8 +76,8 @@ const MultipleOptionsForm = ({
     <div className="container max-w-4xl mx-auto">
       <div className="max-w-xl mx-auto">
         <div className=" rounded-lg overflow-hidden mt-4 border shadow-md bg-white dark:bg-bg-300">
-          <div className="flex bg-primary px-4 py-3">
-            <div className="flex-1 text-white pl-4">{title}</div>
+          <div className="flex bg-primary px-4 py-3 ">
+            <div className="flex-1 text-white pl-4 dark:text-white">{title}</div>
             <div className="flex-shrink-0 text-white pr-8 w-20 sm:w-40 text-center">
               Select
             </div>
@@ -86,7 +86,7 @@ const MultipleOptionsForm = ({
           <div className="divide-y-2">
             {sortOptions.map((option, i) => (
               <div key={i} className="flex px-8 divide-x-2">
-                <div className="flex-1 py-4 pr-4">{option.title}</div>
+                <div className="flex-1 py-4 pr-4 dark:text-white">{option.title}</div>
                 <div className=" flex-shrink-0 px-4 py-4 w-20 sm:w-40 text-center flex justify-center items-center">
                   <CheckBox
                     value={selectedOptions.some((d) => d.id === option.id)}

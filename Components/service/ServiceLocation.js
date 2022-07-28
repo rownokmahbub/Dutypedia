@@ -35,7 +35,7 @@ const ServiceLocation = ({ goNext, goBack, savedData }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-screen-lg mx-auto shadow-3xl mt-20 rounded-lg py-4 bg-white px-4"
+      className="max-w-screen-lg mx-auto shadow-3xl mt-20 rounded-lg py-4 bg-white px-4 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
     >
       <BsArrowLeftSquare
         onClick={() => goBack()}
@@ -60,7 +60,7 @@ const ServiceLocation = ({ goNext, goBack, savedData }) => {
                 setArea([]);
                 setCity(DistrictList[event.target.value]);
               }}
-              className="select select-bordered w-full"
+              className="select select-bordered w-full dark:bg-bg-300 dark:border-[#515150] dark:text-white"
             >
               <option value="" disabled selected>
                 Division...
@@ -86,7 +86,7 @@ const ServiceLocation = ({ goNext, goBack, savedData }) => {
                 setArea(AreaList[selectedState][event.target.value]);
               }}
               ref={cityRef}
-              className="select select-bordered w-full"
+              className="select select-bordered w-full dark:bg-bg-300 dark:border-[#515150] dark:text-white"
             >
               <option value="" disabled selected>
                 District...
@@ -104,7 +104,7 @@ const ServiceLocation = ({ goNext, goBack, savedData }) => {
               ref={areaRef}
               value={selectedArea}
               onChange={(event) => setSelectedArea(event.target.value)}
-              className="select select-bordered w-full"
+              className="select select-bordered w-full dark:bg-bg-300 dark:border-[#515150] dark:text-white"
             >
               <option value="" disabled selected>
                 Area...
@@ -127,7 +127,7 @@ const ServiceLocation = ({ goNext, goBack, savedData }) => {
           <textarea
             value={address}
             onChange={(event) => setAddress(event.target.value)}
-            className="textarea textarea-bordered w-full"
+            className="textarea textarea-bordered w-full dark:bg-bg-300 dark:border-[#515150] dark:text-white"
             id="exampleFormControlTextarea1"
             rows="3"
             placeholder="Your message"

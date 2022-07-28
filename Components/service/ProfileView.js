@@ -49,7 +49,7 @@ const ProfileView = ({
   }, [wallPhoto]);
 
   return (
-    <div className="shadow-3xl h-max bg-white rounded-xl overflow-hidden ">
+    <div className="shadow-3xl h-max bg-white dark:bg-bg-300 dark:border-[#515150] dark:text-white rounded-xl overflow-hidden ">
       <div className="bg-gradient-to-r from-[#d93baf] to-[#854a58] h-48 relative">
         {wallPhotoPreview && (
           <Image src={wallPhotoPreview} layout="fill" objectFit="cover" />

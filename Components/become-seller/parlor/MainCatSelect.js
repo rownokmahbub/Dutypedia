@@ -262,7 +262,7 @@ const ParlorMainCatSelect = ({ goNext, savedData }) => {
 
   return (
     <div className="container max-w-4xl mx-auto">
-      <div className="w-full rounded-xl overflow-hidden bg-white">
+      <div className="w-full rounded-xl overflow-hidden bg-white dark:bg-bg-200">
         <div className="relative w-full h-40 overflow-hidden">
           <Image
             src="/Assets/images/lawyer/parlour.jpg"
@@ -295,7 +295,7 @@ const ParlorMainCatSelect = ({ goNext, savedData }) => {
                           />
                         );
                       }}
-                      className="p-4 flex justify-between items-center gap-2 cursor-pointer text-gray-700 shadow text-center rounded-md bg-gray-50"
+                      className="p-4 flex items-center dark:bg-bg-300 justify-between gap-2 cursor-pointer text-gray-700 shadow text-center rounded-md bg-gray-50 dark:text-white"
                     >
                       <div className="flex gap-2 items-center">
                         {completedSection[activeParentCat].some(
@@ -316,7 +316,7 @@ const ParlorMainCatSelect = ({ goNext, savedData }) => {
                 {customCat[activeParentCat].map((category, i) => (
                   <a
                     key={i}
-                    className={`p-4 flex items-center justify-between gap-2 cursor-pointer text-gray-700 shadow text-center rounded-md bg-gray-50 ${
+                    className={`p-4 flex items-center dark:bg-bg-300 justify-between gap-2 cursor-pointer text-gray-700 shadow text-center rounded-md bg-gray-50 dark:text-white ${
                       showCustomCatError &&
                       !getOptions(category.title, activeParentCat) &&
                       "border-2 border-red-500"
@@ -382,7 +382,7 @@ const ParlorMainCatSelect = ({ goNext, savedData }) => {
           </>
         ) : (
           <>
-            <h1 className="pt-8 pb-2 text-center text-xl">
+            <h1 className="pt-8 pb-2 text-center text-xl dark:text-white">
               Choose Your Service From Here
             </h1>
             <div className="grid grid-cols-2 gap-8 p-6">
@@ -392,7 +392,7 @@ const ParlorMainCatSelect = ({ goNext, savedData }) => {
                   onClick={() => {
                     setActiveParentCat(category);
                   }}
-                  className="p-4 flex flex-col items-center justify-between gap-2 cursor-pointer text-gray-700 shadow text-center rounded-md bg-gray-50"
+                  className="p-4 flex flex-col items-center dark:bg-bg-300 justify-between gap-2 cursor-pointer text-gray-700 shadow text-center rounded-md bg-gray-50 dark:text-white"
                 >
                   <div className="w-full aspect-video relative">
                     <Image
@@ -407,7 +407,7 @@ const ParlorMainCatSelect = ({ goNext, savedData }) => {
                         <FaCheckCircle />
                       </span>
                     )}
-                    <span className="text-xl font-bold text-gray-600">
+                    <span className="text-xl font-bold text-gray-600 dark:text-white">
                       {category}
                     </span>
                   </div>
