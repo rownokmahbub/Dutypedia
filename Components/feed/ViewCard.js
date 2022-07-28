@@ -119,12 +119,14 @@ const ViewCard = ({ view }) => {
               <RatingRender rating={5} />
               <p className=" mt-1 text-[#a8a1a6]">5.0</p>
             </div>
-            <p className="text-[13px] text-[#8c8a8a] pb-[9px]">100k view</p>
+            <p className="text-[13px] text-[#8c8a8a] pb-[9px]">
+              {view.service.views} view
+            </p>
           </div>
           <div className="flex gap-[7px] mr-[6px] relative">
             <Heart className="" />
 
-            <Link href={`/feed/service/${view.id}`}>
+            <Link href={`/feed/service/${view.service.id}`}>
               <a className="text-[#eb8592] font-bold text-[16px] hover:text-white border border-[#eb8592] hover:bg-[#eb8592]  w-[73px] h-10 rounded-[2px] flex justify-center items-center cursor-pointer">
                 View
               </a>
