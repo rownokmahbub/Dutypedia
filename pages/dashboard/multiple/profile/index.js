@@ -218,7 +218,7 @@ const ProfilePage = () => {
 
   if (loading) {
     return (
-      <div className="bg-white  min-h-screen">
+      <div className="bg-white dark:bg-bg-200 min-h-screen">
         <LoadingScreen fullScreen={false} />
       </div>
     );
@@ -227,8 +227,8 @@ const ProfilePage = () => {
   return (
     <div className="min-h-screen">
       <div className="mx-auto max-w-[1920px] md:p-8 sm:p-4 px-4">
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
-          <div className="grid h-max gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 flex-shrink-0 w-full lg:w-96">
+        <div className="flex flex-col lg:flex-row gap-3 lg:gap-10">
+          <div className="grid h-max gap-3 md:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 flex-shrink-0 w-full lg:w-96">
             <ProfileRender
               profileData={serviceData.providerInfo}
               speciality={serviceData.speciality}
@@ -244,7 +244,7 @@ const ProfilePage = () => {
               t47={serviceData.t47}
             />
           </div>
-          <div className="flex-1 space-y-6 overflow-hidden">
+          <div className="flex-1space-y-6 overflow-hidden">
             <div className="overflow-hidden type-slider">
               <Slider {...sliderSettings}>
                 {servicesType.map((item) => (
@@ -263,7 +263,7 @@ const ProfilePage = () => {
                 ))}
               </Slider>
             </div>
-            <div className="w-full bg-white dark:bg-bg-300  shadow-3xl p-6 rounded-xl">
+            <div className="w-full bg-white dark:bg-bg-300  shadow-3xl p-6 rounded-xl mt-5 ">
               {gigsIsLoading ? (
                 <LoadingScreen fullScreen={false} />
               ) : gigData ? (

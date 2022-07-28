@@ -227,7 +227,7 @@ const AddGigInstallment = ({ goBack, data }) => {
               <div className="max-w-xl mx-auto">
                 <div className="mt-4">
                   <div className="flex justify-between items-center">
-                    <p className="mb-2 flex text-lg items-center dark:text-white">
+                    <p className="mb-2 flex text-lg items-center dark:text-white ">
                       Service Title
                     </p>
 
@@ -238,7 +238,7 @@ const AddGigInstallment = ({ goBack, data }) => {
                     <div className="mb-3 w-full">
                       <Input
                         name="title"
-                        className="w-full py-2 px-2 rounded bg-[#f8fafb] dark:bg-bg-300 border border-solid focus:outline-none border-gray-300 dark:text-white"
+                        className="w-full py-2 px-2 rounded bg-[#f8fafb] dark:bg-bg-300 border border-solid focus:outline-none border-gray-300 dark:text-white dark:border-[#515150]"
                         type="text"
                         placeholder="I will give you the best law service."
                       />
@@ -257,14 +257,14 @@ const AddGigInstallment = ({ goBack, data }) => {
                   <Input
                     name="description"
                     as="textarea"
-                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white"
+                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white dark:border-[#515150] dark:bg-bg-300"
                     rows="5"
                     placeholder="Write Something About Your Service...…."
                   />
                 </div>
 
                 <div className="py-8">
-                  <div className="mb-3 w-full shadow-3xl rounded-xl overflow-hidden">
+                  <div className="mb-3 w-full shadow-3xl rounded-xl overflow-hidden dark:bg-bg-300">
                     <div className="px-4 py-3 bg-primary">
                       <p className="text-white">Select Payment</p>
                     </div>
@@ -277,7 +277,7 @@ const AddGigInstallment = ({ goBack, data }) => {
                             <Input
                               name="totlaAmount"
                               type="number"
-                              className=" form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white dark:bg-bg-300"
+                              className=" form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white dark:bg-bg-300 dark:border-[#515150]"
                             />
                             <div className="h-[42px] w-8 absolute right-0 top-0 bg-primary pointer-events-none flex flex-col justify-between items-center cursor-pointer py-1 rounded-r">
                               <FiChevronUp className="text-white cursor-pointer" />
@@ -293,14 +293,14 @@ const AddGigInstallment = ({ goBack, data }) => {
                             <Input
                               name="installmentType"
                               as="select"
-                              className="h-[42px] form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white dark:bg-bg-300 "
+                              className="h-[42px] form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white dark:bg-bg-300 dark:border-[#515150]"
                             >
                               <option value="">Select...</option>
                               <option value="Weekly">Weekly</option>
                               <option value="Monthly">Monthly</option>
                               <option value="Yearly">Yearly</option>
                             </Input>
-                            <div className="h-[42px] w-8 absolute right-0 top-0 bg-primary pointer-events-none flex flex-col justify-center items-center cursor-pointer py-1 rounded-r dark:text-white">
+                            <div className="h-[42px] w-8 absolute right-0 top-0 bg-primary pointer-events-none flex flex-col justify-center items-center cursor-pointer py-1 rounded-r dark:text-white dark:border-[#515150]">
                               <FiChevronDown className="text-white" />
                             </div>
                           </div>
@@ -315,7 +315,7 @@ const AddGigInstallment = ({ goBack, data }) => {
                             <Input
                               name="installmentCount"
                               type="number"
-                              className=" form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white"
+                              className=" form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white dark:bg-bg-300 dark:border-[#515150]"
                             />
                             <div className="h-[42px] w-8 absolute right-0 top-0 bg-primary pointer-events-none flex flex-col justify-between items-center cursor-pointer py-1 rounded-r dark:text-white">
                               <FiChevronUp className="text-white cursor-pointer" />
@@ -324,7 +324,7 @@ const AddGigInstallment = ({ goBack, data }) => {
                             </div>
                           </div>
                         </div>
-                        <div className="space-y-2 col-span-2">
+                        <div className="space-y-2 col-span-2 dark:text-white">
                           <CheckBox
                             value={advancedPayment}
                             onChange={() =>

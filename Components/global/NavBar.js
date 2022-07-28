@@ -51,14 +51,15 @@ const NavBar = () => {
       <div
         className={`w-full py-3 duration-300 hidden px-16 h-full lg:flex justify-between items-center ${
           stickyNav
-            ? `bg-white/70 backdrop-blur-lg backdrop-saturate-150 shadow-sm`
+            ? `bg-white/70 dark:bg-bg/70 backdrop-blur-lg backdrop-saturate-150 shadow-sm`
             : `bg-transparent`
         }`}
       >
         <div className="flex items-center gap-8">
           <Link href="/">
             <a>
-              <img src="/Assets/images/logo.svg" />
+            <img className="w-24  dark:hidden" src="/Assets/images/logo.svg" />
+              <img className="w-24 hidden dark:block" src="/Assets/images/logo-dark.svg" />
             </a>
           </Link>
         </div>
@@ -71,7 +72,7 @@ const NavBar = () => {
                   <a
                     onClick={item.action}
                     className={`flex mx-4 cursor-pointer justify-center items-center gap-2 ${
-                      stickyNav ? "text-black" : "text-white"
+                      stickyNav ? "text-black dark:text-white" : "text-white"
                     }`}
                   >
                     {item.icon && item.icon}
@@ -85,7 +86,7 @@ const NavBar = () => {
                     >
                       <a
                         className={`flex justify-center items-center gap-2 ${
-                          stickyNav ? "text-black" : "text-white"
+                          stickyNav ? "text-black dark:text-white" : "text-white"
                         }`}
                       >
                         {item.icon && item.icon}
@@ -103,9 +104,9 @@ const NavBar = () => {
         </div>
       </div>
 
-      <div className="w-full py-3 flex px-4 sm:px-8 h-full lg:hidden justify-between items-center bg-primary">
+      <div className="w-full py-3 flex px-4 sm:px-8 h-full lg:hidden justify-between items-center bg-primary dark:bg-bg">
         <div>
-          <img src="/logo-white.svg" width={120} />
+          <img className="w-24" src="/Assets/images/logo-dark.svg"  />
         </div>
         <div>
           <FiMenu

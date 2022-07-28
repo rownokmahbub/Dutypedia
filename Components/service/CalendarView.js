@@ -73,7 +73,7 @@ const CalendarView = ({ workingTime, t47 }) => {
           }
           contentBg="bg-white dark:bg-bg-300"
           titlePadding="px-4 py-3"
-          color="bg-gradient-to-b from-[#566D26] to-[#A74260] text-white"
+          color="dark:bg-bg-300  text-white"
         >
           <div className="py-2 dark:bg-bg-300">
             <div>

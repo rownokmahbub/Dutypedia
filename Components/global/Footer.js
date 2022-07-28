@@ -117,7 +117,7 @@ const Footer = () => {
               <div className="mt-2 space-y-2">
                 {FooterLinks.Categories.map((item, idx) => (
                   <Link key={idx} href={item.links}>
-                    <a className="text-gray-600 block dark:text-white transition-colors duration-300 hover:text-primary">
+                    <a className="text-gray-600 block dark:!text-white transition-colors duration-300 hover:text-primary">
                       {item.title}
                     </a>
                   </Link>
@@ -178,13 +178,13 @@ const Footer = () => {
 
           <div className="grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4 hidden md:grid">
             <div>
-              <p className="font-semibold uppercase tracking-wide text-gray-800">
+              <p className="font-semibold uppercase tracking-wide text-gray-800 dark:text-white">
                 Categories
               </p>
               <div className="mt-2 space-y-2">
                 {FooterLinks.Categories.map((item, idx) => (
                   <Link key={idx} href={item.links}>
-                    <a className="text-gray-600 block transition-colors duration-300 hover:text-primary text-sm">
+                    <a className="text-gray-600 block transition-colors duration-300 hover:text-primary text-sm dark:text-white">
                       {item.title}
                     </a>
                   </Link>
@@ -192,13 +192,13 @@ const Footer = () => {
               </div>
             </div>
             <div>
-              <p className="font-semibold uppercase tracking-wide text-gray-800">
+              <p className="font-semibold uppercase tracking-wide text-gray-800 dark:text-white">
                 About
               </p>
               <div className="mt-2 space-y-2">
                 {FooterLinks.About.map((item, idx) => (
                   <Link key={idx} href={item.links}>
-                    <a className="text-gray-600 block transition-colors duration-300 hover:text-primary text-sm">
+                    <a className="text-gray-600 block transition-colors duration-300 hover:text-primary text-sm dark:text-white">
                       {item.title}
                     </a>
                   </Link>
@@ -206,13 +206,13 @@ const Footer = () => {
               </div>
             </div>
             <div>
-              <p className="font-semibold uppercase tracking-wide text-gray-800">
+              <p className="font-semibold uppercase tracking-wide text-gray-800 dark:text-white">
                 Support
               </p>
               <div className="mt-2 space-y-2">
                 {FooterLinks.Support.map((item, idx) => (
                   <Link key={idx} href={item.links}>
-                    <a className="text-gray-600 block transition-colors duration-300 hover:text-primary text-sm">
+                    <a className="text-gray-600 block transition-colors duration-300 hover:text-primary text-sm dark:text-white">
                       {item.title}
                     </a>
                   </Link>
@@ -220,17 +220,17 @@ const Footer = () => {
               </div>
             </div>
             <div>
-              <p className="font-semibold uppercase tracking-wide text-gray-800">
+              <p className="font-semibold uppercase tracking-wide text-gray-800 dark:text-white">
                 Contact Us
               </p>
-              <div className="mt-2 space-y-2 text-sm">
-                <p className="text-gray-600 transition-colors duration-300 hover:text-primary">
+              <div className="mt-2 space-y-2 text-sm dark:text-white">
+                <p className="text-gray-600 transition-colors duration-300 hover:text-primary dark:text-white">
                   Phone no: +88017888888
                 </p>
-                <p className="text-gray-600 transition-colors duration-300 hover:text-primary">
+                <p className="text-gray-600 transition-colors duration-300 hover:text-primary dark:text-white">
                   Email: email@gmail.com
                 </p>
-                <p className="text-gray-600 transition-colors duration-300 hover:text-primary">
+                <p className="text-gray-600 transition-colors duration-300 hover:text-primary dark:text-white">
                   Location: Narayanganj, Dhaka
                 </p>
               </div>
