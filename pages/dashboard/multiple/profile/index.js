@@ -20,7 +20,7 @@ import { useRouter } from "next/router";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import PricingCard from "@components/multiple_dashboard/Profile/PricingCard";
 
-const servicesType = [
+export const servicesType = [
   {
     id: "STARTING",
     title: "Starting",
