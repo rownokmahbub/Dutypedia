@@ -3,7 +3,7 @@ import { Colors } from "./AddGigPackage";
 const PricingCard = ({ pkg, index }) => {
   return (
     <div
-      className={`w-full p-4 shadow-lg rounded-md relative ${
+      className={`w-full p-4 shadow-lg rounded-md relative dark:shadow-glass-card dark:border-[#515150] dark:bg-bg-200 ${
         Colors.Shadows[index % Colors.Shadows.length]
       }`}
     >
@@ -14,15 +14,15 @@ const PricingCard = ({ pkg, index }) => {
       >
         {pkg.name}
       </div>
-      <h1 className="py-8 text-4xl font-medium text-center">
+      <h1 className="py-8 text-4xl font-medium text-center dark:text-white">
         {pkg.price}
         <span className="text-base">৳</span>
       </h1>
       <div className="text-center space-y-2">
         {pkg.features.map((feature, index) => (
           <p
-            className={`text-sm ${
-              feature.isAvailable ? "" : "line-through text-gray-400"
+            className={`text-sm dark:text-white ${
+              feature.isAvailable ? "" : "line-through text-gray-400 dark:text-white"
             }`}
           >
             {feature.title}

@@ -13,7 +13,8 @@ const FeedHeader = () => {
         <div className="flex items-center gap-8">
           <Link href="/">
             <a>
-              <img className="w-24" src="/Assets/images/logo.svg" />
+              <img className="w-24 dark:hidden" src="/Assets/images/logo.svg" />
+              <img className="w-24 hidden dark:block" src="/Assets/images/logo_dark.svg" />
             </a>
           </Link>
         </div>

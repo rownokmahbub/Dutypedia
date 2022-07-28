@@ -305,7 +305,7 @@ const ProfilePage = () => {
                             },
                           }}
                         >
-                          <a className="flex h-full gap-2 shadow-3xl w-full aspect-[10.7/16] border rounded-xl p-4 justify-center items-center">
+                          <a className="flex h-full gap-2 shadow-3xl w-full aspect-[10.7/16] border rounded-xl p-4 justify-center items-center dark:text-white">
                             <AiOutlinePlusCircle className="text-xl dark:text-white" />
                             Create Service
                           </a>

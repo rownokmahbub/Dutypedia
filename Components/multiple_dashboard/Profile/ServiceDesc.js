@@ -156,8 +156,8 @@ const ServiceDesc = ({
         ))}
       </div>
       <div>
-        <h4 className="mb-4 text-2xl">{title}</h4>
-        <div className="leading-relaxed tracking-wide font-thin text-gray-600">
+        <h4 className="mb-4 text-2xl dark:text-white">{title}</h4>
+        <div className="leading-relaxed tracking-wide font-thin text-gray-600 dark:text-white">
           <Truncate
             str={description}
             length={readAll ? description.length : limit}

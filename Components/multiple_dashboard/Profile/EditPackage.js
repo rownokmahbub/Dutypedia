@@ -87,22 +87,22 @@ const EditPackage = ({ onSubmit, data, isOpen, closeModal }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-bg-200 p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="text-lg font-medium leading-6 text-gray-900 dark:text-white"
                   >
                     Add New Package
                   </Dialog.Title>
                   <form ref={formRef} className=" space-y-2">
                     <div className="mt-4">
                       <div className="flex justify-end">
-                        <span className="text-xs italic text-gray-400">
+                        <span className="text-xs italic text-gray-400 dark:text-white ">
                           (20 charecters max)
                         </span>
                       </div>
                       <input
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:text-white dark:bg-bg-300 border-[#515150]"
                         type="text"
                         placeholder="Package Name"
                         value={name}
@@ -113,7 +113,7 @@ const EditPackage = ({ onSubmit, data, isOpen, closeModal }) => {
                     </div>
                     <div className="">
                       <input
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:text-white dark:bg-bg-300 border-[#515150]"
                         type="number"
                         placeholder="Price (৳)"
                         value={price}
@@ -129,12 +129,12 @@ const EditPackage = ({ onSubmit, data, isOpen, closeModal }) => {
                         <div className="flex gap-2 items-center">
                           <div className="flex-1">
                             <div className="flex justify-end">
-                              <span className="text-xs italic text-gray-400">
+                              <span className="text-xs italic text-gray-400 dark:text-white">
                                 (50 charecters max)
                               </span>
                             </div>
                             <input
-                              className="input input-bordered w-full"
+                              className="input input-bordered w-full dark:text-white dark:bg-bg-300 "
                               type="text"
                               placeholder="Feature"
                               value={feature.title}
@@ -162,7 +162,7 @@ const EditPackage = ({ onSubmit, data, isOpen, closeModal }) => {
                       onClick={() =>
                         addFeature(`Feature ${features.length + 1}`)
                       }
-                      className="btn btn-link gap-2 p-0 text-gray-500 lowercase font-normal"
+                      className="btn btn-link gap-2 p-0 text-gray-500 lowercase font-normal dark:text-white"
                     >
                       <BsPlusCircle />
                       <p>

@@ -188,7 +188,7 @@ const AddGigSubs = ({ goBack, data }) => {
       {(formik) => (
         <>
           <form className="pb-8" onSubmit={formik.handleSubmit}>
-            <div className="max-w-screen-lg container mx-auto shadow-3xl rounded-lg py-8  bg-white">
+            <div className="max-w-screen-lg container mx-auto shadow-3xl rounded-lg py-8  bg-white dark:bg-bg-200">
               <BsArrowLeftSquare
                 onClick={() => goBack()}
                 className="text-3xl cursor-pointer text-gray-400"
@@ -196,18 +196,18 @@ const AddGigSubs = ({ goBack, data }) => {
               <div className="max-w-xl mx-auto">
                 <div className="mt-4">
                   <div className="flex justify-between items-center">
-                    <p className="mb-2 flex text-lg items-center">
+                    <p className="mb-2 flex text-lg items-center dark:text-white">
                       Service Title
                     </p>
 
-                    <p className="mb-2 text-[12px]">Max 50 character</p>
+                    <p className="mb-2 text-[12px] dark:text-white">Max 50 character</p>
                   </div>
 
                   <div className="flex">
                     <div className="mb-3 w-full">
                       <Input
                         name="title"
-                        className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                        className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:text-white dark:border-gray-600 dark:bg-bg-300"
                         type="text"
                         placeholder="I will give you the best law service."
                       />
@@ -217,16 +217,16 @@ const AddGigSubs = ({ goBack, data }) => {
 
                 <div className="mb-3 w-full">
                   <div className="flex justify-between items-center">
-                    <p className="mb-2 flex text-lg items-center">
+                    <p className="mb-2 flex text-lg items-center dark:text-white">
                       Service Description
                     </p>
 
-                    <p className="mb-2 text-[12px]">Max 2000 character</p>
+                    <p className="mb-2 text-[12px] dark:text-white">Max 2000 character</p>
                   </div>
                   <Input
                     name="description"
                     as="textarea"
-                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none "
+                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white dark:bg-bg-300"
                     rows="5"
                     placeholder="Write Something About Your Service...…."
                   />
@@ -239,14 +239,14 @@ const AddGigSubs = ({ goBack, data }) => {
                     </div>
                     <div className="p-4 space-y-4">
                       <div className="flex gap-4">
-                        <div className=" space-y-2 flex-1">
+                        <div className=" space-y-2 flex-1 dark:text-white">
                           <p>Subscription Type</p>
 
                           <div className="relative">
                             <Input
                               name="subscriptionType"
                               as="select"
-                              className="h-[42px] form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none "
+                              className="h-[42px] form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white dark:bg-bg-300"
                             >
                               <option disabled value="">
                                 Select...
@@ -260,7 +260,7 @@ const AddGigSubs = ({ goBack, data }) => {
                             </div>
                           </div>
                         </div>
-                        <div className=" space-y-2 flex-1">
+                        <div className=" space-y-2 flex-1 dark:text-white">
                           <p>
                             Amount{" "}
                             {formik.values.subscriptionType && (
@@ -279,7 +279,7 @@ const AddGigSubs = ({ goBack, data }) => {
                               name="totlaAmount"
                               type="number"
                               placeholder="0.00৳"
-                              className=" form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none "
+                              className=" form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white dark:bg-bg-300"
                             />
                             <div className="h-[42px] w-8 absolute right-0 top-0 bg-primary pointer-events-none flex flex-col justify-between items-center cursor-pointer py-1 rounded-r">
                               <FiChevronUp className="text-white cursor-pointer" />
@@ -292,7 +292,7 @@ const AddGigSubs = ({ goBack, data }) => {
 
                       {formik.values.subscriptionType && (
                         <div className="">
-                          <div className=" space-y-2">
+                          <div className=" space-y-2 dark:text-white">
                             <p>Total Duration</p>
                             <div className="grid gap-4 grid-cols-1">
                               {!payAsYouGo && (
@@ -302,7 +302,7 @@ const AddGigSubs = ({ goBack, data }) => {
                                       name="totalDuration"
                                       type="number"
                                       placeholder="Ex. 12"
-                                      className=" form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none "
+                                      className=" form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white dark:bg-bg-300"
                                     />
                                     <div className="h-[42px] w-8 absolute right-0 top-0 bg-primary pointer-events-none flex flex-col justify-between items-center cursor-pointer py-1">
                                       <FiChevronUp className="text-white cursor-pointer" />
@@ -311,7 +311,7 @@ const AddGigSubs = ({ goBack, data }) => {
                                     </div>
                                   </div>
 
-                                  <div className="border px-4 flex justify-center items-center h-[42px] rounded-r-md text-gray-700 bg-[#f8fafb]">
+                                  <div className="border px-4 flex justify-center items-center h-[42px] rounded-r-md text-gray-700 bg-[#f8fafb] dark:text-white dark:bg-bg-300">
                                     {formik.values.subscriptionType.substring(
                                       0,
                                       formik.values.subscriptionType.length - 2
@@ -324,7 +324,7 @@ const AddGigSubs = ({ goBack, data }) => {
                                 <div className="grid grid-cols-2 -mb-2">
                                   <div className="flex items-center">
                                     <hr className="w-full border-gray-300" />
-                                    <span className="px-2 italic text-sm text-gray-400">
+                                    <span className="px-2 italic text-sm text-gray-400 dark:text-white">
                                       Or
                                     </span>
                                     <hr className="w-full border-gray-300" />
@@ -347,7 +347,7 @@ const AddGigSubs = ({ goBack, data }) => {
                 </div>
 
                 <div>
-                  <p className="text-lg mb-2">Upload Of Your Service Photo</p>
+                  <p className="text-lg mb-2 dark:text-white">Upload Of Your Service Photo</p>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <label className="w-full overflow-hidden aspect-video sm:aspect-square flex justify-center items-center flex-col border-2 border-dashed gap-1 hover:border-gray-700 duration-200 cursor-pointer rounded-md relative">
                       {file1Preview ? (
@@ -461,7 +461,7 @@ const AddGigSubs = ({ goBack, data }) => {
                       {file4Preview ? (
                         <>
                           <a
-                            className="absolute top-2 right-2 z-10 flex justify-center items-center w-5 aspect-square bg-white rounded-full"
+                            className="absolute top-2 right-2 z-10 flex justify-center items-center w-5 aspect-square bg-white dark:text-white dark:bg-bg-300 rounded-full"
                             onClick={() => {
                               setFile4Preview(null);
                               setFile4(null);
@@ -494,7 +494,7 @@ const AddGigSubs = ({ goBack, data }) => {
                       )}
                     </label>
                   </div>
-                  <p className="mt-5 text-sm text-[#313131]">
+                  <p className="mt-5 text-sm text-[#313131] dark:text-white">
                     Please uploads at least 5 MB per image.
                   </p>
                 </div>
