@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useState, useContext } from "react";
 import toast from "react-hot-toast";
 
-const ServiceTypeCard = ({ item, isSelected, isEnabled, parentServiceId }) => {
+const ServiceTypeCard = ({ item, isEnabled, parentServiceId, readOnly }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const { token } = useContext(AuthContext);
@@ -38,7 +38,7 @@ const ServiceTypeCard = ({ item, isSelected, isEnabled, parentServiceId }) => {
 
   return (
     <div className="relative">
-      {item.id !== "STARTING" && (
+      {!readOnly && item.id !== "STARTING" && (
         <span className=" absolute right-2 top-4 z-10">
           <Toggle
             onChange={toggleServiceType}
@@ -51,9 +51,12 @@ const ServiceTypeCard = ({ item, isSelected, isEnabled, parentServiceId }) => {
       <div
         onClick={() =>
           router.push({
-            pathname: "/dashboard/multiple/profile",
+            pathname: readOnly
+              ? `${router.pathname}`
+              : "/dashboard/multiple/profile",
             query: {
               type: item.id,
+              ...(readOnly && { id: parentServiceId }),
             },
             shallow: true,
           })

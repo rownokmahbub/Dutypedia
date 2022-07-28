@@ -12,6 +12,7 @@ const ProfileRender = ({
   profilePhoto,
   serviceId,
   updatedService,
+  readOnly,
 }) => {
   const { token, setToken } = useContext(AuthContext);
   const profilePhotoRef = useRef(null);
@@ -126,22 +127,24 @@ const ProfileRender = ({
     <div className="shadow-3xl h-max bg-white dark:bg-[#2e2e2e] rounded-xl overflow-hidden ">
       <div className="bg-gradient-to-r from-[#d93baf] to-[#854a58] h-48 relative">
         {wallPhoto && <Image src={wallPhoto} layout="fill" objectFit="cover" />}
-        <label className="flex justify-end pt-2 pr-2 cursor-pointer z-10 relative">
-          <img
-            className="w-10"
-            src="/Assets/images/service/red_camera.svg"
-            alt=""
-          />
-          <input
-            onChange={(event) => {
-              changeWallPhoto(event.target.files[0]);
-            }}
-            type="file"
-            accept=".jpg,.jpeg,.png"
-            className="hidden"
-            ref={wallPhotoRef}
-          />
-        </label>
+        {!readOnly && (
+          <label className="flex justify-end pt-2 pr-2 cursor-pointer z-10 relative">
+            <img
+              className="w-10"
+              src="/Assets/images/service/red_camera.svg"
+              alt=""
+            />
+            <input
+              onChange={(event) => {
+                changeWallPhoto(event.target.files[0]);
+              }}
+              type="file"
+              accept=".jpg,.jpeg,.png"
+              className="hidden"
+              ref={wallPhotoRef}
+            />
+          </label>
+        )}
         {wallPhotoUpdating && (
           <div className="absolute bg-white/70 dark:bg-[#272727]/70 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
             <div className="btn btn-link loading">Please wait...</div>
@@ -156,22 +159,24 @@ const ProfileRender = ({
         ) : (
           <img className="w-16" src="/Assets/images/service/user.svg" alt="" />
         )}
-        <label>
-          <img
-            className="w-10 absolute z-10 -right-5 top-9 cursor-pointer"
-            src="/Assets/images/service/red_camera.svg"
-            alt=""
-          />
-          <input
-            onChange={(event) => {
-              changeProfilePhoto(event.target.files[0]);
-            }}
-            type="file"
-            accept=".jpg,.jpeg,.png"
-            className="hidden"
-            ref={profilePhotoRef}
-          />
-        </label>
+        {!readOnly && (
+          <label>
+            <img
+              className="w-10 absolute z-10 -right-5 top-9 cursor-pointer"
+              src="/Assets/images/service/red_camera.svg"
+              alt=""
+            />
+            <input
+              onChange={(event) => {
+                changeProfilePhoto(event.target.files[0]);
+              }}
+              type="file"
+              accept=".jpg,.jpeg,.png"
+              className="hidden"
+              ref={profilePhotoRef}
+            />
+          </label>
+        )}
         {profilePhotoUpdating && (
           <div className="absolute rounded-lg bg-white/70 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
             <div className="btn btn-link loading"></div>
@@ -186,9 +191,13 @@ const ProfileRender = ({
         <p className="text-base dark:text-white">{speciality}</p>
         <p className="text-xl dark:text-white ">
           {profileData.name}{" "}
-          <span className="text-sm text-gray-500 dark:text-white">({profileData.gender})</span>{" "}
+          <span className="text-sm text-gray-500 dark:text-white">
+            ({profileData.gender})
+          </span>{" "}
         </p>
-        <p className="text-sm text-gray-500 dark:text-white">({profileData.position})</p>
+        <p className="text-sm text-gray-500 dark:text-white">
+          ({profileData.position})
+        </p>
         <p className="text-sm text-gray-500 dark:text-white">
           {profileData.worker} worker & Team
         </p>

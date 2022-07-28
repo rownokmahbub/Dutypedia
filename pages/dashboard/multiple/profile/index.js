@@ -53,7 +53,7 @@ export const servicesType = [
   },
 ];
 
-const sliderSettings = {
+export const sliderSettings = {
   dots: false,
   arrows: false,
   infinite: false,
@@ -83,7 +83,7 @@ const sliderSettings = {
   ],
 };
 
-const pricingSliderSettings = {
+export const pricingSliderSettings = {
   dots: true,
   arrows: false,
   infinite: false,

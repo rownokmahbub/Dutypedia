@@ -18,7 +18,7 @@ const AboutView = ({ about, address }) => {
       name: "Address",
       content: (
         <div>
-          <p>State : {address.state}</p>
+          <p>State : {address.region}</p>
           <p>City : {address.city}</p>
           <p>Area : {address.area}</p>
           <p>{address.address}</p>
