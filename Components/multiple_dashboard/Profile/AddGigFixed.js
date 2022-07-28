@@ -171,26 +171,26 @@ const AddGigFixed = ({ goBack, data }) => {
       {(formik) => (
         <>
           <form className="pb-8" onSubmit={formik.handleSubmit}>
-            <div className="max-w-screen-lg container mx-auto shadow-3xl rounded-lg py-8  bg-white">
+            <div className="max-w-screen-lg container mx-auto shadow-3xl rounded-lg py-8 dark:bg-bg-200 bg-white">
               <BsArrowLeftSquare
                 onClick={() => goBack()}
-                className="text-3xl cursor-pointer text-gray-400"
+                className="text-3xl cursor-pointer text-gray-400 dark:text-white"
               />
               <div className="max-w-xl mx-auto">
                 <div className="mt-4">
                   <div className="flex justify-between items-center">
-                    <p className="mb-2 flex text-lg items-center">
+                    <p className="mb-2 flex text-lg items-center dark:text-white">
                       Service Title
                     </p>
 
-                    <p className="mb-2 text-[12px]">Max 50 character</p>
+                    <p className="mb-2 text-[12px] dark:text-white">Max 50 character</p>
                   </div>
 
                   <div className="flex">
                     <div className="mb-3 w-full">
                       <Input
                         name="title"
-                        className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                        className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                         type="text"
                         placeholder="I will give you the best law service."
                       />
@@ -200,16 +200,16 @@ const AddGigFixed = ({ goBack, data }) => {
 
                 <div className="mb-3 w-full">
                   <div className="flex justify-between items-center">
-                    <p className="mb-2 flex text-lg items-center">
+                    <p className="mb-2 flex text-lg items-center dark:text-white">
                       Service Description
                     </p>
 
-                    <p className="mb-2 text-[12px]">Max 2000 character</p>
+                    <p className="mb-2 text-[12px] dark:text-white">Max 2000 character</p>
                   </div>
                   <Input
                     name="description"
                     as="textarea"
-                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none "
+                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                     rows="5"
                     placeholder="Write Something About Your Service...…."
                   />
@@ -217,17 +217,17 @@ const AddGigFixed = ({ goBack, data }) => {
 
                 <div className="mb-3 w-full">
                   <div className="flex justify-between items-center">
-                    <p className="mb-2 flex text-lg items-center">Price (৳)</p>
+                    <p className="mb-2 flex text-lg items-center dark:text-white">Price (৳)</p>
                   </div>
                   <Input
                     name="price"
                     type="number"
-                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none "
+                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                   />
                 </div>
 
                 <div>
-                  <p className="text-lg mb-2">Upload Of Your Service Photo</p>
+                  <p className="text-lg mb-2 dark:text-white">Upload Of Your Service Photo</p>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <label className="w-full overflow-hidden aspect-video sm:aspect-square flex justify-center items-center flex-col border-2 border-dashed gap-1 hover:border-gray-700 duration-200 cursor-pointer rounded-md relative">
                       {file1Preview ? (
@@ -252,7 +252,7 @@ const AddGigFixed = ({ goBack, data }) => {
                           <span className="text-3xl text-gray-400">
                             <FiPlus />
                           </span>
-                          <p className="text-sm text-gray-700">Add Photo</p>
+                          <p className="text-sm text-gray-600">Add Photo</p>
                           <input
                             onChange={(event) => {
                               setFile1(event.target.files[0]);
@@ -374,7 +374,7 @@ const AddGigFixed = ({ goBack, data }) => {
                       )}
                     </label>
                   </div>
-                  <p className="mt-5 text-sm text-[#313131]">
+                  <p className="mt-5 text-sm text-[#313131] dark:text-white">
                     Please uploads at least 5 MB per image.
                   </p>
                 </div>

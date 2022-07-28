@@ -270,17 +270,17 @@ const FinalReview = ({ goBack, data }) => {
           </div>
 
           <div className="pt-16 border-t mt-16 pb-8 space-y-4">
-            <div className="">
+            <div className="flex flex-wrap">
               <CheckBox
                 value={agree}
                 onChange={() => setAgree(!agree)}
                 title={
-                  <span className="text-xs text-gray-500">
+                  <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">
                     I agree with all the terms and conditions{" "}
                     <a
                       href="/terms"
                       target="_blank"
-                      className="link link-primary"
+                      className="link link-primary ml-2"
                     >
                       Read more
                     </a>
@@ -288,7 +288,7 @@ const FinalReview = ({ goBack, data }) => {
                 }
               />
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col md:flex-row items-center gap-4">
               <button className="btn btn-wide bg-white text-black hover:bg-gray-200">
                 Cancel
               </button>

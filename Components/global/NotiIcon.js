@@ -113,7 +113,7 @@ const NotiIcon = () => {
             </div>
           </Menu.Item>
           {isLoading ? (
-            <div className="w-full h-[150px] flex justify-center items-center bg-white">
+            <div className="w-full h-[150px] flex justify-center items-center bg-white dark:bg-bg">
               <span className="text-primary text-4xl animate-spin">
                 <CgSpinner />
               </span>

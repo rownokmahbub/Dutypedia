@@ -14,7 +14,7 @@ const Accordion = ({
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div
-      className={`border rounded-lg overflow-hidden ${
+      className={`border dark:border-[#515150] rounded-lg overflow-hidden ${
         noBorder && isOpen && "!border-0"
       }`}
     >

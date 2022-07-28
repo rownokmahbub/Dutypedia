@@ -214,15 +214,15 @@ const AddGigPackage = ({ goBack, data }) => {
       {(formik) => (
         <>
           <form className="pb-8" onSubmit={formik.handleSubmit}>
-            <div className="max-w-screen-lg container mx-auto shadow-3xl rounded-lg py-8  bg-white">
+            <div className="max-w-screen-lg container mx-auto shadow-3xl rounded-lg py-8  bg-white dark:bg-bg-200">
               <BsArrowLeftSquare
                 onClick={() => goBack()}
                 className="text-3xl cursor-pointer text-gray-400"
               />
-              <div className="max-w-xl mx-auto">
+              <div className="max-w-xl mx-auto dark:text-white">
                 <div className="mt-4">
-                  <div className="flex justify-between items-center">
-                    <p className="mb-2 flex text-lg items-center">
+                  <div className="flex justify-between items-center dark:text-white">
+                    <p className="mb-2 flex text-lg items-center dark:text-white">
                       Service Title
                     </p>
 
@@ -233,7 +233,7 @@ const AddGigPackage = ({ goBack, data }) => {
                     <div className="mb-3 w-full">
                       <Input
                         name="title"
-                        className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                        className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:text-white dark:bg-bg-300 dark:border-[#515150]"
                         type="text"
                         placeholder="I will give you the best law service."
                       />
@@ -252,7 +252,7 @@ const AddGigPackage = ({ goBack, data }) => {
                   <Input
                     name="description"
                     as="textarea"
-                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none "
+                    className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#f8fafb] bg-clip-padding border border-solid border-gray-300 rounded-md m-0 focus:outline-none dark:text-white dark:bg-bg-300 dark:border-[#515150]"
                     rows="5"
                     placeholder="Write Something About Your Service...…."
                   />
@@ -310,7 +310,7 @@ const AddGigPackage = ({ goBack, data }) => {
                     <div>
                       <a
                         onClick={() => setIsOpen(true)}
-                        className="p-4 text-2xl w-full flex items-center justify-center gap-2 cursor-pointer text-gray-700 shadow text-center rounded-md bg-gray-50"
+                        className="p-4 text-2xl w-full flex items-center justify-center gap-2 cursor-pointer text-gray-700 shadow text-center rounded-md bg-gray-50 dark:bg-bg-300 dark:border-[#515150]"
                       >
                         <FiPlusCircle className="text-primary" />
                         <p className="text-primary text-base">Add Package</p>
@@ -334,7 +334,7 @@ const AddGigPackage = ({ goBack, data }) => {
                   </div>
                 </div>
                 <div>
-                  <p className="text-lg mb-2">Upload Of Your Service Photo</p>
+                  <p className="text-lg mb-2 dark:text-white">Upload Of Your Service Photo</p>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <label className="w-full overflow-hidden aspect-video sm:aspect-square flex justify-center items-center flex-col border-2 border-dashed gap-1 hover:border-gray-700 duration-200 cursor-pointer rounded-md relative">
                       {file1Preview ? (
@@ -481,7 +481,7 @@ const AddGigPackage = ({ goBack, data }) => {
                       )}
                     </label>
                   </div>
-                  <p className="mt-5 text-sm text-[#313131]">
+                  <p className="mt-5 text-sm text-[#313131] dark:text-white">
                     Please uploads at least 5 MB per image.
                   </p>
                 </div>

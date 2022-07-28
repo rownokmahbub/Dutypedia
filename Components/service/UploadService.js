@@ -143,7 +143,7 @@ const UploadService = ({ goNext, goBack, savedData }) => {
       {(formik) => (
         <>
           <form className="pb-8" onSubmit={formik.handleSubmit}>
-            <div className="max-w-screen-lg container mx-auto shadow-3xl rounded-lg py-8  bg-white dark:bg-bg-300 dark:border-[#515150] dark:text-white">
+            <div className="max-w-screen-lg container mx-auto shadow-3xl rounded-lg py-8  bg-white  dark:bg-bg-300 dark:border-[#515150] dark:text-white">
               <BsArrowLeftSquare
                 onClick={() => goBack()}
                 className="text-3xl cursor-pointer text-gray-400"
