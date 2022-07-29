@@ -20,6 +20,7 @@ import Link from "next/link";
 import ServiceListView from "@components/service/ServiceListView";
 import GigCard from "@components/multiple_dashboard/Profile/GigCard";
 import AppointmentView from "@components/service/AppointmentView";
+import toast from "react-hot-toast";
 
 const ServiceView = () => {
   const [serviceData, setServiceData] = useState(null);
@@ -55,6 +56,8 @@ const ServiceView = () => {
         setGigs(data.service.gigs);
       } catch (error) {
         console.log(error);
+        toast.error("Service not found!");
+        router.push("/feed");
       } finally {
         setLoading(false);
       }
@@ -83,7 +86,7 @@ const ServiceView = () => {
               about={serviceData.about}
               address={serviceData.location}
             />
-            <AppointmentView />
+            <AppointmentView serviceId={serviceData.id} />
             <CalendarView
               workingTime={serviceData.workingTime}
               t47={serviceData.t47}
