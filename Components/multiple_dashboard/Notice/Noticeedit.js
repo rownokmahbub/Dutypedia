@@ -8,15 +8,15 @@ const Noticeedit = ({goNext}) => {
   const  [startDate, setStartDate] = React.useState(new Date());
   return (
     <div className="container max-w-screen-xl mx-auto relative">
-      <div className="relative  mt-[156px] w-full h-auto rounded-2xl shadow-4xl md:shadow-3xl mb-10 mx-auto bg-white px-6 py-6">
+      <div className="relative  mt-[156px] w-full h-auto rounded-2xl shadow-4xl md:shadow-3xl mb-10 mx-auto bg-white dark:bg-bg-200 px-6 py-6">
   {/* mobile version  */}
   <div className="xl:hidden block">
       <div className="flex justify-between">
     <div className="flex justify-start flex-col mb-5">
-          <p className="items-center text-md mb-1">Search By Date</p>
+          <p className="items-center text-md mb-1 dark:text-white">Search By Date</p>
           <div className="w-40 relative">
                 <input
-                  className="border border-primary focus:outline-primary rounded-md px-2 py-1.5"
+                  className="border border-primary focus:outline-primary rounded-md px-2 py-1.5 dark:text-white"
                   type="date"
                   name="startDate"
                 />
@@ -40,7 +40,7 @@ const Noticeedit = ({goNext}) => {
     </div>
     <div className="relative text-gray-600 md:w-96 w-full mb-4">
           <input
-            className=" h-10 px-5 pl-4 w-full mx-auto rounded-lg text-sm focus:outline-none  outline-none border-2 border-solid border-[#ECECEC] bg-white"
+            className=" h-10 px-5 pl-4 w-full mx-auto rounded-lg text-sm focus:outline-none  outline-none border-2 border-solid border-[#ECECEC] bg-white dark:text-white dark:bg-bg-200 dark:border-[#515150]"
             type="search"
             name="search"
             placeholder="Search title or id/record No"
@@ -54,10 +54,10 @@ const Noticeedit = ({goNext}) => {
 
       <div className="xl:grid grid-cols-3 items-center space-x-3 px-10 py-10 hidden">
         <div className="flex items-center">
-          <p className="items-center mr-3">Search By Date</p>
+          <p className="items-center mr-3 dark:text-white">Search By Date</p>
           <div className="w-40 relative">
                 <input
-                  className="border border-primary focus:outline-primary rounded-md px-2 py-1.5"
+                  className="border border-primary focus:outline-primary rounded-md px-2 py-1.5 dark:text-white dark:bg-bg-300 dark:border-[#515150]"
                   type="date"
                   name="startDate"
                 />
@@ -69,7 +69,7 @@ const Noticeedit = ({goNext}) => {
 
         <div className="relative text-gray-600 md:w-96 w-full">
           <input
-            className=" h-10 px-5 pl-4 w-full mx-auto rounded-lg text-sm focus:outline-none  outline-none border-2 border-solid border-[#ECECEC] bg-white"
+            className=" h-10 px-5 pl-4 w-full mx-auto rounded-lg text-sm focus:outline-none  outline-none border-2 border-solid border-[#ECECEC] bg-white dark:text-white dark:bg-bg-300 dark:border-[#515150]"
             type="search"
             name="search"
             placeholder="Search title or id/record No"
@@ -79,7 +79,7 @@ const Noticeedit = ({goNext}) => {
           </div>
         </div>
         <div className="flex items-center justify-end cursor-pointer">
-          <p className="items-center -mr-2">Add New</p>
+          <p className="items-center -mr-2 dark:text-white dark:bg-bg-300 dark:border-[#515150]">Add New</p>
           <div className="flex justify-center items-center w-14 h-14 ">
             <Image
               src={redplus}
@@ -98,7 +98,7 @@ const Noticeedit = ({goNext}) => {
         <p className="flex-1">notice</p>
         <p className="flex-1"></p>
       </div>
-      <div className="flex divide-x-2 text-center capitalize justify-between px-10 bg-white shadow-3xl mt-4 py-3 rounded-lg ">
+      <div className="flex divide-x-2 text-center capitalize justify-between px-10 bg-white dark:text-white dark:bg-bg-300 dark:border-[#515150] shadow-3xl mt-4 py-3 rounded-lg ">
         <p className="flex-1 text-left -ml-11 md:ml-0 px-2"> 12/10/2022</p>
         <p className="flex-1 line-clamp-1 md:line-clamp-none px-2">12335465777 4545</p>
         <p className="flex-1 line-clamp-1 md:line-clamp-none px-2">Admission Notice 2021-2022</p>
@@ -107,7 +107,7 @@ const Noticeedit = ({goNext}) => {
           </button>
          </div>
       </div>
-      <div className="flex divide-x-2 text-center capitalize justify-between px-10 bg-white shadow-3xl mt-4 py-3 rounded-lg ">
+      <div className="flex divide-x-2 text-center capitalize justify-between px-10 bg-white dark:text-white dark:bg-bg-300 dark:border-[#515150] shadow-3xl mt-4 py-3 rounded-lg ">
         <p className="flex-1 text-left -ml-11 md:ml-0 px-2"> 12/10/2022</p>
         <p className="flex-1 line-clamp-1 md:line-clamp-none px-2">12335465777 4545</p>
         <p className="flex-1 line-clamp-1 md:line-clamp-none px-2">Admission Notice 2021-2022</p>

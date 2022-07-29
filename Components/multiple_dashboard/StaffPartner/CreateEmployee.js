@@ -61,7 +61,7 @@ const CreateEmployee = ({goNext}) => {
       <div className="flex justify-center items-center mx-auto md:mt-10">
         <button
           onClick={openModal}
-          className="container max-w-screen-xl mx-auto relative flex flex-col justify-center items-center  h-[256px] rounded-2xl shadow-4xl md:shadow-3xl bg-white md:mt-20"
+          className="container max-w-screen-xl mx-auto relative flex flex-col justify-center items-center  h-[256px] rounded-2xl shadow-4xl md:shadow-3xl bg-white md:mt-20 dark:bg-bg-200"
         >
           <div className="w-10 md:w-28 ">
             <img
@@ -73,7 +73,7 @@ const CreateEmployee = ({goNext}) => {
             />
           </div>
 
-          <p className="text-center  md:text-2xl mt-5 ">Add Employee</p>
+          <p className="text-center  md:text-2xl mt-5 dark:text-white">Add Employee</p>
         </button>
       </div>
       <Transition appear show={isOpen} as={Fragment}>
@@ -101,7 +101,7 @@ const CreateEmployee = ({goNext}) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-screen-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-screen-md transform overflow-hidden rounded-2xl bg-white dark:bg-bg-200 dark:text-white p-6 text-left align-middle shadow-xl transition-all">
                   <div className="">
                     <div className="h-max">
                       <div
@@ -115,15 +115,13 @@ const CreateEmployee = ({goNext}) => {
                         />
                       </div>
                       <div className=" flex justify-between w-full pt-10 md:flex-nowrap flex-wrap ">
-                        <div className="-mt-2 relative text-gray-600 md:w-[97%] w-[92%]">
+                        <div className="-mt-2 relative text-gray-600 md:w-[97%] w-[92%] ">
                           <input
-                            className=" md:h-14 h-10 px-5  w-[95%] pr-8 rounded-lg text-sm focus:outline-none mx-auto ml-5 md:ml-8 outline-none border-2 border-solid border-[#ECECEC]"
+                            className=" md:h-14 h-10 px-5  w-[95%] pr-8 rounded-lg text-sm focus:outline-none mx-auto ml-5 md:ml-8 outline-none border-2 border-solid border-[#ECECEC] dark:bg-bg-200 dark:border-[#515150]" placeholder="rownok mahbub"
                             type="search"
                             name="search"
                           />
-                          <div className="absolute left-5 md:left-14 md:top-[13px] top-1 text-lg  border-none -mt-1 px-4 py-1 cursor-pointer">
-                            Maliya Mouly
-                          </div>
+                         
                           <div className="absolute md:right-6 right-0 md:top-1 top-2 md:mt-[11px] w-10  h-8 cursor-pointer">
                             <Image
                               src={search}
@@ -137,11 +135,11 @@ const CreateEmployee = ({goNext}) => {
 
                       <div className=" md:mt-7 ">
                         <Wrapper className="md:px-4">
-                          <div onClick={goNext} className="bg-white border-none outline-none px-4 mt-4 rounded-md relative z-10 routine-table-body-section pb-5 cursor-pointer">
+                          <div onClick={goNext} className="bg-white dark:bg-bg-300 border-none outline-none px-4 mt-4 rounded-md relative z-10 routine-table-body-section pb-5 cursor-pointer">
                             {SearchEmp.map((card, i) => (
                               <div
                                 key={i}
-                                className="flex items-center  text-sm font-normal mt-4 w-full mx-auto "
+                                className="flex items-center  text-sm font-normal mt-4 w-full mx-auto dark:bg-bg-200"
                               >
                                 <div className=" flex border-none  rounded-md items-center w-full  md:h-20 h-[9rem] shadow-3xl">
                                   <div className="relative flex items-center ml-5">

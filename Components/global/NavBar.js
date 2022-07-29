@@ -49,7 +49,7 @@ const NavBar = () => {
   return (
     <nav className={`z-40 fixed left-0 top-0 w-full`}>
       <div
-        className={`w-full py-3 duration-300 hidden px-16 h-full lg:flex justify-between items-center ${
+        className={`w-full dark:bg-bg py-3 duration-300 hidden px-16 h-full lg:flex justify-between items-center ${
           stickyNav
             ? `bg-white/70 dark:bg-bg/70 backdrop-blur-lg backdrop-saturate-150 shadow-sm`
             : `bg-transparent`

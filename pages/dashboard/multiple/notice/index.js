@@ -7,7 +7,7 @@ import { useState } from "react";
 function Index() {
    const [step, setStep] = useState(1);
    return (
-      <div className='dark:bg-bg'>
+      <div className='dark:bg-bg '>
            <>{step === 1 && <Addnotice goNext={() => setStep(2)} />}</>
          <>{step === 2 && <Noticeinfo goNext={() => setStep(3)} />}</>
          <>{step === 3 && <Noticeedit goNext={() => setStep(4)} />}</>

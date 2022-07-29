@@ -76,10 +76,10 @@ const InviteEmployee = ({ goNext }) => {
   ];
   const [selected, setSelected] = useState(people[0]);
   return (
-    <div className="container max-w-screen-md mx-auto relative my-5 ">
+    <div className="container max-w-screen-md mx-auto relative my-5 pt-20">
      
-      <div className=" h-auto rounded-2xl shadow-4xl md:shadow-3xl bg-white py-5 md:py-10 px-2 md:px-12 mt-16">
-      <div className="flex py-2 mb-3">
+      <div className=" h-auto rounded-2xl dark:bg-bg-200 shadow-4xl md:shadow-3xl py-5 md:py-10 px-2 md:px-12 mt-16">
+      <div className="flex py-2 mb-3 ">
              <div  className="relative flex items-center ">
                  
                  <div className="w-[50px] h-[50px] ">
@@ -109,14 +109,14 @@ const InviteEmployee = ({ goNext }) => {
                     inputProps={{
                       placeholder: "Position",
                       className:
-                        "w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                        "w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300"
                 
                     }}
                     
                     renderItem={(item, isHighlighted) => (
                       <div
                         className={`cursor-pointer border-b p-1 ${
-                          isHighlighted ? "bg-gray-200" : "bg-white"
+                          isHighlighted ? "bg-gray-200" : "bg-white dark:bg-bg-300"
                         }`}
                       >
                         {item.label}
@@ -126,14 +126,14 @@ const InviteEmployee = ({ goNext }) => {
                  
                 </div>
 
-          <div className="w-40 relative mt-2 mr-3">
+          <div className="w-40 relative mt-2 ">
             <input
-              className="border border-primary focus:outline-primary rounded-md px-2 py-1.5"
+              className="border border-primary focus:outline-primary rounded-md px-2 py-1.5 dark:bg-bg-300"
               type="date"
               name="startDate"
               placeholder="Start Date"
             />
-            <span className="bg-primary text-white absolute -right-3 top-0 h-[40px] w-10 flex justify-center items-center text-xl rounded-r-md pointer-events-none">
+            <span className="bg-primary text-white absolute right-0 top-0 h-[40px] w-10 flex justify-center items-center text-xl rounded-r-md pointer-events-none">
               <img className=" scale-90" src="/Assets/icon/calendar.svg" />
               
             </span>

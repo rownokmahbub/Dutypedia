@@ -27,7 +27,7 @@ const DefaultLayout = ({ children }) => {
 
   if (authenticating || user) return <LoadingScreen />;
   return (
-    <div className="bg-[#F8FAFB]">
+    <div >
       <NavBar />
       {useUi.displayModal && <ModalRoot />}
       <MainNavSidebar />

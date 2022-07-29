@@ -36,20 +36,20 @@ const CreateExpences = ({goNext}) => {
     getFieldProps,
   } = formik;
   return (
-    <div className="container  max-w-screen-xl h-auto mx-auto rounded-lg bg-white  py-8 mt-20">
+    <div className="container  max-w-screen-xl h-auto mx-auto rounded-lg  py-8 mt-20">
        <FormikProvider value={formik}>
       <Form autoComplete="off" onSubmit={handleSubmit}>
       <div className="flex flex-col md:flex-row justify-around">
      
      <div className="flex flex-col">
   <p className='font-normal text-2xl mt-4 mb-5'>Create New Expenses List</p>
-  <Input name="expencelist" className='px-4 py-3 text-md font-normal w-72 bg-gray-100 rounded-lg outline-none' placeholder='Rent House' type="text" />
+  <Input name="expencelist" className='px-4 py-3 text-md font-normal w-72 bg-gray-100 rounded-lg outline-none dark:bg-bg-300 dark:border-[#515150]' placeholder='Rent House' type="text" />
   <div className="flex flex-col mt-5">
          <p className="text-lg mb-2">Amount</p>
          <div className="relative flex w-40">
            <Input
              name="worker"
-             className="w-40 py-2 px-2  rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+             className="w-40 py-2 px-2  rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150]"
              type="number"
              min="1"
              max="100000"
@@ -67,7 +67,7 @@ const CreateExpences = ({goNext}) => {
          <p className="text-lg mb-2">Select Date</p>
          <div className="w-40 relative">
            <Input
-             className="border border-primary focus:outline-primary rounded-md px-2 py-1.5"
+             className="border border-primary focus:outline-primary rounded-md px-2 py-1.5 dark:bg-bg-300 dark:border-[#515150]"
              type="date"
              name="startDate"
            />

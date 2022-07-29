@@ -9,7 +9,7 @@ import MultipleDashboardLayout from 'layouts/MultipleLayout';
 function Index() {
    const [step, setStep] = useState(1);
    return (
-      <div className='m-auto md:p-10 bg-[#FFF1F2]'>
+      <div className='m-auto md:p-10 bg-[#FFF1F2] dark:bg-bg-200'>
       <>{step === 1 && <ExpenceCreate goNext={() => setStep(2)} />}</>
     <>{step === 2 && < CreateExpences goNext={() => setStep(3)} />}</>
     <>{step === 3 && < ExpenceEdit goNext={() => setStep(4)} />}</>
