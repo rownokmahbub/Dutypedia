@@ -1,32 +1,17 @@
-import OfflineTime from "@components/multiple_dashboard/Appointment/OfflineTime";
-import OnlineTime from "@components/multiple_dashboard/Appointment/OnlineTime";
-import Accepted from "@components/multiple_dashboard/Appointment/request/Accepted";
-import AppoinmentEnd from "@components/multiple_dashboard/Appointment/request/AppoinmentEnd";
-import Canceled from "@components/multiple_dashboard/Appointment/request/Canceled";
-import CancelRequest from "@components/multiple_dashboard/Appointment/request/CancelRequest";
-import Datetime from "@components/multiple_dashboard/Appointment/request/Datetime";
-import SentCancel from "@components/multiple_dashboard/Appointment/request/SentCancel";
-
+import AppointmentsTab from "@components/multiple_dashboard/Appointment/AppointmentsTab";
 import MultipleDashboardLayout from "layouts/MultipleLayout";
 
-import {
-  OfflineSearch,
-  OnlineSearch,
-  Nofile,
-} from "../../../../Components/multiple_dashboard/Appointment";
-const Index = () => {
+const AppoinmentPageMultiple = () => {
   return (
     <>
-      <OnlineTime />
-      <Nofile></Nofile>
-      {/* <Accepted/>
-        <AppoinmentEnd/>
-        <Canceled/>
-       <CancelRequest/>
-       <Datetime/>
-       <SentCancel/> */}
+      <div className="md:p-8 sm:p-4 p-0 mx-auto max-w-screen-2xl">
+        <div className="shadow-4xl md:shadow-3xl bg-white dark:bg-bg-200 drop-shadow-md rounded-xl p-6">
+          <AppointmentsTab />
+        </div>
+      </div>
     </>
   );
 };
-Index.layout = MultipleDashboardLayout;
-export default Index;
+
+AppoinmentPageMultiple.layout = MultipleDashboardLayout;
+export default AppoinmentPageMultiple;

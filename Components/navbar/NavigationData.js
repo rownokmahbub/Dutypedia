@@ -80,7 +80,7 @@ export const multipleDashboardData = [
   },
   {
     icon: <BsBookmarkStar />,
-    link: "/multiple_dashboard/appointment",
+    link: "/dashboard/multiple/appointment",
     title: "Appointment",
   },
   {

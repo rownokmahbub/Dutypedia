@@ -39,7 +39,7 @@ const UpcomingAppo = ({ serviceId }) => {
   }
 
   return (
-    <div>
+    <div className="grid gap-4">
       {appointments.map((item) => (
         <div>
           <div className="flex gap-2 items-center">
