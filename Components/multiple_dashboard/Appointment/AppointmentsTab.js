@@ -1,7 +1,11 @@
 import { cn } from "@components/service/AboutView";
 import { Tab } from "@headlessui/react";
+import Image from "next/image";
+import { useState } from "react";
+import search from "/public/Assets/icon/search.svg";
 
 const AppointmentsTab = () => {
+  const [searchTerm, setSearchTerm] = useState("");
   const Tabs = [
     {
       name: "Upcomming",
@@ -18,8 +22,32 @@ const AppointmentsTab = () => {
   ];
   return (
     <>
-      <div className="text-center">
-        <p>Appointment</p>
+      <div className="text-center py-4">
+        <p className="font-medium text-xl">Appointment</p>
+      </div>
+      <div className="flex justify-between py-8 gap-4 flex-col md:flex-row">
+        <div className="relative text-gray-600 w-full md:w-[400px]">
+          <input
+            className="input input-bordered w-full"
+            type="search"
+            name="search"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <div className="absolute right-4 top-1/2 -translate-y-1/2">
+            <Image src={search} width={16} height={16} alt="search" />
+          </div>
+        </div>
+        <div className="flex flex-shrink-0 items-center gap-4 mt-5 md:mt-0">
+          <p>Filter By</p>
+
+          <input
+            className="input input-bordered"
+            type="date"
+            onChange={(date) => {}}
+          />
+        </div>
       </div>
       <Tab.Group>
         <Tab.List className="flex w-full justify-between">
