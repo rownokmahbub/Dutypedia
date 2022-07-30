@@ -85,13 +85,13 @@ const ExpenceEdit = ({goNext}) => {
   const [selected, setSelected] = useState(people[0])
   return (
     <div className="container max-w-screen-xl mx-auto relative my-5">
-      <div className="mt-16 h-auto rounded-2xl shadow-4xl md:shadow-3xl bg-white py-5 md:py-10 px-2 md:px-12">
+      <div className="mt-16 h-auto rounded-2xl shadow-4xl md:shadow-3xl dark:bg-bg-300 py-5 md:py-10 px-2 md:px-12">
         <div className="flex justify-between items-center flex-wrap ">
           <div className="flex gap-4 items-center pb-5 md:pb-0">
             <p>Filtered By</p>
             <Listbox  value={selected} onChange={setSelected}>
         <div className="relative mt-1 z-20">
-          <Listbox.Button className="relative w-full cursor-pointer rounded-lg bg-white py-2 pl-3 pr-10 text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm border border-primary">
+          <Listbox.Button className="relative w-full cursor-pointer rounded-lg  py-2 pl-3 pr-10 text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm border border-primary">
             <span className="block truncate w-24">{selected.name}</span>
             <div className="absolute top-0 -bottom-[1px] right-0 flex  items-center px-2 pointer-events-none bg-primary rounded-r-lg">
                <img src="/Assets/icon/downarrow.svg" alt="" />
@@ -103,13 +103,13 @@ const ExpenceEdit = ({goNext}) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute mt-2 max-h-72 w-full overflow-auto rounded-md bg-white text-base ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm border border-primary">
+            <Listbox.Options className="absolute mt-2 max-h-72 w-full overflow-auto rounded-md dark:bg-bg-300 dark:border-[#515150] dark:text-white text-base ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm border border-primary">
               {people.map((person, personIdx) => (
                 <Listbox.Option
                   key={personIdx}
                   className={({ active }) =>
                     `relative cursor-default select-none py-2 px-3 pr-4 ${
-                      active ? 'bg-primary text-white' : 'text-gray-900'
+                      active ? 'bg-primary text-white' : 'text-gray-900 dark:text-white'
                     }`
                   }
                   value={person}
@@ -141,7 +141,7 @@ const ExpenceEdit = ({goNext}) => {
 
           <div className="relative text-gray-600 md:w-72 w-full pb-5 md:pb-0">
             <input
-              className=" h-10 px-5 pl-4 pr-8 w-full mx-auto rounded-lg text-sm focus:outline-none  outline-none border-2 border-solid border-[#ECECEC] bg-white"
+              className=" h-10 px-5 pl-4 pr-8 w-full mx-auto rounded-lg text-sm focus:outline-none  outline-none border-2 border-solid border-[#ECECEC] bg-white dark:bg-bg-300 dark:border-[#515150]"
               type="search"
               name="search"
               placeholder="Search"
@@ -168,17 +168,17 @@ const ExpenceEdit = ({goNext}) => {
           <div className="routine-table-body-section md:pr-3">
           {Expence.map((card, i) => (
          
-         <div className="grid grid-cols-3 divide-x h-[] border border-b-2  px-2">
-         <p className="items-center flex justify-center text-[16px] md:text-xl text-[#666666]">
+         <div className="grid grid-cols-3 divide-x dark:divide-[#515150] border dark:border-[#515150] border-b-2  px-2">
+         <p className="items-center flex justify-center text-[16px] md:text-xl text-[#666666] dark:text-white">
         {card.date}
          </p>
-         <p className="items-center flex text-center text-[16px] md:text-xl px-2 text-[#666666]">
+         <p className="items-center flex text-center text-[16px] md:text-xl px-2 text-[#666666] dark:text-white">
           {card.expence}
          </p>
 
          <p className="items-center flex justify-end text-[16px] md:text-xl">
            <div className="flex items-center justify-end">
-             <p className="items-center text-[16px]  md:text-2xl text-[#666666] md:-ml-8">
+             <p className="items-center text-[16px]  md:text-2xl text-[#666666] md:-ml-8 dark:text-white">
                {card.amount}
              </p>
 

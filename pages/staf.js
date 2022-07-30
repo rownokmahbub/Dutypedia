@@ -10,7 +10,7 @@ const staf = () => {
   const [step, setStep] = useState(1);
 
   return (
-    <div>
+    <div className='dark:bg-bg'>
       
         <>{step === 1 && <CreateEmployee goNext={() => setStep(2)} />}</>
         <>{step === 2 && <InviteEmployee goNext={() => setStep(3)} />}</>

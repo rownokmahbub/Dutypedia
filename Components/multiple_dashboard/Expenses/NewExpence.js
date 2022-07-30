@@ -36,12 +36,12 @@ const NewExpence = ({goNext}) => {
     <div className="container max-w-screen-md mx-auto relative ">
              <FormikProvider value={formik}>
       <Form autoComplete="off" onSubmit={handleSubmit}>
-      <div className="flex flex-col  mt-16 h-auto rounded-2xl shadow-4xl md:shadow-3xl bg-white  py-10 px-12">
+      <div className="flex flex-col  mt-16 h-auto rounded-2xl shadow-4xl md:shadow-3xl dark:bg-bg-300  py-10 px-12">
         <h1 className="text-2xl mb-10">Create New Expenses </h1>
         <h1 className="text-lg mb-2">Name Of Expenses</h1>
         <Input name="expencelist"
           type="text"
-          className="border-none bg-[#F5F5F5] rounded-md  h-[38px] w-[290px] outline-none pl-3"
+          className="border-none bg-[#F5F5F5] rounded-md  h-[38px] w-[290px] outline-none pl-3 dark:bg-bg-200 dark:border-[#515150] dark:text-white"
           placeholder="Rent House"
         />
         <div className="flex flex-col md:flex-row justify-between mt-5">
@@ -50,7 +50,7 @@ const NewExpence = ({goNext}) => {
             <div className="relative w-40">
               <Input
                 name="worker"
-                className="w-40 py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                className="w-40 py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150 dark:text-white"
                 type="number"
                 min="1"
                 max="100000"
@@ -68,7 +68,7 @@ const NewExpence = ({goNext}) => {
             <p className="text-lg mb-2">Select Date</p>
             <div className="w-40 relative">
               <Input
-                className="border border-primary focus:outline-primary rounded-md px-2 py-1.5"
+                className="border border-primary focus:outline-primary rounded-md px-2 py-1.5 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                 type="date"
                 name="startDate"
               />

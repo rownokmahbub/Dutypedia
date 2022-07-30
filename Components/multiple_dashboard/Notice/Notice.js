@@ -10,7 +10,7 @@ function Notice({goNext}) {
   return (
   <div className='container max-w-screen-xl mx-auto mt-10'>
 
-   <div className='relative w-full  rounded-2xl shadow-4xl md:shadow-3xl bg-white mb-4 h-auto'>
+   <div className='relative w-full  rounded-2xl shadow-4xl md:shadow-3xl bg-white dark:text-white dark:bg-bg-300 dark:border-[#515150] mb-4 h-auto'>
        <div className="flex justify-around items-center w-[117px] pt-10 absolute right-6 pb-20 mx-auto">
             <button className="outline-none border-none bg-transparent cursor-pointer">
             <Image  src={printer} width={23} height={23} alt='printer'/>
@@ -23,7 +23,7 @@ function Notice({goNext}) {
             </button>
        </div>
      
-       <h3 className='mt-24 mb-2 text-[#666666] text-lg pt-24 text-center' htmlFor="">Rasel Swimming Training Center</h3>
+       <h3 className='mt-24 mb-2 text-[#666666] text-lg pt-24 text-center dark:text-white' htmlFor="">Rasel Swimming Training Center</h3>
        <div className=' mt-10 flex-shrink  w-[95%] mx-auto bg-[#CCCCCC] h-[1px]'></div>
        <div className=' mt-1 flex-shrink  w-[95%] mx-auto bg-[#CCCCCC] h-[1px] visible md:invisible'></div>
        

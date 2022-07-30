@@ -16,7 +16,7 @@ export const Wrapper = styled('div')`
   .routine-table-body-section::-webkit-scrollbar {
       width: 11px;
       height: 10px;
-      background: #F1F1F1;
+      background: #181818;
   }
 
   .routine-table-body-section::-webkit-scrollbar-track {
@@ -26,12 +26,12 @@ export const Wrapper = styled('div')`
   }
 
   .routine-table-body-section::-webkit-scrollbar-thumb {
-      background: rgb(90, 90, 90);
+      background: #444444;
       border-radius: 10px;
   }
 
   .routine-table-body-section::-webkit-scrollbar-button:single-button {
-      background-color: white;
+      background-color: #272727;
       display: block;
       border-style: solid;
       height: 1.5vw;

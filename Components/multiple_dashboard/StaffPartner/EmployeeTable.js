@@ -90,7 +90,7 @@ const EmployeeTable = ({goNext}) => {
   return (
     <div className="mt-10">
      <div className="container max-w-screen-2xl mx-auto relative my-5">
-      <div className="mt-16 h-auto rounded-2xl shadow-4xl md:shadow-3xl bg-white py-5 md:py-10 px-2 md:px-12">
+      <div className="mt-16 h-auto rounded-2xl shadow-4xl md:shadow-3xl py-5 md:py-10 px-2 md:px-12">
       <div className="flex justify-end items-center mr-4 cursor-pointer">
         <div onClick={goNext} className="flex items-center">
         <p className="text-lg">Add Employee</p>
@@ -111,7 +111,7 @@ const EmployeeTable = ({goNext}) => {
           <div className="routine-table-body-section md:pr-3">
           {SearchEmp.map((card, i) => (
          
-         <div className="grid grid-cols-5 divide-x h-[] border border-b-2  px-2">
+         <div className="grid grid-cols-5 divide-x dark:divide-[#515150] border dark:border-[#515150] border-b-2  px-2">
              <div className="flex py-2">
              <div  className="relative flex items-center ">
                  

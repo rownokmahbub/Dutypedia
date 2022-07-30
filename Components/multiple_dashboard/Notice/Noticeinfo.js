@@ -47,18 +47,18 @@ function Noticeinfo({ goNext }) {
   } = formik;
   return (
     <div className="container max-w-screen-xl mt-16 mx-auto relative">
-      <div className=" relative w-full h-[1200px] rounded-2xl shadow-4xl md:shadow-3xl mb-10 mx-auto bg-white">
+      <div className=" relative w-full h-[1200px] rounded-2xl shadow-4xl md:shadow-3xl mb-10 mx-auto bg-white dark:bg-bg-200">
         <FormikProvider value={formik}>
          
           <Form autoComplete="off" onSubmit={handleSubmit}>
-            <div className="flex  flex-col absolute right-7 flex-shrink pb-40">
+            <div className="flex  flex-col absolute right-7 flex-shrink pb-40 dark:text-white">
               <label className="mt-10 mb-2 " htmlFor="">
                 Select date
               </label>
-              <div className="flex flex-row">
+              <div className="flex flex-row ">
                 <div className="w-40 relative">
                   <Input
-                    className="border border-primary focus:outline-primary rounded-md px-2 py-1.5"
+                    className="border border-primary focus:outline-primary rounded-md px-2 py-1.5 dark:text-white dark:bg-bg-200"
                     type="date"
                     name="startDate"
                   />
@@ -72,31 +72,31 @@ function Noticeinfo({ goNext }) {
               </div>
             </div>
 
-            <div className="flex  flex-col flex-shrink  w-[95%] mx-auto pt-40">
+            <div className="flex  flex-col flex-shrink  w-[95%] mx-auto pt-40 dark:text-white">
               <div className="  w-full mx-auto bg-[#CCCCCC] h-[1px] "></div>
               <label className="mt-10 mb-2" htmlFor="">
                 Id/record number
               </label>
               <Input
                 type="text"
-                className="border-none bg-[#F5F5F5] rounded-md  h-[38px] w-[290px] outline-none pl-3"
+                className="border-none bg-[#F5F5F5] rounded-md  h-[38px] w-[290px] outline-none pl-3 dark:text-white dark:bg-bg-300 dark:border-[#515150]"
                 placeholder="985699...|"
                 name="recordno"
               />
             </div>
             <div className=" mt-10 flex-shrink  w-[95%] mx-auto bg-[#CCCCCC] h-[1px]"></div>
             <div className="flex  flex-col flex-shrink  w-[95%] mx-auto">
-              <label className="mt-7 mb-2" htmlFor="">
+              <label className="mt-7 mb-2 dark:text-white" htmlFor="">
                 Subject
               </label>
               <Input
                 name="subject"
                 type="text"
-                className="border-none bg-[#F5F5F5] rounded-md  h-[38px]  outline-none pl-3 "
+                className="border-none bg-[#F5F5F5] rounded-md  h-[38px]  outline-none pl-3 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
               />
             </div>
             <div className=" mt-10 flex-shrink  w-[95%] mx-auto bg-[#CCCCCC] h-[1px]"></div>
-            <div className="flex  flex-col flex-shrink  w-[95%] mx-auto">
+            <div className="flex  flex-col flex-shrink  w-[95%] mx-auto dark:text-white">
               <label className="mt-10 mb-2" htmlFor="">
                 Describe Your Notice
               </label>
@@ -104,23 +104,23 @@ function Noticeinfo({ goNext }) {
                 as="textarea"
                 name="description"
                 id=""
-                className=" h-[280px] border-none bg-[#F5F5F5] rounded-lg outline-none pl-8 pt-8 "
+                className=" h-[280px] border-none bg-[#F5F5F5] rounded-lg outline-none pl-8 pt-8 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                 placeholder="Type Your Notice..."
               ></Input>
             </div>
             <div className="relative">
               <div className="flex  flex-col absolute right-5">
-                <label className="mt-10 mb-2" htmlFor="">
+                <label className="mt-10 mb-2 dark:text-white" htmlFor="">
                   Enter Your Name
                 </label>
                 <Input
                   name="uname"
                   type="text"
-                  className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300"
+                  className="w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150] "
                   placeholder="Type Name"
                 />
               </div>
-              <div className="flex  flex-col absolute right-5 flex-shrink-0 mt-36">
+              <div className="flex  flex-col absolute right-5 flex-shrink-0 mt-36 dark:text-white">
               
                   <Autocomplete
                     getItemValue={(item) => item.value}
@@ -129,7 +129,7 @@ function Noticeinfo({ goNext }) {
                     inputProps={{
                       placeholder: "Position",
                       className:
-                        "w-full py-2 px-2 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300",
+                        "w-full py-2 px-2 dark:text-white rounded bg-[#f8fafb]  dark:bg-bg-200 dark:border-[#515150] border border-solid focus:outline-none border-gray-300",
                       ...getFieldProps("position"),
                     }}
                     value={values.position}
@@ -142,7 +142,7 @@ function Noticeinfo({ goNext }) {
                     renderItem={(item, isHighlighted) => (
                       <div
                         className={`cursor-pointer border-b p-1 ${
-                          isHighlighted ? "bg-gray-200" : "bg-white"
+                          isHighlighted ? "bg-gray-200 dark:text-white" : "bg-white dark:bg-bg-200"
                         }`}
                       >
                         {item.label}
@@ -163,7 +163,7 @@ function Noticeinfo({ goNext }) {
               >
                 Submit
               </button>
-              <button className="w-[100px] lg:w-[130px] h-[45px] border-[#E22424] text-[#E22424] bg-transparent cursor-pointer outline-none border-2 rounded-lg">
+              <button className="w-[100px] lg:w-[130px] h-[45px] border-[#E22424] text-[#E22424] bg-transparent cursor-pointer outline-none border-2 rounded-lg ">
                 Cancel
               </button>
             </div>
