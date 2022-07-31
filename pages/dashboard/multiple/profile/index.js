@@ -228,7 +228,7 @@ const ProfilePage = () => {
   return (
     <div className="min-h-screen">
       <div className="mx-auto max-w-[1920px] md:p-8 sm:p-4 px-4">
-        <div className="flex flex-col lg:flex-row gap-3 lg:gap-10">
+        <div className="flex flex-col lg:flex-row gap-2 lg:gap-10">
           <div className="grid h-max gap-2 md:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 flex-shrink-0 w-full lg:w-96">
             <ProfileRender
               profileData={serviceData.providerInfo}
@@ -245,7 +245,7 @@ const ProfilePage = () => {
               t47={serviceData.t47}
             />
           </div>
-          <div className="flex-1 space-y-6 overflow-hidden">
+          <div className="flex-1 space-y-2 md:space-y-6 overflow-hidden">
             <div className="overflow-hidden type-slider">
               <Slider {...sliderSettings}>
                 {servicesType.map((item) => (
