@@ -8,6 +8,7 @@ import AddNewCat from "../AddNewCat";
 import toast from "react-hot-toast";
 import { MdDelete } from "react-icons/md";
 import { BiChevronRight } from "react-icons/bi";
+import Link from "next/link";
 
 const Categories = [
   {
@@ -173,6 +174,9 @@ const LawyerMainCatSelect = ({ goNext, savedData }) => {
 
   return (
     <div className="container max-w-4xl mx-auto">
+       <Link href='/become-seller'>
+     <img className="pt-2 cursor-pointer pb-4 w-[30px]" src="/Assets/icon/arrowleft.svg" alt="" />
+     </Link>
       <div className="w-full rounded-xl overflow-hidden bg-white dark:bg-bg-200">
         <div className="relative w-full h-40 overflow-hidden">
           <Image

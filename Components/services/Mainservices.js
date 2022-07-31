@@ -136,7 +136,10 @@ const Mainservices = () => {
 
   return (
     <div className="bg-[#f5f5f5] dark:bg-bg-200 container max-w-screen-xl mx-auto relative pb-8">
-     <img className="pt-16 pl-10 pb-4" src="/Assets/icon/leftarrow.svg" alt="" />
+     
+     <Link href='/feed'>
+     <img className="pt-16 cursor-pointer pl-10 pb-4 w-[70px]" src="/Assets/icon/arrowleft.svg" alt="" />
+     </Link>
       <div className="flex flex-col  md:flex-row justify-between items-start space-y-2 md:items-center px-2 md:px-10 -mt-2 mb-5">
       
         <p className="text-2xl font-semibold dark:text-white">Select Your Service</p>
