@@ -11,6 +11,7 @@ import "swiper/css/bundle";
 import "react-datepicker/dist/react-datepicker.css";
 // import store from "../Redux/store";
 import "../styles/globals.css";
+import { ThemeProvider } from "@lib/themeContext";
 
 function MyApp({ Component, pageProps, router }) {
   const Layout = Component.layout || DefaultLayout;
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps, router }) {
     <>
       {/* <Provider store={store}>
       </Provider> */}
+      <ThemeProvider>
         <AuthContextProvider>
           <GlobalContextProvider>
             <Layout key={router.route}>
@@ -35,7 +37,7 @@ function MyApp({ Component, pageProps, router }) {
             </Layout>
           </GlobalContextProvider>
         </AuthContextProvider>
-     
+      </ThemeProvider>
     </>
   );
 }
