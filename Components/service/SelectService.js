@@ -237,7 +237,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                     renderItem={(item, isHighlighted) => (
                       <div
                         className={`cursor-pointer border-b p-1 ${
-                          isHighlighted ? "bg-gray-200" : "bg-white "
+                          isHighlighted ? "bg-gray-200 dark:bg-blue-500" : "bg-white dark:bg-bg"
                         }`}
                       >
                         {item.label}
@@ -258,7 +258,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                 />
                 <Input
                   name="gender"
-                  className="w-full py-2 h-[42px]  px-1 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150]"
+                  className="w-full py-2 h-[42px]  px-1 rounded bg-[#f8fafb] border border-solid focus:outline-none border-gray-300 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                   as="select"
                 >
                   <option value="">Gender...</option>
@@ -286,7 +286,7 @@ const SelectService = ({ goNext, goBack, savedData }) => {
                     renderItem={(item, isHighlighted) => (
                       <div
                         className={`cursor-pointer border-b p-1 ${
-                          isHighlighted ? "bg-gray-200" : "bg-white "
+                          isHighlighted ? "bg-gray-200 dark:bg-blue-500" : "bg-white dark:bg-bg"
                         }`}
                       >
                         {item.label}
