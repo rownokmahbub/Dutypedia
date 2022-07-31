@@ -1,5 +1,6 @@
 import AuthIcon from "@components/global/AuthIcon";
 import NotiIconVendor from "@components/global/NotiIconVendor";
+import ThemeToggle from "@components/global/ThemeToggle";
 import AuthContext from "@lib/authContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -14,8 +15,14 @@ const TopNavBar = () => {
         <div className="flex items-center gap-8">
           <Link href="/">
             <a>
-              <img className="w-24  dark:hidden" src="/Assets/images/logo.svg" />
-              <img className="w-24 hidden dark:block" src="/Assets/images/logo-dark.svg" />
+              <img
+                className="w-24  dark:hidden"
+                src="/Assets/images/logo.svg"
+              />
+              <img
+                className="w-24 hidden dark:block"
+                src="/Assets/images/logo-dark.svg"
+              />
             </a>
           </Link>
         </div>
@@ -28,9 +35,7 @@ const TopNavBar = () => {
               <a>
                 <img className="w-8" src="/Assets/icon/send.svg" />
               </a>
-              {/* <a>
-            <img src="/Assets/icon/sun.svg" />
-          </a> */}
+              <ThemeToggle />
             </>
           )}
           <AuthIcon />

@@ -4,6 +4,7 @@ import { Fragment, useContext, useEffect, useState } from "react";
 import ActiveLink from "./ActiveLink";
 import { GlobalContext } from "@lib/globalContext";
 import { FiMenu } from "react-icons/fi";
+import ThemeToggle from "./ThemeToggle";
 
 const NavBar = () => {
   const [stickyNav, setStickyNav] = useState(false);
@@ -58,8 +59,14 @@ const NavBar = () => {
         <div className="flex items-center gap-8">
           <Link href="/">
             <a>
-            <img className="w-24  dark:hidden" src="/Assets/images/logo.svg" />
-              <img className="w-24 hidden dark:block" src="/Assets/images/logo-dark.svg" />
+              <img
+                className="w-24  dark:hidden"
+                src="/Assets/images/logo.svg"
+              />
+              <img
+                className="w-24 hidden dark:block"
+                src="/Assets/images/logo-dark.svg"
+              />
             </a>
           </Link>
         </div>
@@ -86,7 +93,9 @@ const NavBar = () => {
                     >
                       <a
                         className={`flex justify-center items-center gap-2 ${
-                          stickyNav ? "text-black dark:text-white" : "text-white"
+                          stickyNav
+                            ? "text-black dark:text-white"
+                            : "text-white"
                         }`}
                       >
                         {item.icon && item.icon}
@@ -98,6 +107,7 @@ const NavBar = () => {
               </Fragment>
             ))}
           </div>
+          <ThemeToggle />
           <Link href="/contact">
             <a className={`btn capitalize btn-primary`}>Get Started</a>
           </Link>
@@ -106,9 +116,10 @@ const NavBar = () => {
 
       <div className="w-full py-3 flex px-4 sm:px-8 h-full lg:hidden justify-between items-center bg-primary dark:bg-bg">
         <div>
-          <img className="w-24" src="/Assets/images/logo-dark.svg"  />
+          <img className="w-24" src="/Assets/images/logo-dark.svg" />
         </div>
-        <div>
+        <div className="flex gap-2 items-center">
+          <ThemeToggle />
           <FiMenu
             onClick={() => {
               uiDispatch({ type: "OPEN_SIDEBAR" });

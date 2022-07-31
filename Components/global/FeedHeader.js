@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useContext } from "react";
 import NotiIcon from "./NotiIcon";
 import AuthIcon from "@components/global/AuthIcon";
+import ThemeToggle from "./ThemeToggle";
 
 const FeedHeader = () => {
   const router = useRouter();
@@ -30,9 +31,7 @@ const FeedHeader = () => {
               <a>
                 <img className="w-8" src="/Assets/icon/send.svg" />
               </a>
-              {/* <a>
-            <img src="/Assets/icon/sun.svg" />
-          </a> */}
+              <ThemeToggle />
             </>
           )}
           <AuthIcon />
