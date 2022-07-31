@@ -5,16 +5,25 @@ import AuthContext from "@lib/authContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
 
 const TopNavBar = () => {
   const { logOut } = useContext(AuthContext);
   const router = useRouter();
   return (
-    <nav className="z-40 sticky left-0 top-0 w-full py-2 bg-white/70 backdrop-blur-lg backdrop-saturate-150 shadow-sm">
-      <div className="w-full px-6 h-full flex justify-between items-center">
-        <div className="flex items-center gap-8">
+    <nav className="z-40 sticky left-0 top-0 w-full py-2 bg-white/70 dark:bg-bg-300/70 backdrop-blur-lg backdrop-saturate-150 shadow-sm">
+      <div className="w-full px-6 h-full flex justify-between  items-center">
+        <div className="flex items-center ">
+          <Link  href='/mobilenav'>
+          <AiOutlineMenu
+              
+              className="text-xl cursor-pointer md:hidden"
+            />
+          </Link>
+    
           <Link href="/">
-            <a>
+            <a className="ml-3">
               <img
                 className="w-24  dark:hidden"
                 src="/Assets/images/logo.svg"
@@ -27,7 +36,7 @@ const TopNavBar = () => {
           </Link>
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 md:gap-6">
           {!router.pathname.includes("/become-seller") && (
             <>
               <NotiIconVendor />

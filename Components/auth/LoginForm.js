@@ -38,7 +38,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="inline-block relative w-full max-w-sm px-8 py-16 overflow-hidden align-middle transition-all transform bg-white shadow-xl">
+    <div className="inline-block relative w-full max-w-sm px-8 py-16 overflow-hidden align-middle transition-all transform bg-white shadow-xl dark:bg-bg-200 rounded-md">
       <a
         onClick={() => {
           uiDispatch({ type: "CLOSE_MODAL" });
