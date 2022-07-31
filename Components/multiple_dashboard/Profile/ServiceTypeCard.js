@@ -61,7 +61,7 @@ const ServiceTypeCard = ({ item, isEnabled, parentServiceId, readOnly }) => {
             shallow: true,
           })
         }
-        className={`w-full flex-shrink-0 dark:text-white cursor-pointer aspect-[16/12] shadow-3xl rounded-lg overflow-hidden relative p-4 ${
+        className={`w-full bg-white flex-shrink-0 dark:text-white cursor-pointer aspect-[16/12] shadow-3xl rounded-lg overflow-hidden relative p-4 ${
           enabled ? "saturate-100 opacity-100" : "saturate-0 opacity-50"
         } ${item.bgColor}`}
       >

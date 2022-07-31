@@ -183,7 +183,7 @@ const ProfileRender = ({
           </div>
         )}
       </div>
-      <p className="flex justify-center float-right bg-[#d6d6d6]  w-24 mr-3 -mt-12 rounded-xl text-sm">
+      <p className="flex justify-center float-right bg-[#d6d6d6] w-24 mr-3 -mt-12 rounded-xl text-sm">
         New Seller
       </p>
       <div className="text-center py-8">
