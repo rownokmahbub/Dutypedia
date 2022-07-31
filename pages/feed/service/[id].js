@@ -92,7 +92,7 @@ const ServiceView = () => {
               t47={serviceData.t47}
             />
           </div>
-          <div className="flex-1 grid gap-2 md:gap-6 overflow-hidden">
+          <div className="flex-1 space-y-2 md:space-y-6 overflow-hidden">
             <div className="overflow-hidden type-slider">
               <Slider {...sliderSettings}>
                 {servicesType.map((item) => (
