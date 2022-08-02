@@ -257,7 +257,7 @@ const Footer = () => {
             <Link href="/">
               <a className="link">Dutypedia</a>
             </Link>
-            .
+            
           </div>
           <div />
         </div>
