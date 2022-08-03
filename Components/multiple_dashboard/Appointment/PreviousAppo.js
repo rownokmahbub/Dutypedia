@@ -37,7 +37,6 @@ const PreviousAppoDashboard = ({ searchTerm }) => {
             },
           }
         );
-        console.log(data.appointments);
         setAppointments(data.appointments);
       } catch (error) {
         console.log(error);

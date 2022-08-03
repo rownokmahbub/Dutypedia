@@ -1,24 +1,17 @@
-import CreateExpences from '@components/multiple_dashboard/Expenses/CreateExpences'
-import ExpenceCreate from '@components/multiple_dashboard/Expenses/ExpenceCreate'
-import ExpenceEdit from '@components/multiple_dashboard/Expenses/ExpenceEdit'
-import NewExpence from '@components/multiple_dashboard/Expenses/NewExpence'
-import { useState } from "react";
-import React from 'react'
-import MultipleDashboardLayout from 'layouts/MultipleLayout';
+import ExpensesList from "@components/multiple_dashboard/Expenses/ExpensesList";
+import MultipleDashboardLayout from "layouts/MultipleLayout";
 
-function Index() {
-   const [step, setStep] = useState(1);
-   return (
-      <div className='m-auto md:p-10 bg-[#FFF1F2] dark:bg-bg-200'>
-      <>{step === 1 && <ExpenceCreate goNext={() => setStep(2)} />}</>
-    <>{step === 2 && < CreateExpences goNext={() => setStep(3)} />}</>
-    <>{step === 3 && < ExpenceEdit goNext={() => setStep(4)} />}</>
-    <>{step === 4 && <NewExpence goNext={() => setStep(5)} />}</>
-    <>{step === 5 && <ExpenceEdit goNext={() => setStep(4)} />}</>
-    
-   </div>
+const ExpensesDashboard = () => {
+  return (
+    <>
+      <div className="md:p-8 sm:p-4 p-0 mx-auto max-w-screen-2xl">
+        <div className="shadow-4xl md:shadow-3xl bg-white dark:bg-bg-200 drop-shadow-md rounded-xl p-6">
+          <ExpensesList />
+        </div>
+      </div>
+    </>
+  );
+};
 
-   )
-}
-Index.layout=MultipleDashboardLayout
-export default Index
+ExpensesDashboard.layout = MultipleDashboardLayout;
+export default ExpensesDashboard;

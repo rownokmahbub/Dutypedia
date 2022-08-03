@@ -28,6 +28,7 @@ const Accordion = ({
         />
       </div>
       <motion.div
+        initial={false}
         key="content"
         className={`overflow-hidden px-4 ${contentBg}`}
         animate={{ height: isOpen ? "auto" : "0" }}
