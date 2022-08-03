@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MdLockOpen } from "react-icons/md";
-import { FaUserEdit, FaPoll } from "react-icons/fa";
+import { FaUserEdit, FaPoll, FaUserCircle } from "react-icons/fa";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useContext, useState, useEffect } from "react";
 import { IoMdExit } from "react-icons/io";
@@ -11,6 +11,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import axios from "axios";
 import toast from "react-hot-toast";
 import LoginToDashboardModal from "@components/auth/LoginToDashboardModal";
+import { BiLogInCircle } from "react-icons/bi";
 
 const AuthIcon = () => {
   const { user, logOut, token, setToken } = useContext(AuthContext);
@@ -84,17 +85,31 @@ const AuthIcon = () => {
               </Menu.Item>
             )}
             {user.loginAs === "USER" && (
-              <Menu.Item>
-                <a
-                  className={`group cursor-pointer flex dark:text-white rounded-md items-center w-full px-2 py-2 text-sm hover:text-primary text-gray-700 transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-300`}
-                  onClick={() => setIsOpen(true)}
-                >
-                  <span className="mr-2" aria-hidden="true">
-                    <IoMdExit />
-                  </span>
-                  Login To Dashboard
-                </a>
-              </Menu.Item>
+              <>
+                <Menu.Item>
+                  <Link href={`/profile/${user.username}`}>
+                    <a
+                      className={`group cursor-pointer flex dark:text-white rounded-md items-center w-full px-2 py-2 text-sm hover:text-primary text-gray-700 transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-300`}
+                    >
+                      <span className="mr-2" aria-hidden="true">
+                        <FaUserCircle />
+                      </span>
+                      My Profile
+                    </a>
+                  </Link>
+                </Menu.Item>
+                <Menu.Item>
+                  <a
+                    className={`group cursor-pointer flex dark:text-white rounded-md items-center w-full px-2 py-2 text-sm hover:text-primary text-gray-700 transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-300`}
+                    onClick={() => setIsOpen(true)}
+                  >
+                    <span className="mr-2" aria-hidden="true">
+                      <BiLogInCircle />
+                    </span>
+                    Login To Dashboard
+                  </a>
+                </Menu.Item>
+              </>
             )}
             <Menu.Item>
               <a

@@ -16,7 +16,6 @@ import {
 import { useContext, useState, useEffect, useRef } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Slider from "react-slick";
-import Link from "next/link";
 import ServiceListView from "@components/service/ServiceListView";
 import GigCard from "@components/multiple_dashboard/Profile/GigCard";
 import AppointmentView from "@components/service/AppointmentView";

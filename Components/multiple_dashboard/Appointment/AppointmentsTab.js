@@ -2,22 +2,25 @@ import { cn } from "@components/service/AboutView";
 import { Tab } from "@headlessui/react";
 import Image from "next/image";
 import { useState } from "react";
+import PreviousAppoDashboard from "./PreviousAppo";
+import RequestAppoTab from "./RequestAppoTab";
+import UpcomingAppoDashboard from "./UpcomingAppo";
 import search from "/public/Assets/icon/search.svg";
 
 const AppointmentsTab = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const Tabs = [
     {
-      name: "Upcomming",
-      content: <></>,
+      name: "Upcoming",
+      content: <UpcomingAppoDashboard searchTerm={searchTerm} />,
     },
     {
       name: "Previous",
-      content: <></>,
+      content: <PreviousAppoDashboard searchTerm={searchTerm} />,
     },
     {
       name: "Request",
-      content: <></>,
+      content: <RequestAppoTab searchTerm={searchTerm} />,
     },
   ];
   return (
