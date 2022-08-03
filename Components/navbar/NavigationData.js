@@ -96,12 +96,7 @@ export const multipleDashboardData = [
   {
     icon: <GiMoneyStack />,
     title: "Expenses",
-    dropdownList: [
-      {
-        title: "Employee List",
-        link: "/dashboard_1/expenses",
-      },
-    ],
+    link: "/dashboard/multiple/expenses",
   },
   {
     icon: <IoWalletOutline />,
