@@ -37,7 +37,28 @@ const ServiceTypeCard = ({ item, isEnabled, parentServiceId, readOnly }) => {
   };
 
   return (
-    <div className="relative">
+    <>
+{/* mobile view */}
+        <div className="flex overflow-x-auto gap-3 sm:hidden">
+          <div className=" px-2 py-1 bg-bg-300 flex justify-center items-center rounded-lg">
+        Bargaining
+          </div>
+          <div className=" px-2 py-1 bg-bg-300 flex justify-center items-center rounded-lg">
+        Fixed
+          </div>
+          <div className=" px-2 py-1 bg-bg-300 flex justify-center items-center rounded-lg">
+        package
+          </div>
+          <div className=" px-2 py-1 bg-bg-300 flex justify-center items-center rounded-lg">
+        Instalment
+          </div>
+          <div className=" px-2 py-1 bg-bg-300 flex justify-center items-center rounded-lg">
+        Subscription
+          </div>
+        </div>
+
+    {/* desktop view */}
+      <div className="relative hidden sm:block">
       {!readOnly && item.id !== "STARTING" && (
         <span className=" absolute right-2 top-4 z-10">
           <Toggle
@@ -71,6 +92,8 @@ const ServiceTypeCard = ({ item, isEnabled, parentServiceId, readOnly }) => {
         <img className="z-0 absolute right-1 bottom-1 w-32" src={item.image} />
       </div>
     </div>
+    </>
+  
   );
 };
 

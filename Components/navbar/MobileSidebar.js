@@ -15,7 +15,7 @@ const MobileSidebar = () => {
                 Member
             </div>
         </Link>
-        <Link href=''>
+        <Link href='/dashboard/multiple/appointment'>
             <div className=''>
                 Appoinment
             </div>
