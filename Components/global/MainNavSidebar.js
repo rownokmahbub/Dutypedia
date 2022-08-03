@@ -4,6 +4,7 @@ import { Transition, Dialog } from "@headlessui/react";
 import { IoMdClose } from "react-icons/io";
 import useMediaQuery from "@lib/hooks/useMediaQuery";
 import ActiveLink from "./ActiveLink";
+import ThemeToggle from "./ThemeToggle";
 
 const MainNavSidebar = () => {
   const isLg = useMediaQuery("(min-width: 1024px)");
@@ -69,13 +70,18 @@ const MainNavSidebar = () => {
           leaveTo="translate-x-full"
           as={Fragment}
         >
-          <div className="right-0 shadow-xl absolute top-0 h-full w-72 bg-white">
-            <div className="px-5 pt-4 bg-white absolute top-0 left-0">
+          <div className="right-0 shadow-xl absolute top-0 h-full w-72 bg-white dark:bg-bg-200">
+            <div className="px-5 pt-4 bg-white dark:bg-bg-200 absolute top-0 left-0">
               <IoMdClose
                 onClick={() => uiDispatch({ type: "CLOSE_SIDEBAR" })}
                 className="text-2xl cursor-pointer"
               />
+
             </div>
+            <div className="px-5 pt-4 bg-white dark:bg-bg-200 absolute top-0 right-0">
+            <ThemeToggle />
+            </div>
+           
             <div className="w-full h-full flex flex-col pt-16 space-y-6 pl-16">
               {NavLinks.map((item) => (
                 <Fragment key={item.name}>

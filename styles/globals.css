@@ -169,10 +169,10 @@ ul {
     @apply px-2
   }
   .type-slider .slick-list{
-    @apply -mx-3 overflow-visible
+    @apply -mx-1 md:-mx-3 overflow-visible
   }
   .type-slider .slick-slide{
-    @apply px-3
+    @apply px-1 md:px-3
   }
   .type-slider .slick-track{
     @apply ml-[initial]

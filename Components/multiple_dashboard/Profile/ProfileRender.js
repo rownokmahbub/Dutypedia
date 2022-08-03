@@ -1,3 +1,4 @@
+import RatingRender from "@components/global/Rating/RatingRender";
 import AuthContext from "@lib/authContext";
 import axios from "axios";
 import Image from "next/image";
@@ -124,86 +125,239 @@ const ProfileRender = ({
   };
 
   return (
-    <div className="shadow-3xl h-max bg-white dark:bg-[#2e2e2e] rounded-xl overflow-hidden ">
-      <div className="bg-gradient-to-r from-[#d93baf] to-[#854a58] h-48 relative">
-        {wallPhoto && <Image src={wallPhoto} layout="fill" objectFit="cover" />}
-        {!readOnly && (
-          <label className="flex justify-end pt-2 pr-2 cursor-pointer z-10 relative">
+    <>
+      {/* mobile view */}
+      <div className="shadow-3xl h-max bg-white dark:bg-[#2e2e2e] rounded-xl overflow-hidden sm:hidden">
+        <div className="bg-gradient-to-r from-[#d93baf] to-[#854a58] h-48 relative">
+          {wallPhoto && (
+            <Image src={wallPhoto} layout="fill" objectFit="cover" />
+          )}
+          {!readOnly && (
+            <label className="flex justify-end pt-2 pr-2 cursor-pointer z-10 relative">
+              <img
+                className="w-10"
+                src="/Assets/images/service/red_camera.svg"
+                alt=""
+              />
+              <input
+                onChange={(event) => {
+                  changeWallPhoto(event.target.files[0]);
+                }}
+                type="file"
+                accept=".jpg,.jpeg,.png"
+                className="hidden"
+                ref={wallPhotoRef}
+              />
+            </label>
+          )}
+          {wallPhotoUpdating && (
+            <div className="absolute bg-white/70 dark:bg-[#272727]/70 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+              <div className="btn btn-link loading">Please wait...</div>
+            </div>
+          )}
+        </div>
+        <div className="flex relative justify-center bg-white dark:bg-bg-300 w-28 h-28 -mt-14 rounded-lg mx-auto shadow-3xl">
+          {profilePhoto ? (
+            <div className="w-full h-full relative rounded-lg overflow-hidden">
+              <Image src={profilePhoto} layout="fill" objectFit="cover" />
+            </div>
+          ) : (
             <img
-              className="w-10"
-              src="/Assets/images/service/red_camera.svg"
+              className="w-16"
+              src="/Assets/images/service/user.svg"
               alt=""
             />
-            <input
-              onChange={(event) => {
-                changeWallPhoto(event.target.files[0]);
-              }}
-              type="file"
-              accept=".jpg,.jpeg,.png"
-              className="hidden"
-              ref={wallPhotoRef}
-            />
-          </label>
-        )}
-        {wallPhotoUpdating && (
-          <div className="absolute bg-white/70 dark:bg-[#272727]/70 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
-            <div className="btn btn-link loading">Please wait...</div>
+          )}
+          {!readOnly && (
+            <label>
+              <img
+                className="w-10 absolute z-10 -right-5 top-9 cursor-pointer"
+                src="/Assets/images/service/red_camera.svg"
+                alt=""
+              />
+              <input
+                onChange={(event) => {
+                  changeProfilePhoto(event.target.files[0]);
+                }}
+                type="file"
+                accept=".jpg,.jpeg,.png"
+                className="hidden"
+                ref={profilePhotoRef}
+              />
+            </label>
+          )}
+          {profilePhotoUpdating && (
+            <div className="absolute rounded-lg bg-white/70 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+              <div className="btn btn-link loading"></div>
+            </div>
+          )}
+        </div>
+        <p className="flex justify-center float-right  w-24  -mt-12 rounded-xl text-sm">
+          <img
+            className="hidden dark:block"
+            src="/Assets/images/feed/verifydark.svg"
+            alt=""
+          />
+          <img
+            className="dark:hidden block"
+            src="/Assets/images/feed/verified.svg"
+            alt=""
+          />
+        </p>
+        <div className=" pl-4 py-1">
+          <p className="text-xl font-semibold dark:text-white ">{serviceCenterName}</p>
+          <p className="text-[14px] font-semibold dark:text-white ">
+            {profileData.name}{" "}
+            <span className="text-sm text-gray-500 dark:text-white">
+              ({profileData.gender})
+            </span>{" "}
+          </p>
+
+          <p className="text-[12px] text-gray-500 dark:text-white line-clamp-1">
+            Position Of ({profileData.position})
+          </p>
+
+          <div className="flex items-center gap-2 mt-1">
+            <RatingRender rating={4.5} />
+            <p className="text-[12px]">4.6</p>
+            <p className="text-[12px] ml-5">profile view 10k</p>
           </div>
-        )}
-      </div>
-      <div className="flex relative justify-center bg-white dark:bg-bg-300 w-28 h-28 -mt-14 rounded-lg mx-auto shadow-3xl">
-        {profilePhoto ? (
-          <div className="w-full h-full relative rounded-lg overflow-hidden">
-            <Image src={profilePhoto} layout="fill" objectFit="cover" />
-          </div>
-        ) : (
-          <img className="w-16" src="/Assets/images/service/user.svg" alt="" />
-        )}
-        {!readOnly && (
-          <label>
+          <div className="flex items-center gap-2 my-1">
             <img
-              className="w-10 absolute z-10 -right-5 top-9 cursor-pointer"
-              src="/Assets/images/service/red_camera.svg"
+              className="hidden dark:block"
+              src="/Assets/images/feed/position-dark.svg"
               alt=""
             />
-            <input
-              onChange={(event) => {
-                changeProfilePhoto(event.target.files[0]);
-              }}
-              type="file"
-              accept=".jpg,.jpeg,.png"
-              className="hidden"
-              ref={profilePhotoRef}
+            <img
+              className="block dark:hidden"
+              src="/Assets/images/feed/position.svg"
+              alt=""
             />
-          </label>
-        )}
-        {profilePhotoUpdating && (
-          <div className="absolute rounded-lg bg-white/70 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
-            <div className="btn btn-link loading"></div>
+            <p className="text-[14px] font-semibold dark:text-white line-clamp-1"> Speciality In {speciality}</p>
           </div>
-        )}
+          <hr className="dark:border-[#3d3d3d]" />
+          <div className="flex items-center gap-2 my-1">
+            <img
+              className="hidden dark:block"
+              src="/Assets/images/feed/worker-dark.svg"
+              alt=""
+            />
+            <img
+              className="block dark:hidden"
+              src="/Assets/images/feed/worker.svg"
+              alt=""
+            />
+               <p className="text-[14px] font-semibold text-gray-500 dark:text-white">
+            {profileData.worker}Worker & Team
+          </p>
+          </div>
+          <hr className="dark:border-[#3d3d3d]" />
+          <div className="flex items-center gap-2 my-1">
+            <img
+              className="hidden dark:block"
+              src="/Assets/images/feed/year-dark.svg"
+              alt=""
+            />
+            <img
+              className="block dark:hidden"
+              src="/Assets/images/feed/year.svg"
+              alt=""
+            />
+              <p className="text-[14px] font-semibold text-gray-500 dark:text-white pl-1"> Science 2022</p>
+          </div>
+          <hr className="dark:border-[#3d3d3d]" />
+         
+        </div>
       </div>
-      <p className="flex justify-center float-right bg-[#d6d6d6]  w-24 mr-3 -mt-12 rounded-xl text-sm">
-        New Seller
-      </p>
-      <div className="text-center py-8">
-        <p className="text-xl dark:text-white">{serviceCenterName}</p>
-        <p className="text-base dark:text-white">{speciality}</p>
-        <p className="text-xl dark:text-white ">
-          {profileData.name}{" "}
-          <span className="text-sm text-gray-500 dark:text-white">
-            ({profileData.gender})
-          </span>{" "}
+
+      {/* desktop view */}
+      <div className="shadow-3xl h-max bg-white dark:bg-[#2e2e2e] rounded-xl overflow-hidden hidden sm:block">
+        <div className="bg-gradient-to-r from-[#d93baf] to-[#854a58] h-48 relative">
+          {wallPhoto && (
+            <Image src={wallPhoto} layout="fill" objectFit="cover" />
+          )}
+          {!readOnly && (
+            <label className="flex justify-end pt-2 pr-2 cursor-pointer z-10 relative">
+              <img
+                className="w-10"
+                src="/Assets/images/service/red_camera.svg"
+                alt=""
+              />
+              <input
+                onChange={(event) => {
+                  changeWallPhoto(event.target.files[0]);
+                }}
+                type="file"
+                accept=".jpg,.jpeg,.png"
+                className="hidden"
+                ref={wallPhotoRef}
+              />
+            </label>
+          )}
+          {wallPhotoUpdating && (
+            <div className="absolute bg-white/70 dark:bg-[#272727]/70 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+              <div className="btn btn-link loading">Please wait...</div>
+            </div>
+          )}
+        </div>
+        <div className="flex relative justify-center bg-white dark:bg-bg-300 w-28 h-28 -mt-14 rounded-lg mx-auto shadow-3xl">
+          {profilePhoto ? (
+            <div className="w-full h-full relative rounded-lg overflow-hidden">
+              <Image src={profilePhoto} layout="fill" objectFit="cover" />
+            </div>
+          ) : (
+            <img
+              className="w-16"
+              src="/Assets/images/service/user.svg"
+              alt=""
+            />
+          )}
+          {!readOnly && (
+            <label>
+              <img
+                className="w-10 absolute z-10 -right-5 top-9 cursor-pointer"
+                src="/Assets/images/service/red_camera.svg"
+                alt=""
+              />
+              <input
+                onChange={(event) => {
+                  changeProfilePhoto(event.target.files[0]);
+                }}
+                type="file"
+                accept=".jpg,.jpeg,.png"
+                className="hidden"
+                ref={profilePhotoRef}
+              />
+            </label>
+          )}
+          {profilePhotoUpdating && (
+            <div className="absolute rounded-lg bg-white/70 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+              <div className="btn btn-link loading"></div>
+            </div>
+          )}
+        </div>
+        <p className="flex justify-center float-right bg-[#d6d6d6] w-24 mr-3 -mt-12 rounded-xl text-sm">
+          New Seller
         </p>
-        <p className="text-sm text-gray-500 dark:text-white">
-          ({profileData.position})
-        </p>
-        <p className="text-sm text-gray-500 dark:text-white">
-          {profileData.worker} worker & Team
-        </p>
-        <p className="text-xs text-gray-500 dark:text-white">Science 2022</p>
+        <div className="text-center py-8">
+          <p className="text-xl dark:text-white">{serviceCenterName}</p>
+          <p className="text-base dark:text-white">{speciality}</p>
+          <p className="text-xl dark:text-white ">
+            {profileData.name}{" "}
+            <span className="text-sm text-gray-500 dark:text-white">
+              ({profileData.gender})
+            </span>{" "}
+          </p>
+          <p className="text-sm text-gray-500 dark:text-white">
+            ({profileData.position})
+          </p>
+          <p className="text-sm text-gray-500 dark:text-white">
+            {profileData.worker} worker & Team
+          </p>
+          <p className="text-xs text-gray-500 dark:text-white">Science 2022</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

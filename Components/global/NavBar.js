@@ -119,7 +119,7 @@ const NavBar = () => {
           <img className="w-24" src="/Assets/images/logo-dark.svg" />
         </div>
         <div className="flex gap-2 items-center">
-          <ThemeToggle />
+         
           <FiMenu
             onClick={() => {
               uiDispatch({ type: "OPEN_SIDEBAR" });

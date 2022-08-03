@@ -295,7 +295,7 @@ const FinalReview = ({ goBack, data }) => {
               <button
                 onClick={handleSubmit}
                 disabled={!agree || isLoading}
-                className={`btn btn-primary btn-wide ${isLoading && "loading"}`}
+                className={`btn btn-primary btn-wide  ${isLoading && "loading"}`}
               >
                 Confirm to create
               </button>

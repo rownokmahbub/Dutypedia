@@ -250,13 +250,14 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col items-center justify-between py-5 border-t sm:flex-row">
-          <img className="w-32" src="/Assets/icon/logo_accent.svg" />
-          <div className="text-sm text-gray-600">
+          <img className="w-32 dark:hidden" src="/Assets/icon/logo_accent.svg" />
+          <img className="w-32 hidden dark:block" src="/Assets/images/logo-dark.svg" />
+          <div className="text-sm text-gray-600 dark:text-gray-400">
             All right reserved © {new Date().getFullYear()}{" "}
             <Link href="/">
               <a className="link">Dutypedia</a>
             </Link>
-            .
+            
           </div>
           <div />
         </div>

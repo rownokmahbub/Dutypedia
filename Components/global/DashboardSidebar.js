@@ -12,7 +12,7 @@ const DashboardSidebar = ({ data }) => {
     <aside
       onMouseEnter={() => uiDispatch({ type: "SIDEBAR_HOVER" })}
       onMouseLeave={() => uiDispatch({ type: "SIDEBAR_LEAVE" })}
-      className={`hover:w-80 group hidden duration-300 ease-in-out-expo w-[55px] bg-white/70 backdrop-blur-lg backdrop-saturate-150 items-center lg:items-baseline overflow-x-hidden lg:overflow-hidden shadow-md sm:flex flex-col z-40 h-full ${
+      className={`hover:w-80 group hidden duration-300 ease-in-out-expo w-[55px] bg-white/70 dark:bg-bg-300/70 backdrop-blur-lg backdrop-saturate-150 items-center lg:items-baseline overflow-x-hidden lg:overflow-hidden shadow-md sm:flex flex-col z-40 h-full ${
         useUi.expandSidebar && "absolute"
       }`}
     >
