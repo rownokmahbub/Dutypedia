@@ -1,5 +1,6 @@
 import LoadingScreen from "@components/global/LoadingScreen";
 import AuthContext from "@lib/authContext";
+import { GlobalContext } from "@lib/globalContext";
 import axios from "axios";
 import { useState, useContext, useEffect } from "react";
 import AppoItem from "./AppoItem";
@@ -8,7 +9,7 @@ const ReceiveAppoUser = () => {
   const [appointments, setAppointments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { token } = useContext(AuthContext);
-
+  const { useUi } = useContext(GlobalContext);
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
@@ -29,7 +30,7 @@ const ReceiveAppoUser = () => {
       }
     };
     fetchAppointments();
-  }, []);
+  }, [useUi.refresh]);
 
   if (isLoading) {
     return <LoadingScreen fullScreen={false} />;

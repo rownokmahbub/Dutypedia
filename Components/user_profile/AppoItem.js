@@ -5,13 +5,15 @@ import { Menu } from "@headlessui/react";
 import { HiDotsVertical } from "react-icons/hi";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { GlobalContext } from "@lib/globalContext";
 import AuthContext from "@lib/authContext";
+import AppoDetailsModal from "@components/multiple_dashboard/Appointment/AppoDetailsModal";
 
 const AppoItem = ({ item, type }) => {
   const { token } = useContext(AuthContext);
   const { uiDispatch } = useContext(GlobalContext);
+  const [selectedAppo, setSelectedAppo] = useState(null);
 
   const handelAppoStatusChange = async (status) => {
     const Request = async () => {
@@ -41,103 +43,117 @@ const AppoItem = ({ item, type }) => {
     });
   };
   return (
-    <div className="flex justify-between">
-      <div className="flex gap-2 items-center">
-        <span className="w-8 aspect-square rounded-full shadow-md flex justify-center items-center dark:bg-gray-600 text-primary">
-          <BsFillBellFill />
-        </span>
-        <div>
-          <p className="text-xs">
-            {format(new Date(item.date), "dd MMM yyyy")},{" "}
-            {moment(item.startTime, ["HH:mm"]).format("h:mm A")}
-          </p>
-          <p className=" line-clamp-1">{item.title}</p>
-          <p
-            className={`line-clamp-1 text-xs italic ${
-              item.status == "PENDING"
-                ? "text-yellow-500"
-                : item.status === "COMPLETED"
-                ? "text-green-500"
-                : "text-red-500"
-            }`}
+    <>
+      <div className="flex justify-between">
+        <div className="flex gap-2 items-center">
+          <span className="w-8 aspect-square rounded-full shadow-md flex justify-center items-center dark:bg-gray-600 text-primary">
+            <BsFillBellFill />
+          </span>
+          <div
+            onClick={() => {
+              setSelectedAppo(item);
+            }}
+            className=" cursor-pointer"
           >
-            ({item.status})
-          </p>
+            <p className="text-xs">
+              {format(new Date(item.date), "dd MMM yyyy")},{" "}
+              {moment(item.startTime, ["HH:mm"]).format("h:mm A")}
+            </p>
+            <p className=" line-clamp-1">{item.title}</p>
+            <p
+              className={`line-clamp-1 text-xs italic ${
+                item.status == "PENDING"
+                  ? "text-yellow-500"
+                  : item.status === "COMPLETED"
+                  ? "text-green-500"
+                  : "text-red-500"
+              }`}
+            >
+              ({item.status})
+            </p>
+          </div>
         </div>
-      </div>
 
-      <Menu as="div" className=" relative">
-        <Menu.Button>
-          <HiDotsVertical className="text-xl" />
-        </Menu.Button>
-        <Menu.Items className="flex flex-col items-center absolute -ml-20 bg-white dark:bg-bg shadow-3xl  rounded-md px-3 py-1">
-          {type !== "receive" && (
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  onClick={() => handelAppoStatusChange("COMPLETED")}
-                  className={`${
-                    active
-                      ? "bg-gray-200 dark:bg-gray-600 text-black dark:text-white "
-                      : "text-gray-900 dark:text-white"
-                  } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
-                >
-                  <p className="text-sm">Completed</p>
-                </a>
-              )}
-            </Menu.Item>
-          )}
-          {type !== "receive" && (
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  onClick={() => handelAppoStatusChange("CANCELLED")}
-                  className={`${
-                    active
-                      ? "bg-primary-300 text-white"
-                      : "text-gray-900 dark:text-white"
-                  } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
-                >
-                  <p className="text-sm">Cancel</p>
-                </a>
-              )}
-            </Menu.Item>
-          )}
-          {type === "receive" && (
-            <>
+        <Menu as="div" className=" relative">
+          <Menu.Button>
+            <HiDotsVertical className="text-xl" />
+          </Menu.Button>
+          <Menu.Items className="flex flex-col items-center absolute -ml-20 bg-white dark:bg-bg shadow-3xl  rounded-md px-3 py-1">
+            {type !== "receive" && (
               <Menu.Item>
                 {({ active }) => (
                   <a
-                    onClick={() => handelAppoStatusChange("APPROVED")}
+                    onClick={() => handelAppoStatusChange("COMPLETED")}
                     className={`${
                       active
                         ? "bg-gray-200 dark:bg-gray-600 text-black dark:text-white "
                         : "text-gray-900 dark:text-white"
                     } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
                   >
-                    <p className="text-sm">Accept</p>
+                    <p className="text-sm">Completed</p>
                   </a>
                 )}
               </Menu.Item>
+            )}
+            {type !== "receive" && (
               <Menu.Item>
                 {({ active }) => (
                   <a
-                    onClick={() => handelAppoStatusChange("REJECTED")}
+                    onClick={() => handelAppoStatusChange("CANCELLED")}
                     className={`${
                       active
                         ? "bg-primary-300 text-white"
                         : "text-gray-900 dark:text-white"
                     } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
                   >
-                    <p className="text-sm">Rejected</p>
+                    <p className="text-sm">Cancel</p>
                   </a>
                 )}
               </Menu.Item>
-            </>
-          )}
-        </Menu.Items>
-      </Menu>
-    </div>
+            )}
+            {type === "receive" && (
+              <>
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      onClick={() => handelAppoStatusChange("APPROVED")}
+                      className={`${
+                        active
+                          ? "bg-gray-200 dark:bg-gray-600 text-black dark:text-white "
+                          : "text-gray-900 dark:text-white"
+                      } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
+                    >
+                      <p className="text-sm">Accept</p>
+                    </a>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      onClick={() => handelAppoStatusChange("REJECTED")}
+                      className={`${
+                        active
+                          ? "bg-primary-300 text-white"
+                          : "text-gray-900 dark:text-white"
+                      } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
+                    >
+                      <p className="text-sm">Rejected</p>
+                    </a>
+                  )}
+                </Menu.Item>
+              </>
+            )}
+          </Menu.Items>
+        </Menu>
+      </div>
+      {selectedAppo && (
+        <AppoDetailsModal
+          isOpen={selectedAppo ? true : false}
+          closeModal={() => setSelectedAppo(null)}
+          appoinment={selectedAppo}
+        />
+      )}
+    </>
   );
 };
 
