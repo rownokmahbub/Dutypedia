@@ -74,7 +74,7 @@ const ExpensesList = ({ goNext }) => {
 
             <div className="relative text-gray-600 md:w-72 w-full pb-5 md:pb-0">
               <input
-                className=" h-10 px-5 pl-4 pr-8 w-full mx-auto rounded-lg text-sm focus:outline-none  outline-none border-2 border-solid border-[#ECECEC] bg-white dark:bg-bg-300 dark:border-[#515150]"
+                className=" h-10 px-5 pl-4 pr-8 w-full mx-auto rounded-lg text-sm focus:outline-none  outline-none border-2 border-solid border-[#ECECEC] bg-white dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                 type="search"
                 name="search"
                 placeholder="Search"
