@@ -1,8 +1,9 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import CreateExpences from "./CreateExpences";
+import CreateExpences from "./CreateExpenses";
+import UpdateExpences from "./UpdateExpenses";
 
-const NewExpenseModal = ({ isOpen, closeModal }) => {
+const NewExpenseModal = ({ isOpen, closeModal, mode = "new", expense }) => {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -31,7 +32,11 @@ const NewExpenseModal = ({ isOpen, closeModal }) => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-screen-xl transform overflow-hidden rounded-2xl bg-white dark:bg-bg-200 p-6 text-left align-middle shadow-xl transition-all">
-                  <CreateExpences closeModal={closeModal} />
+                  {mode == "edit" && expense ? (
+                    <UpdateExpences closeModal={closeModal} expense={expense} />
+                  ) : (
+                    <CreateExpences closeModal={closeModal} />
+                  )}
                 </Dialog.Panel>
               </Transition.Child>
             </div>

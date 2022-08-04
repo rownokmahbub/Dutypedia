@@ -4,21 +4,23 @@ import add from "/public/Assets/icon/roundedplus.svg";
 import { Menu } from "@headlessui/react";
 import Image from "next/image";
 import { Wrapper } from "../../../styles/Scrollbar";
-import { Fragment, useState, useEffect, useContext } from "react";
-import { Listbox, Transition } from "@headlessui/react";
+import { useState, useEffect, useContext } from "react";
 import AuthContext from "@lib/authContext";
 import axios from "axios";
 import { GlobalContext } from "@lib/globalContext";
 import LoadingScreen from "@components/global/LoadingScreen";
 import NewExpenseModal from "./NewExpenseModal";
+import toast from "react-hot-toast";
 
-const ExpensesList = ({ goNext }) => {
+const ExpensesList = () => {
   const [showNewExpense, setShowNewExpense] = useState(false);
   const [expenses, setExpenses] = useState([]);
   const { token } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
-  const { useUi } = useContext(GlobalContext);
+  const { useUi, uiDispatch } = useContext(GlobalContext);
+  const [selectedExpense, setSelectedExpense] = useState(null);
+  const [mode, setMode] = useState(null);
 
   const filteredExpenses = expenses.filter((expense) => {
     return (
@@ -27,6 +29,34 @@ const ExpensesList = ({ goNext }) => {
       expense.date.toString().includes(searchTerm.toLowerCase())
     );
   });
+
+  const handelDelete = async (id) => {
+    const userAction = confirm(`Are you sure you want to delete this?`);
+    if (userAction) {
+      const Request = async () => {
+        try {
+          await axios.delete(
+            `${process.env.NEXT_PUBLIC_API_URL}/expenses/delete/${id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          uiDispatch({ type: "DO_REFRESH" });
+          return "Successfully done!";
+        } catch (error) {
+          console.log(error);
+          throw new Error(error.response?.data?.msg);
+        }
+      };
+      toast.promise(Request(), {
+        loading: <b>Please wait...</b>,
+        success: (data) => <b>{data}</b>,
+        error: (err) => <b>{err.toString()}</b>,
+      });
+    }
+  };
 
   function calculateTotal(expenses) {
     return expenses.reduce((total, expense) => {
@@ -86,7 +116,10 @@ const ExpensesList = ({ goNext }) => {
               </div>
             </div>
             <div
-              onClick={() => setShowNewExpense(true)}
+              onClick={() => {
+                setMode("new");
+                setShowNewExpense(true);
+              }}
               className="flex gap-1 items-center cursor-pointer"
             >
               <p>Add Expenses</p>
@@ -130,7 +163,11 @@ const ExpensesList = ({ goNext }) => {
                           <Menu.Item>
                             {({ active }) => (
                               <a
-                                onClick={goNext}
+                                onClick={() => {
+                                  setMode("edit");
+                                  setSelectedExpense(item);
+                                  setShowNewExpense(true);
+                                }}
                                 className={`${
                                   active
                                     ? "bg-gray-200 text-black "
@@ -144,6 +181,7 @@ const ExpensesList = ({ goNext }) => {
                           <Menu.Item>
                             {({ active }) => (
                               <a
+                                onClick={() => handelDelete(item.id)}
                                 className={`${
                                   active
                                     ? "bg-primary-300 text-white"
@@ -173,7 +211,10 @@ const ExpensesList = ({ goNext }) => {
       ) : (
         <div className="flex justify-center items-center py-16">
           <a
-            onClick={() => setShowNewExpense(true)}
+            onClick={() => {
+              setMode("new");
+              setShowNewExpense(true);
+            }}
             className="flex flex-col justify-center cursor-pointer"
           >
             <Image
@@ -190,6 +231,8 @@ const ExpensesList = ({ goNext }) => {
       <NewExpenseModal
         isOpen={showNewExpense}
         closeModal={() => setShowNewExpense(false)}
+        expense={selectedExpense}
+        mode={mode}
       />
     </>
   );

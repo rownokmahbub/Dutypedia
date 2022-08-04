@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Link from "next/link";
 import { useFormik, Form, FormikProvider, Formik } from "formik";
 import Accordion from "@components/global/Accordion";
 import { FiChevronUp, FiChevronDown } from "react-icons/fi";
@@ -11,7 +10,7 @@ import AuthContext from "@lib/authContext";
 import toast from "react-hot-toast";
 import { GlobalContext } from "@lib/globalContext";
 
-const CreateExpences = ({ closeModal }) => {
+const UpdateExpences = ({ closeModal, expense }) => {
   const { token } = useContext(AuthContext);
   const { uiDispatch } = useContext(GlobalContext);
   const validate = Yup.object({
@@ -21,15 +20,15 @@ const CreateExpences = ({ closeModal }) => {
   });
   const formik = useFormik({
     initialValues: {
-      title: "",
-      amount: "",
-      date: "",
+      title: expense.title || "",
+      amount: expense.amount || "",
+      date: expense.date || "",
     },
     validationSchema: validate,
     onSubmit: async (values) => {
       try {
-        await axios.post(
-          `${process.env.NEXT_PUBLIC_API_URL}/expenses/create`,
+        await axios.put(
+          `${process.env.NEXT_PUBLIC_API_URL}/expenses/update/${expense.id}`,
           {
             title: values.title,
             amount: values.amount,
@@ -41,7 +40,7 @@ const CreateExpences = ({ closeModal }) => {
             },
           }
         );
-        toast.success("Expense created successfully!");
+        toast.success("Expense updated successfully!");
         uiDispatch({ type: "DO_REFRESH" });
         closeModal();
       } catch (error) {
@@ -65,9 +64,7 @@ const CreateExpences = ({ closeModal }) => {
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <div className="flex flex-col md:flex-row justify-around">
             <div className="flex flex-col">
-              <p className="font-normal text-2xl mt-4 mb-5">
-                Create New Expenses List
-              </p>
+              <p className="font-normal text-2xl mt-4 mb-5">Update Expenses</p>
               <Input
                 name="title"
                 className="px-4 py-3 text-md font-normal w-72 bg-gray-100 rounded-lg outline-none dark:bg-bg-300 dark:border-[#515150]"
@@ -117,7 +114,7 @@ const CreateExpences = ({ closeModal }) => {
                     isSubmitting && "loading"
                   }`}
                 >
-                  Save
+                  Update
                 </button>
                 <a
                   onClick={closeModal}
@@ -175,4 +172,4 @@ const CreateExpences = ({ closeModal }) => {
   );
 };
 
-export default CreateExpences;
+export default UpdateExpences;

@@ -55,7 +55,7 @@ const AppoItem = ({ item }) => {
                   item.online
                     ? item.user.profilePhoto ||
                       "/Assets/images/service/user.svg"
-                    : item.offlineMember.profilePhoto ||
+                    : item.offlineMember?.profilePhoto ||
                       "/Assets/images/service/user.svg"
                 }
                 layout="fill"
@@ -70,12 +70,12 @@ const AppoItem = ({ item }) => {
             <div>
               <p>
                 {item.online
-                  ? `${item.user.firstName} ${item.user.lastName}`
-                  : item.offlineMember.name}
+                  ? `${item.user?.firstName} ${item.user?.lastName}`
+                  : item.offlineMember?.name}
               </p>
               {item.online && (
                 <p className="text-xs md:text-sm text-gray-400">
-                  @{item.user.username}
+                  @{item.user?.username}
                 </p>
               )}
             </div>
