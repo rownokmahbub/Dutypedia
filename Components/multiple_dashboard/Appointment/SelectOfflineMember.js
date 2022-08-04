@@ -95,7 +95,7 @@ const SelectOfflineMember = ({ closeModal }) => {
                   </div>
                 </div>
 
-                <div className="flex-shrink-0 gap-2 md:gap-4 hidden sm:flex">
+                <div className="flex-shrink-0 gap-2 md:gap-4  sm:flex">
                   <button
                     onClick={() => setSelectedMember(member)}
                     className="btn btn-outline btn-primary"
