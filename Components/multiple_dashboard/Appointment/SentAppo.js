@@ -120,7 +120,7 @@ const SentAppoDashboard = ({ searchTerm }) => {
     </div>
 
     {/* desktop view */}
-       <div className="grid gap-4 hidden sm:block">
+       <div className=" gap-4 hidden sm:grid">
       {filteredAppointments.map((item) => (
         <div className="shadow-3xl rounded-md px-4 py-3">
           <div className="flex gap-2 items-center justify-between">
@@ -149,11 +149,7 @@ const SentAppoDashboard = ({ searchTerm }) => {
                     ? `${item.user.firstName} ${item.user.lastName}`
                     : item.offlineMember.name}
                 </p>
-                {item.online && (
-                  <p className="text-xs md:text-sm text-gray-400">
-                    @{item.user.username}
-                  </p>
-                )}
+              
               </div>
             </div>
             <div>
