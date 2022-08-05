@@ -66,7 +66,61 @@ const SentAppoDashboard = ({ searchTerm }) => {
   }
 
   return (
-    <div className="grid gap-4">
+    <>
+{/* mobile view */}
+<div className="grid gap-4 sm:hidden ">
+      {filteredAppointments.map((item) => (
+        <div className="shadow-3xl rounded-md px-4 py-3">
+          <div className="flex gap-2 items-center justify-between">
+            <div className="flex gap-4 items-center">
+              <div className="w-12 aspect-square rounded-md relative">
+                <Image
+                  src={
+                    item.online
+                      ? item.user.profilePhoto ||
+                        "/Assets/images/service/user.svg"
+                      : item.offlineMember.profilePhoto ||
+                        "/Assets/images/service/user.svg"
+                  }
+                  layout="fill"
+                />
+                {item.online && (
+                  <img
+                    src="/Assets/icon/online.svg"
+                    className="absolute w-6 right-0 bottom-0 translate-x-1/2 translate-y-1/3"
+                  />
+                )}
+              </div>
+              <div>
+                <p className="line-clamp-1">
+                  {item.online
+                    ? `${item.user.firstName} ${item.user.lastName}`
+                    : item.offlineMember.name}
+                </p>
+                <div>
+              <p className="text-xs">
+                {format(new Date(item.date), "dd MMM yyyy")},{" "}
+                {moment(item.startTime, ["HH:mm"]).format("h:mm A")}
+              </p>
+              <p className=" line-clamp-1">{item.title}</p>
+            </div>
+              </div>
+            </div>
+          
+            <div className="flex items-center capitalize gap-4">
+              <CancelRequestButton
+                token={token}
+                appoId={item.id}
+                status={item.status}
+              />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* desktop view */}
+       <div className="grid gap-4 hidden sm:block">
       {filteredAppointments.map((item) => (
         <div className="shadow-3xl rounded-md px-4 py-3">
           <div className="flex gap-2 items-center justify-between">
@@ -120,6 +174,8 @@ const SentAppoDashboard = ({ searchTerm }) => {
         </div>
       ))}
     </div>
+    </>
+ 
   );
 };
 

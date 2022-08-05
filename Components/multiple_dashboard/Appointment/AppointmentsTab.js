@@ -31,7 +31,7 @@ const AppointmentsTab = () => {
       <div className="flex justify-between py-8 gap-4 flex-col md:flex-row">
         <div className="relative text-gray-600 w-full md:w-[400px]">
           <input
-            className="input input-bordered w-full"
+            className="input input-bordered w-full dark:bg-bg-300 border-[#515150] h-10"
             type="search"
             name="search"
             placeholder="Search"
@@ -42,14 +42,15 @@ const AppointmentsTab = () => {
             <Image src={search} width={16} height={16} alt="search" />
           </div>
         </div>
-        <div className="flex flex-shrink-0 items-center gap-4 mt-5 md:mt-0">
-          <p>Filter By</p>
+        <div className="flex flex-shrink-0 items-center gap-4 sm:mt-5 md:mt-0">
+          <p className="sm:block hidden">Filter By</p>
 
           <input
-            className="input input-bordered"
+            className="input input-bordered dark:bg-bg-300 border-[#515150] h-10"
             type="date"
             onChange={(date) => {}}
           />
+           <p className="sm:hidden block">Filter By</p>
         </div>
       </div>
       <Tab.Group>

@@ -15,7 +15,7 @@ const AppoinmentPageMultiple = () => {
         </div>
         <button
           onClick={() => setShowNewAppointment(true)}
-          className="btn btn-circle btn-primary fixed right-8 bottom-4"
+          className="btn btn-circle btn-primary fixed right-6 sm:right-14 bottom-2 sm:bottom-4"
         >
           <BiPlus className="text-4xl" />
         </button>
