@@ -87,9 +87,7 @@ const SelectOnlineMember = ({ closeModal }) => {
                     <p className="md:text-lg dark:text-white">
                       {member.user.firstName} {member.user.lastName}
                     </p>
-                    <p className="text-xs md:text-sm text-gray-400">
-                      @{member.user.username}
-                    </p>
+                  
                     <div className="gap-2 md:gap-4 flex sm:hidden mt-2">
                       <span className="w-8 aspect-square rounded-full flex items-center justify-center shadow-3xl">
                         <img className="w-6" src="/Assets/icon/shild.svg" />
@@ -101,10 +99,10 @@ const SelectOnlineMember = ({ closeModal }) => {
                   </div>
                 </div>
 
-                <div className="flex-shrink-0 gap-2 md:gap-4 hidden sm:flex">
+                <div className="flex-shrink-0 gap-2 md:gap-4 sm:flex">
                   <button
                     onClick={() => setSelectedMember(member.user)}
-                    className="btn btn-outline btn-primary"
+                    className="btn btn-sm btn-outline btn-primary "
                   >
                     Select
                   </button>

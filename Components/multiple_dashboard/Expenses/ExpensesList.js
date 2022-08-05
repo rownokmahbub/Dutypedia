@@ -97,14 +97,14 @@ const ExpensesList = () => {
           <div className="flex justify-between items-center flex-wrap ">
             <div className="flex gap-4 items-center pb-5 md:pb-0">
               <p>Filtered By</p>
-              <select>
+              <select className="dark:bg-bg-300 ">
                 <option value="">All</option>
               </select>
             </div>
 
-            <div className="relative text-gray-600 md:w-72 w-full pb-5 md:pb-0">
+            <div className="relative text-gray-600 md:w-72 w-full pb-5 md:pb-0 ">
               <input
-                className=" h-10 px-5 pl-4 pr-8 w-full mx-auto rounded-lg text-sm focus:outline-none  outline-none border-2 border-solid border-[#ECECEC] bg-white dark:bg-bg-300 dark:border-[#515150]"
+                className=" h-10 px-5 pl-4 pr-8 w-full mx-auto rounded-lg text-sm focus:outline-none  outline-none border-2 border-solid border-[#ECECEC] bg-white dark:bg-bg-300 dark:border-[#515150] dark:text-white"
                 type="search"
                 name="search"
                 placeholder="Search"
@@ -172,7 +172,7 @@ const ExpensesList = () => {
                                   active
                                     ? "bg-gray-200 text-black "
                                     : "text-gray-900"
-                                } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
+                                } group flex w-full items-center rounded-[4px] px-2 text-sm text-center cursor-pointer`}
                               >
                                 <p className="text-sm">Edit</p>
                               </a>

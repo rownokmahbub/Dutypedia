@@ -83,7 +83,7 @@ const SelectOfflineMember = ({ closeModal }) => {
                     />
                   </span>
                   <div>
-                    <p className="md:text-lg dark:text-white">{member.name}</p>
+                    <p className="md:text-lg dark:text-white line-clamp-1">{member.name}</p>
                     <div className="gap-2 md:gap-4 flex sm:hidden mt-2">
                       <span className="w-8 aspect-square rounded-full flex items-center justify-center shadow-3xl">
                         <img className="w-6" src="/Assets/icon/shild.svg" />
@@ -95,10 +95,10 @@ const SelectOfflineMember = ({ closeModal }) => {
                   </div>
                 </div>
 
-                <div className="flex-shrink-0 gap-2 md:gap-4 hidden sm:flex">
+                <div className="flex-shrink-0 gap-2 md:gap-4  sm:flex">
                   <button
                     onClick={() => setSelectedMember(member)}
-                    className="btn btn-outline btn-primary"
+                    className="btn btn-sm btn-outline btn-primary"
                   >
                     Select
                   </button>
