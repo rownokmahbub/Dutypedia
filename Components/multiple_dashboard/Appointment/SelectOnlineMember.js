@@ -87,15 +87,10 @@ const SelectOnlineMember = ({ closeModal }) => {
                     <p className="md:text-lg dark:text-white">
                       {member.user.firstName} {member.user.lastName}
                     </p>
-                  
-                    <div className="gap-2 md:gap-4 flex sm:hidden mt-2">
-                      <span className="w-8 aspect-square rounded-full flex items-center justify-center shadow-3xl">
-                        <img className="w-6" src="/Assets/icon/shild.svg" />
-                      </span>
-                      <span className="w-8 aspect-square rounded-full flex items-center justify-center shadow-3xl">
-                        <img className="w-6" src="/Assets/icon/send.svg" />
-                      </span>
-                    </div>
+                    <p className="md:text-lg dark:text-gray-300 text-xs">
+                     @{member.user.username}
+                    </p>
+                 
                   </div>
                 </div>
 

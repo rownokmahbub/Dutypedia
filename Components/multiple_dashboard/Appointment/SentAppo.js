@@ -124,7 +124,7 @@ const SentAppoDashboard = ({ searchTerm }) => {
       {filteredAppointments.map((item) => (
         <div className="shadow-3xl rounded-md px-4 py-3">
           <div className="flex gap-2 items-center justify-between">
-            <div className="flex gap-4 items-center">
+            <div className="flex flex-1 gap-4 items-center">
               <div className="w-12 aspect-square rounded-md relative">
                 <Image
                   src={
@@ -159,7 +159,7 @@ const SentAppoDashboard = ({ searchTerm }) => {
               </p>
               <p className=" line-clamp-1">{item.title}</p>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-1 justify-end items-center gap-4">
               <CancelRequestButton
                 token={token}
                 appoId={item.id}
