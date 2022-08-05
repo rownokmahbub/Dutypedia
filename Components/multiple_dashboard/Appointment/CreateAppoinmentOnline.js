@@ -109,6 +109,7 @@ const CreateAppoinmentOnline = ({ member, closeModal }) => {
               required
               className="border w-full border-primary focus:outline-primary rounded-md px-2 py-1.5 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
               type="text"
+              maxlength="100"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -118,6 +119,7 @@ const CreateAppoinmentOnline = ({ member, closeModal }) => {
             <textarea
               className="border w-full flex-1 border-primary focus:outline-primary rounded-md px-2 py-1.5 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
               rows="4"
+              maxlength="1000"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
