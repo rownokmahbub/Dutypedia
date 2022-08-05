@@ -71,12 +71,7 @@ export const multipleDashboardData = [
   {
     icon: <TiClipboard />,
     title: "Notice",
-    dropdownList: [
-      {
-        title: "Employee List",
-        link: "/dashboard_1/notice",
-      },
-    ],
+    link: "/dashboard/multiple/notice",
   },
   {
     icon: <BsBookmarkStar />,
