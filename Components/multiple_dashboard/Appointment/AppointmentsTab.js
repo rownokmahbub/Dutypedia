@@ -25,11 +25,11 @@ const AppointmentsTab = () => {
   ];
   return (
     <>
-      <div className="text-center py-4">
-        <p className="font-medium text-xl">Appointment</p>
+      <div className="text-center sm:py-4">
+        <p className="font-medium text-xl hidden sm:block">Appointment</p>
       </div>
-      <div className="flex justify-between py-8 gap-4 flex-col md:flex-row">
-        <div className="relative text-gray-600 w-full md:w-[400px]">
+      <div className="flex justify-between py-8 gap-4 flex-row">
+        <div className="relative text-gray-600 w-48 md:w-[400px]">
           <input
             className="input input-bordered w-full dark:bg-bg-300 border-[#515150] h-10"
             type="search"
@@ -46,11 +46,11 @@ const AppointmentsTab = () => {
           <p className="sm:block hidden">Filter By</p>
 
           <input
-            className="input input-bordered dark:bg-bg-300 border-[#515150] h-10"
+            className="input input-bordered dark:bg-bg-300 border-[#515150] h-10 w-[134px] sm:w-38"
             type="date"
             onChange={(date) => {}}
           />
-           <p className="sm:hidden block">Filter By</p>
+         
         </div>
       </div>
       <Tab.Group>

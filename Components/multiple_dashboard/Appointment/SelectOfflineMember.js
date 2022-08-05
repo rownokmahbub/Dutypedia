@@ -84,14 +84,7 @@ const SelectOfflineMember = ({ closeModal }) => {
                   </span>
                   <div>
                     <p className="md:text-lg dark:text-white line-clamp-1">{member.name}</p>
-                    <div className="gap-2 md:gap-4 flex sm:hidden mt-2">
-                      <span className="w-8 aspect-square rounded-full flex items-center justify-center shadow-3xl">
-                        <img className="w-6" src="/Assets/icon/shild.svg" />
-                      </span>
-                      <span className="w-8 aspect-square rounded-full flex items-center justify-center shadow-3xl">
-                        <img className="w-6" src="/Assets/icon/send.svg" />
-                      </span>
-                    </div>
+                    
                   </div>
                 </div>
 

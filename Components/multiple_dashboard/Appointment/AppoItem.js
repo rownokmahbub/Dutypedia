@@ -148,7 +148,7 @@ const AppoItem = ({ item }) => {
     {/* desktop view */}
       <div className="shadow-3xl rounded-md px-4 py-3 hidden sm:block">
         <div className="flex gap-2 items-center justify-between">
-          <div className="flex gap-4 items-center">
+          <div className="flex flex-1 gap-4 items-center">
             <div className="w-12 aspect-square rounded-md relative">
               <Image
                 src={
@@ -193,7 +193,7 @@ const AppoItem = ({ item }) => {
             </p>
             <p className=" line-clamp-1">{item.title}</p>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-1 justify-end items-center gap-4">
             <span className="w-10 aspect-square rounded-full flex items-center justify-center shadow-3xl">
               <img className="w-8" src="/Assets/icon/shild.svg" />
             </span>
