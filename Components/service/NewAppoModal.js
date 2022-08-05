@@ -1,9 +1,9 @@
 import { Dialog, Transition } from "@headlessui/react";
 import AuthContext from "@lib/authContext";
+import { GlobalContext } from "@lib/globalContext";
 import axios from "axios";
 import { Fragment, useContext, useRef, useState } from "react";
 import toast from "react-hot-toast";
-import { date } from "yup/lib/locale";
 
 const NewAppoModal = ({ isOpen, closeModal, serviceId }) => {
   const { token } = useContext(AuthContext);
@@ -13,6 +13,7 @@ const NewAppoModal = ({ isOpen, closeModal, serviceId }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const { uiDispatch } = useContext(GlobalContext);
 
   const handelSubmit = async (e) => {
     e.preventDefault();
@@ -35,6 +36,7 @@ const NewAppoModal = ({ isOpen, closeModal, serviceId }) => {
         }
       );
       toast.success("Appointment created successfully!");
+      uiDispatch({ type: "DO_REFRESH" });
       closeModal();
     } catch (error) {
       console.log(error);
