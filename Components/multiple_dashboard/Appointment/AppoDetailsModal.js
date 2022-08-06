@@ -35,7 +35,7 @@ const AppoDetailsModal = ({ isOpen, closeModal, appoinment }) => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-xl transform relative  rounded-2xl bg-white dark:bg-bg-200 p-6 text-left align-middle shadow-xl transition-all">
-                <img className="w-10 absolute -right-2 -top-4" src="/Assets/icon/cross.svg" alt="" onClick={closeModal} />
+                <img className="w-10 absolute -right-4 -top-5" src="/Assets/icon/cross.svg" alt="" onClick={closeModal} />
                   <div className="flex justify-between">
                     <div>
                     <p>
