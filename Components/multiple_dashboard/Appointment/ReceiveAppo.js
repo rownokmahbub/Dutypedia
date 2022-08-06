@@ -70,7 +70,68 @@ const ReceiveAppoDashboard = ({ searchTerm }) => {
 
   return (
     <>
-      <div className="grid gap-4">
+    {/* mobile view */}
+    <div className="grid gap-4">
+        {filteredAppointments.map((item) => (
+          <div className="shadow-3xl rounded-md px-4 py-3">
+            <div className="flex gap-2 items-center justify-between">
+              <div className="flex gap-4 items-center">
+                <div className="w-12 aspect-square rounded-md relative flex-shrink-0">
+                  <img className="w-8" 
+                    src={
+                      item.online
+                        ? item.user.profilePhoto ||
+                          "/Assets/images/service/user.svg"
+                        : item.offlineMember.profilePhoto ||
+                          "/Assets/images/service/user.svg"
+                    }
+                    layout="fill"
+                  />
+                  {item.online && (
+                    <img
+                      src="/Assets/icon/online.svg"
+                      className="absolute w-6 right-3 bottom-4 translate-x-1/2 translate-y-1/3"
+                    />
+                  )}
+                </div>
+                <div>
+                  <p className="line-clamp-1">
+                    {item.online
+                      ? `${item.user.firstName} ${item.user.lastName}`
+                      : item.offlineMember.name}
+                  </p>
+               
+                     <div
+                onClick={() => setSelectedAppo(item)}
+                className=" cursor-pointer"
+              >
+                <p className="text-xs">
+                  {format(new Date(item.date), "dd MMM yyyy")},{" "}
+                  {moment(item.startTime, ["HH:mm"]).format("h:mm A")}
+                </p>
+                <p className=" line-clamp-1">{item.title}</p>
+              </div>
+                </div>
+              </div>
+           
+              <div className="flex flex-col items-center gap-4">
+                <AcceptRequestButton
+                  token={token}
+                  appoId={item.id}
+                  status={item.status}
+                />
+                <RejectRequestButton
+                  token={token}
+                  appoId={item.id}
+                  status={item.status}
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    {/* desktop view */}
+      <div className=" gap-4 hidden sm:grid">
         {filteredAppointments.map((item) => (
           <div className="shadow-3xl rounded-md px-4 py-3">
             <div className="flex gap-2 items-center justify-between">

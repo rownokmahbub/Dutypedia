@@ -39,7 +39,7 @@ const AcceptRequestButton = ({ token, appoId, status }) => {
   return status === "PENDING" ? (
     <button
       onClick={handleCancelRequest}
-      className={`btn btn-primary capitalize font-medium ${
+      className={`btn btn-sm btn-primary capitalize font-medium ${
         isLoading && "loading"
       }`}
     >

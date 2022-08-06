@@ -75,8 +75,8 @@ const SentAppoDashboard = ({ searchTerm }) => {
           <div className="shadow-3xl rounded-md px-4 py-3">
             <div className="flex gap-2 items-center justify-between">
               <div className="flex gap-4 items-center">
-                <div className="w-12 aspect-square rounded-md relative">
-                  <Image
+                <div className="w-12 aspect-square rounded-md relative flex-shrink-0">
+                  <img className="w-10"
                     src={
                       item.online
                         ? item.user.profilePhoto ||
@@ -89,7 +89,7 @@ const SentAppoDashboard = ({ searchTerm }) => {
                   {item.online && (
                     <img
                       src="/Assets/icon/online.svg"
-                      className="absolute w-6 right-0 bottom-0 translate-x-1/2 translate-y-1/3"
+                      className="absolute w-6 right-2 bottom-3 translate-x-1/2 translate-y-1/3"
                     />
                   )}
                 </div>

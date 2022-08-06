@@ -96,7 +96,7 @@ const AppoItem = ({ item }) => {
           <div className="flex items-center gap-4">
             <p className="text-[10px] -mt-5 justify-end ">
               {item.status == "COMPLETED" ? (
-                <span className="text-green-500">completed</span>
+                <span className="text-green-500 pr-3">completed</span>
               ) : item.status == "CANCELLED" ? (
                 <span className="text-primary-500">canceled</span>
               ) : item.status == "REJECTED" ? (
