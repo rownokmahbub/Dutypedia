@@ -48,11 +48,11 @@ const AppoItem = ({ item }) => {
     <>
 
     {/* mobile view */}
-    <div className="shadow-3xl rounded-md px-4 py-3 sm:hidden block">
+    <div className="shadow-3xl rounded-md  py-3 sm:hidden block">
         <div className="flex gap-2 items-center justify-between">
-          <div className="flex  gap-4 items-center">
-            <div className="w-12 aspect-square rounded-md relative">
-              <Image
+          <div className="flex items-center">
+            <div className="w-12 aspect-square rounded-md relative flex-shrink-0">
+              <img className="w-8 "
                 src={
                   item.online
                     ? item.user.profilePhoto ||
@@ -65,25 +65,25 @@ const AppoItem = ({ item }) => {
               {item.online && (
                 <img
                   src="/Assets/icon/online.svg"
-                  className="absolute w-6 right-0 bottom-0 translate-x-1/2 translate-y-1/3"
+                  className="absolute w-6 right-4 bottom-4 rounded-md translate-x-1/2 translate-y-1/3"
                 />
               )}
             </div>
             <div className="flex flex-col">
             <div>
-              <p className="line-clamp-1">
+              <p className="line-clamp-1 ">
                 {item.online
                   ? `${item.user?.firstName} ${item.user?.lastName}`
                   : item.offlineMember?.name}
               </p>
            
             </div>
-            <div
+            <div 
             onClick={() => {
               setSelectedAppo(item);
               setShowAppoDetails(true);
             }}
-            className=" cursor-pointer"
+            className=" cursor-pointer "
           >
             <p className="text-xs">
               {format(new Date(item.date), "dd MMM yyyy")},{" "}
@@ -95,17 +95,9 @@ const AppoItem = ({ item }) => {
          
           
           </div>
-         
+      
           <div className="flex items-center gap-4">
-            <span className="w-10 aspect-square rounded-full flex items-center justify-center shadow-3xl">
-              <img className="w-8" src="/Assets/icon/shild.svg" />
-            </span>
-
-            {item.online && (
-              <span className="w-10 aspect-square rounded-full flex items-center justify-center shadow-3xl">
-                <img className="w-8" src="/Assets/icon/send.svg" />
-              </span>
-            )}
+          <p className="text-[10px] -mt-5 justify-end " >{item.status=="COMPLETED"? <span className="text-green-500">completed</span> :item.status=="CANCELLED"?<span className="text-primary-500">canceled</span>:item.status=="REJECTED"?"Rejected":item.status=="APPROVED"?<span className="text-blue-500">Approved</span>:"pending"}</p>
             <Menu as="div" className=" relative">
               <Menu.Button>
                 <HiDotsVertical className="text-xl" />
@@ -185,7 +177,7 @@ const AppoItem = ({ item }) => {
               setSelectedAppo(item);
               setShowAppoDetails(true);
             }}
-            className=" cursor-pointer"
+            className=" cursor-pointer w-52 "
           >
             <p className="text-xs">
               {format(new Date(item.date), "dd MMM yyyy")},{" "}
@@ -195,11 +187,13 @@ const AppoItem = ({ item }) => {
           </div>
           <div className="flex flex-1 justify-end items-center gap-4">
             <span className="w-10 aspect-square rounded-full flex items-center justify-center shadow-3xl">
-              <img className="w-8" src="/Assets/icon/shild.svg" />
+              <img className="w-12 dark:block hidden" src="/Assets/icon/shild-dark.svg" />
+              <img className="w-8 dark:hidden block" src="/Assets/icon/shild.svg" />
             </span>
 
             {item.online && (
               <span className="w-10 aspect-square rounded-full flex items-center justify-center shadow-3xl">
+              
                 <img className="w-8" src="/Assets/icon/send.svg" />
               </span>
             )}

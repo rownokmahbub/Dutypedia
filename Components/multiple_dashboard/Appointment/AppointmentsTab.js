@@ -71,6 +71,7 @@ const AppointmentsTab = () => {
                 <span className=" absolute right-0 w-[1px] h-6 top-1/2 -translate-y-1/2 bg-gray-100" />
               )}
               <span className="">{item.name}</span>
+              
             </Tab>
           ))}
         </Tab.List>
