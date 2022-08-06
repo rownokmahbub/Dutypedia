@@ -74,77 +74,81 @@ const AppoItem = ({ item, type }) => {
           </div>
         </div>
 
-        <Menu as="div" className=" relative">
-          <Menu.Button>
-            <HiDotsVertical className="text-xl" />
-          </Menu.Button>
-          <Menu.Items className="flex flex-col items-center absolute -ml-20 bg-white dark:bg-bg shadow-3xl  rounded-md px-3 py-1">
-            {type !== "receive" && (
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    onClick={() => handelAppoStatusChange("COMPLETED")}
-                    className={`${
-                      active
-                        ? "bg-gray-200 dark:bg-gray-600 text-black dark:text-white "
-                        : "text-gray-900 dark:text-white"
-                    } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
-                  >
-                    <p className="text-sm">Completed</p>
-                  </a>
+        {(item.status == "PENDING" || item.status == "APPROVED") && (
+          <>
+            <Menu as="div" className=" relative">
+              <Menu.Button>
+                <HiDotsVertical className="text-xl" />
+              </Menu.Button>
+              <Menu.Items className="flex flex-col items-center absolute -ml-20 bg-white dark:bg-bg shadow-3xl  rounded-md px-3 py-1">
+                {type !== "receive" && (
+                  <Menu.Item>
+                    {({ active }) => (
+                      <a
+                        onClick={() => handelAppoStatusChange("COMPLETED")}
+                        className={`${
+                          active
+                            ? "bg-gray-200 dark:bg-gray-600 text-black dark:text-white "
+                            : "text-gray-900 dark:text-white"
+                        } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
+                      >
+                        <p className="text-sm">Completed</p>
+                      </a>
+                    )}
+                  </Menu.Item>
                 )}
-              </Menu.Item>
-            )}
-            {type !== "receive" && (
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    onClick={() => handelAppoStatusChange("CANCELLED")}
-                    className={`${
-                      active
-                        ? "bg-primary-300 text-white"
-                        : "text-gray-900 dark:text-white"
-                    } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
-                  >
-                    <p className="text-sm">Cancel</p>
-                  </a>
+                {type !== "receive" && (
+                  <Menu.Item>
+                    {({ active }) => (
+                      <a
+                        onClick={() => handelAppoStatusChange("CANCELLED")}
+                        className={`${
+                          active
+                            ? "bg-primary-300 text-white"
+                            : "text-gray-900 dark:text-white"
+                        } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
+                      >
+                        <p className="text-sm">Cancel</p>
+                      </a>
+                    )}
+                  </Menu.Item>
                 )}
-              </Menu.Item>
-            )}
-            {type === "receive" && (
-              <>
-                <Menu.Item>
-                  {({ active }) => (
-                    <a
-                      onClick={() => handelAppoStatusChange("APPROVED")}
-                      className={`${
-                        active
-                          ? "bg-gray-200 dark:bg-gray-600 text-black dark:text-white "
-                          : "text-gray-900 dark:text-white"
-                      } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
-                    >
-                      <p className="text-sm">Accept</p>
-                    </a>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <a
-                      onClick={() => handelAppoStatusChange("REJECTED")}
-                      className={`${
-                        active
-                          ? "bg-primary-300 text-white"
-                          : "text-gray-900 dark:text-white"
-                      } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
-                    >
-                      <p className="text-sm">Rejected</p>
-                    </a>
-                  )}
-                </Menu.Item>
-              </>
-            )}
-          </Menu.Items>
-        </Menu>
+                {type === "receive" && (
+                  <>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          onClick={() => handelAppoStatusChange("APPROVED")}
+                          className={`${
+                            active
+                              ? "bg-gray-200 dark:bg-gray-600 text-black dark:text-white "
+                              : "text-gray-900 dark:text-white"
+                          } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
+                        >
+                          <p className="text-sm">Accept</p>
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          onClick={() => handelAppoStatusChange("REJECTED")}
+                          className={`${
+                            active
+                              ? "bg-primary-300 text-white"
+                              : "text-gray-900 dark:text-white"
+                          } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
+                        >
+                          <p className="text-sm">Rejected</p>
+                        </a>
+                      )}
+                    </Menu.Item>
+                  </>
+                )}
+              </Menu.Items>
+            </Menu>
+          </>
+        )}
       </div>
       {selectedAppo && (
         <AppoDetailsModal
