@@ -99,7 +99,10 @@ const SentAppoDashboard = ({ searchTerm }) => {
                       ? `${item.user.firstName} ${item.user.lastName}`
                       : item.offlineMember.name}
                   </p>
-                  <div>
+                  <div
+                    onClick={() => setSelectedAppo(item)}
+                    className=" cursor-pointer"
+                  >
                     <p className="text-xs">
                       {format(new Date(item.date), "dd MMM yyyy")},{" "}
                       {moment(item.startTime, ["HH:mm"]).format("h:mm A")}
