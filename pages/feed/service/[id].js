@@ -165,6 +165,8 @@ const ServiceView = () => {
                         gigData.packageData ||
                         gigData.installmentData
                       }
+                      viewAs="USER"
+                      services={gigData.services}
                     />
 
                     <div className="mt-16">

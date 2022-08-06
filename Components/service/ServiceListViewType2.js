@@ -3,11 +3,6 @@ import { Colors } from "./ServiceListView";
 const ServiceListViewType2 = ({ data }) => {
   return (
     <>
-      {/* <div className="text-center mb-8">
-        <span className="border-b border-dashed capitalize px-8 pb-2">
-          {data.category}
-        </span>
-      </div> */}
       {data.options.map((rootItem, index) => (
         <>
           <div className="text-center mb-4">

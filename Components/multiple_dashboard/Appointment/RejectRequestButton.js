@@ -1,10 +1,12 @@
+import { GlobalContext } from "@lib/globalContext";
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 
 const RejectRequestButton = ({ token, appoId, status }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const { uiDispatch } = useContext(GlobalContext);
 
   const handleCancelRequest = async () => {
     try {
@@ -23,6 +25,7 @@ const RejectRequestButton = ({ token, appoId, status }) => {
       );
       toast.success("Request reject successfully!");
       setIsSuccess(true);
+      uiDispatch({ type: "DO_REFRESH" });
     } catch (error) {
       console.log(error);
       toast.error("Something went wrong!");

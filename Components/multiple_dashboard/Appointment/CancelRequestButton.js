@@ -1,10 +1,12 @@
+import { GlobalContext } from "@lib/globalContext";
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 
 const CancelRequestButton = ({ token, appoId, status }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const { uiDispatch } = useContext(GlobalContext);
 
   const handleCancelRequest = async () => {
     try {
@@ -23,6 +25,7 @@ const CancelRequestButton = ({ token, appoId, status }) => {
       );
       toast.success("Request cancelled successfully!");
       setIsSuccess(true);
+      uiDispatch({ type: "DO_REFRESH" });
     } catch (error) {
       console.log(error);
       toast.error("Something went wrong!");
@@ -31,7 +34,11 @@ const CancelRequestButton = ({ token, appoId, status }) => {
     }
   };
   if (isSuccess) {
-    return <p className="sm:font-medium text-[10px] capitalize text-primary">Canceled</p>;
+    return (
+      <p className="sm:font-medium text-[10px] capitalize text-primary">
+        Canceled
+      </p>
+    );
   }
   return status === "PENDING" ? (
     <button
@@ -43,7 +50,19 @@ const CancelRequestButton = ({ token, appoId, status }) => {
       Cancel Request
     </button>
   ) : (
-    <p className="font-medium  text-[10px] capitalize text-primary">{status=="COMPLETED"? <span className="text-green-500">completed</span> :status=="CANCELLED"?<span className="text-primary-500">canceled</span>:status=="REJECTED"?"Rejected":status=="APPROVED"?<span className="text-blue-500">Approved</span>:"pending"}</p>
+    <p className="font-medium  text-[10px] capitalize text-primary">
+      {status == "COMPLETED" ? (
+        <span className="text-green-500">completed</span>
+      ) : status == "CANCELLED" ? (
+        <span className="text-primary-500">canceled</span>
+      ) : status == "REJECTED" ? (
+        "Rejected"
+      ) : status == "APPROVED" ? (
+        <span className="text-blue-500">Approved</span>
+      ) : (
+        "pending"
+      )}
+    </p>
   );
 };
 
