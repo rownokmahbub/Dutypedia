@@ -32,6 +32,7 @@ const AppoDetailsModal = ({ isOpen, closeModal, appoinment }) => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-xl transform overflow-hidden rounded-2xl bg-white dark:bg-bg-200 p-6 text-left align-middle shadow-xl transition-all">
+                  
                   <div className="flex justify-between">
                     <div>
                     <p>

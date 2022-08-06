@@ -49,7 +49,7 @@ const AppoItem = ({ item }) => {
 
     {/* mobile view */}
     <div className="shadow-3xl rounded-md  py-3 sm:hidden block">
-        <div className="flex gap-2 items-center justify-between">
+        <div className="flex gap-2 items-center justify-between px-2">
           <div className="flex items-center">
             <div className="w-12 aspect-square rounded-md relative flex-shrink-0">
               <img className="w-8 "

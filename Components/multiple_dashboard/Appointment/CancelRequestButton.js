@@ -31,19 +31,19 @@ const CancelRequestButton = ({ token, appoId, status }) => {
     }
   };
   if (isSuccess) {
-    return <p className="sm:font-medium text-[12px] capitalize text-primary">Canceled</p>;
+    return <p className="sm:font-medium text-[10px] capitalize text-primary">Canceled</p>;
   }
   return status === "PENDING" ? (
     <button
       onClick={handleCancelRequest}
-      className={`btn btn-sm  btn-primary  capitalize text-[12px] font-medium ${
+      className={`btn btn-sm  btn-primary  capitalize text-[10px] font-medium ${
         isLoading && "loading"
       }`}
     >
       Cancel Request
     </button>
   ) : (
-    <p className="font-medium text-sm capitalize text-primary">{status}</p>
+    <p className="font-medium  text-[10px] capitalize text-primary">{status=="COMPLETED"? <span className="text-green-500">completed</span> :status=="CANCELLED"?<span className="text-primary-500">canceled</span>:status=="REJECTED"?"Rejected":status=="APPROVED"?<span className="text-blue-500">Approved</span>:"pending"}</p>
   );
 };
 
