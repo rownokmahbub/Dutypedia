@@ -46,13 +46,13 @@ const AppoItem = ({ item }) => {
 
   return (
     <>
-
-    {/* mobile view */}
-    <div className="shadow-3xl rounded-md  py-3 sm:hidden block">
+      {/* mobile view */}
+      <div className="shadow-3xl rounded-md  py-3 sm:hidden block">
         <div className="flex gap-2 items-center justify-between">
           <div className="flex items-center">
             <div className="w-12 aspect-square rounded-md relative flex-shrink-0">
-              <img className="w-8 "
+              <img
+                className="w-8 "
                 src={
                   item.online
                     ? item.user.profilePhoto ||
@@ -70,74 +70,87 @@ const AppoItem = ({ item }) => {
               )}
             </div>
             <div className="flex flex-col">
-            <div>
-              <p className="line-clamp-1 ">
-                {item.online
-                  ? `${item.user?.firstName} ${item.user?.lastName}`
-                  : item.offlineMember?.name}
-              </p>
-           
+              <div>
+                <p className="line-clamp-1 ">
+                  {item.online
+                    ? `${item.user?.firstName} ${item.user?.lastName}`
+                    : item.offlineMember?.name}
+                </p>
+              </div>
+              <div
+                onClick={() => {
+                  setSelectedAppo(item);
+                  setShowAppoDetails(true);
+                }}
+                className=" cursor-pointer "
+              >
+                <p className="text-xs">
+                  {format(new Date(item.date), "dd MMM yyyy")},{" "}
+                  {moment(item.startTime, ["HH:mm"]).format("h:mm A")}
+                </p>
+                <p className=" line-clamp-1">{item.title}</p>
+              </div>
             </div>
-            <div 
-            onClick={() => {
-              setSelectedAppo(item);
-              setShowAppoDetails(true);
-            }}
-            className=" cursor-pointer "
-          >
-            <p className="text-xs">
-              {format(new Date(item.date), "dd MMM yyyy")},{" "}
-              {moment(item.startTime, ["HH:mm"]).format("h:mm A")}
-            </p>
-            <p className=" line-clamp-1">{item.title}</p>
           </div>
-            </div>
-         
-          
-          </div>
-      
+
           <div className="flex items-center gap-4">
-          <p className="text-[10px] -mt-5 justify-end " >{item.status=="COMPLETED"? <span className="text-green-500">completed</span> :item.status=="CANCELLED"?<span className="text-primary-500">canceled</span>:item.status=="REJECTED"?"Rejected":item.status=="APPROVED"?<span className="text-blue-500">Approved</span>:"pending"}</p>
-            <Menu as="div" className=" relative">
-              <Menu.Button>
-                <HiDotsVertical className="text-xl" />
-              </Menu.Button>
-              <Menu.Items className="flex flex-col items-center absolute -ml-20 bg-white dark:bg-bg shadow-3xl  rounded-md px-3 py-1">
-                <Menu.Item>
-                  {({ active }) => (
-                    <a
-                      onClick={() => handelAppoStatusChange("COMPLETED")}
-                      className={`${
-                        active
-                          ? "bg-gray-200 text-black dark:text-white "
-                          : "text-gray-900 dark:text-white"
-                      } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
-                    >
-                      <p className="text-sm">Completed</p>
-                    </a>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <a
-                      onClick={() => handelAppoStatusChange("CANCELLED")}
-                      className={`${
-                        active
-                          ? "bg-primary-300 text-white"
-                          : "text-gray-900 dark:text-white"
-                      } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
-                    >
-                      <p className="text-sm">Cancel</p>
-                    </a>
-                  )}
-                </Menu.Item>
-              </Menu.Items>
-            </Menu>
+            <p className="text-[10px] -mt-5 justify-end ">
+              {item.status == "COMPLETED" ? (
+                <span className="text-green-500">completed</span>
+              ) : item.status == "CANCELLED" ? (
+                <span className="text-primary-500">canceled</span>
+              ) : item.status == "REJECTED" ? (
+                "Rejected"
+              ) : item.status == "APPROVED" ? (
+                <span className="text-blue-500">Approved</span>
+              ) : (
+                "pending"
+              )}
+            </p>
+            {(item.status == "PENDING" || item.status == "APPROVED") && (
+              <>
+                <Menu as="div" className=" relative">
+                  <Menu.Button>
+                    <HiDotsVertical className="text-xl" />
+                  </Menu.Button>
+                  <Menu.Items className="flex flex-col items-center absolute -ml-20 bg-white dark:bg-bg shadow-3xl  rounded-md px-3 py-1">
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          onClick={() => handelAppoStatusChange("COMPLETED")}
+                          className={`${
+                            active
+                              ? "bg-gray-200 text-black dark:text-white "
+                              : "text-gray-900 dark:text-white"
+                          } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
+                        >
+                          <p className="text-sm">Completed</p>
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          onClick={() => handelAppoStatusChange("CANCELLED")}
+                          className={`${
+                            active
+                              ? "bg-primary-300 text-white"
+                              : "text-gray-900 dark:text-white"
+                          } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
+                        >
+                          <p className="text-sm">Cancel</p>
+                        </a>
+                      )}
+                    </Menu.Item>
+                  </Menu.Items>
+                </Menu>
+              </>
+            )}
           </div>
         </div>
       </div>
 
-    {/* desktop view */}
+      {/* desktop view */}
       <div className="shadow-3xl rounded-md px-4 py-3 hidden sm:block">
         <div className="flex gap-2 items-center justify-between">
           <div className="flex flex-1 gap-4 items-center">
@@ -187,51 +200,61 @@ const AppoItem = ({ item }) => {
           </div>
           <div className="flex flex-1 justify-end items-center gap-4">
             <span className="w-10 aspect-square rounded-full flex items-center justify-center shadow-3xl">
-              <img className="w-12 dark:block hidden" src="/Assets/icon/shild-dark.svg" />
-              <img className="w-8 dark:hidden block" src="/Assets/icon/shild.svg" />
+              <img
+                className="w-12 dark:block hidden"
+                src="/Assets/icon/shild-dark.svg"
+              />
+              <img
+                className="w-8 dark:hidden block"
+                src="/Assets/icon/shild.svg"
+              />
             </span>
 
             {item.online && (
               <span className="w-10 aspect-square rounded-full flex items-center justify-center shadow-3xl">
-              
                 <img className="w-8" src="/Assets/icon/send.svg" />
               </span>
             )}
-            <Menu as="div" className=" relative">
-              <Menu.Button>
-                <HiDotsVertical className="text-xl" />
-              </Menu.Button>
-              <Menu.Items className="flex flex-col items-center absolute -ml-20 bg-white dark:bg-bg shadow-3xl  rounded-md px-3 py-1">
-                <Menu.Item>
-                  {({ active }) => (
-                    <a
-                      onClick={() => handelAppoStatusChange("COMPLETED")}
-                      className={`${
-                        active
-                          ? "bg-gray-200 text-black dark:text-white "
-                          : "text-gray-900 dark:text-white"
-                      } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
-                    >
-                      <p className="text-sm">Completed</p>
-                    </a>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <a
-                      onClick={() => handelAppoStatusChange("CANCELLED")}
-                      className={`${
-                        active
-                          ? "bg-primary-300 text-white"
-                          : "text-gray-900 dark:text-white"
-                      } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
-                    >
-                      <p className="text-sm">Cancel</p>
-                    </a>
-                  )}
-                </Menu.Item>
-              </Menu.Items>
-            </Menu>
+            {(item.status == "PENDING" || item.status == "APPROVED") && (
+              <>
+                <Menu as="div" className=" relative">
+                  <Menu.Button>
+                    <HiDotsVertical className="text-xl" />
+                  </Menu.Button>
+
+                  <Menu.Items className="flex flex-col items-center absolute -ml-20 bg-white dark:bg-bg shadow-3xl  rounded-md px-3 py-1">
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          onClick={() => handelAppoStatusChange("COMPLETED")}
+                          className={`${
+                            active
+                              ? "bg-gray-200 text-black dark:text-white "
+                              : "text-gray-900 dark:text-white"
+                          } group flex w-full items-center rounded-[4px]  px-2 text-sm text-center cursor-pointer`}
+                        >
+                          <p className="text-sm">Completed</p>
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          onClick={() => handelAppoStatusChange("CANCELLED")}
+                          className={`${
+                            active
+                              ? "bg-primary-300 text-white"
+                              : "text-gray-900 dark:text-white"
+                          } group flex w-full items-center rounded-[4px] px-2 text-sm cursor-pointer`}
+                        >
+                          <p className="text-sm">Cancel</p>
+                        </a>
+                      )}
+                    </Menu.Item>
+                  </Menu.Items>
+                </Menu>
+              </>
+            )}
           </div>
         </div>
       </div>
