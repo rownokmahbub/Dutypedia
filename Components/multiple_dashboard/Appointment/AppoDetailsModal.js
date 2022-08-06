@@ -34,7 +34,7 @@ const AppoDetailsModal = ({ isOpen, closeModal, appoinment }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-xl transform   rounded-2xl bg-white dark:bg-bg-200 p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-xl transform  pb-10 rounded-2xl bg-white dark:bg-bg-200 p-6 text-left align-middle shadow-xl transition-all">
              
                   <div className="flex justify-between relative">
                     <div>
@@ -62,7 +62,7 @@ const AppoDetailsModal = ({ isOpen, closeModal, appoinment }) => {
               </span>
             )}
                     </div>
-                    <button className="btn btn-sm btn-primary absolute right-0 bottom-0" onClick={closeModal}>Close</button>
+                    <button className="btn btn-sm btn-primary absolute right-0 -bottom-7 " onClick={closeModal}>Close</button>
                   </div>
                  
                 </Dialog.Panel>
