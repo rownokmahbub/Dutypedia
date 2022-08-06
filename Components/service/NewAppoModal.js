@@ -138,7 +138,7 @@ const NewAppoModal = ({ isOpen, closeModal, serviceId }) => {
                         }`}
                         type="submit"
                       >
-                        Submit
+                        Send Appointment Request
                       </button>
                     </div>
                   </form>
