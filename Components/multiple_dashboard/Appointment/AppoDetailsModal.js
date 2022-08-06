@@ -34,7 +34,7 @@ const AppoDetailsModal = ({ isOpen, closeModal, appoinment }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-xl transform  pb-10 rounded-2xl bg-white dark:bg-bg-200 p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-xl transform  pb-16 rounded-2xl bg-white dark:bg-bg-200 p-6 text-left align-middle shadow-xl transition-all">
              
                   <div className="flex justify-between relative">
                     <div>
@@ -51,7 +51,7 @@ const AppoDetailsModal = ({ isOpen, closeModal, appoinment }) => {
                     <p>{appoinment.description}</p>
                     </div>
                   
-                    <div className="sm:hidden block">
+                    <div className="sm:hidden block space-y-2">
                     <span className="w-10 aspect-square rounded-full flex items-center justify-center shadow-3xl">
               <img className="w-10" src="/Assets/icon/shild-dark.svg" />
             </span>
@@ -62,7 +62,7 @@ const AppoDetailsModal = ({ isOpen, closeModal, appoinment }) => {
               </span>
             )}
                     </div>
-                    <button className="btn btn-sm btn-primary absolute right-0 -bottom-7 " onClick={closeModal}>Close</button>
+                    <button className="btn btn-sm btn-primary absolute right-0 -bottom-12 " onClick={closeModal}>Close</button>
                   </div>
                  
                 </Dialog.Panel>
