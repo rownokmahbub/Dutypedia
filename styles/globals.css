@@ -43,23 +43,6 @@ ul {
 } */
 /* scroll bar styling custom table */
 
-<<<<<<< HEAD
-html.light::-webkit-scrollbar { width: 8px; height: 3px;}
-html.light::-webkit-scrollbar-button {  background-color: rgb(255, 255, 255); }
-html.light::-webkit-scrollbar-track {  background-color: #646464;}
-html.light::-webkit-scrollbar-track-piece { background-color: #f1f1f1;}
-html.light::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
-html.light::-webkit-scrollbar-corner { background-color: #646464;}
-html.light::-webkit-resizer { background-color: #666;}
-
-html.dark::-webkit-scrollbar { width: 8px; height: 3px;}
-html.dark::-webkit-scrollbar-button {  background-color: rgb(38, 38, 38); }
-html.dark::-webkit-scrollbar-track {  background-color: #181818;}
-html.dark::-webkit-scrollbar-track-piece { background-color: #840202;}
-html.dark::-webkit-scrollbar-thumb { height: 50px; background-color: rgb(223, 13, 13); border-radius: 3px;}
-html.dark::-webkit-scrollbar-corner { background-color: #646464;}
-html.dark::-webkit-resizer { background-color: #666;}
-=======
 ::-webkit-scrollbar { width: 8px; height: 3px;}
 ::-webkit-scrollbar-button {  background-color: rgb(38, 38, 38); }
 ::-webkit-scrollbar-track {  background-color: #181818;}
@@ -67,7 +50,6 @@ html.dark::-webkit-resizer { background-color: #666;}
 ::-webkit-scrollbar-thumb { height: 50px; background-color: rgb(223, 13, 13); border-radius: 3px;}
 ::-webkit-scrollbar-corner { background-color: #646464;}
 ::-webkit-resizer { background-color: #666;}
->>>>>>> c3115e179a3fe753709a01cf67156570b522d4d8
 
 .calender__year__changeing__left {
   width: 1.5vw;
