@@ -5,28 +5,10 @@
   font-family: "Infinite";
   src: url(/public/Assets/fonts/Infinite_Stroke.otf);
 }
-html.light{
+html{
   scroll-behavior: smooth;
-  scrollbar-face-color: #646464;
-  scrollbar-base-color: #646464;
-  scrollbar-3dlight-color: #646464;
-  scrollbar-highlight-color: #646464;
-  scrollbar-track-color: #000;
-  scrollbar-arrow-color: #000;
-  scrollbar-shadow-color: #646464;
-  scrollbar-dark-shadow-color: #646464;
 }
-html.dark{
-  scroll-behavior: smooth;
-  scrollbar-face-color: #646464;
-  scrollbar-base-color: #0f0f0f;
-  scrollbar-3dlight-color: #1d1d1d;
-  scrollbar-highlight-color: #212121;
-  scrollbar-track-color: #000;
-  scrollbar-arrow-color: #000;
-  scrollbar-shadow-color: #646464;
-  scrollbar-dark-shadow-color: #646464;
-}
+
 body {
   /* background: #fff1f2; */
   padding: 0;
@@ -61,13 +43,22 @@ ul {
 } */
 /* scroll bar styling custom table */
 
-::-webkit-scrollbar { width: 8px; height: 3px;}
-::-webkit-scrollbar-button {  background-color: #666; }
-::-webkit-scrollbar-track {  background-color: #646464;}
-::-webkit-scrollbar-track-piece { background-color: #f1f1f1;}
-::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
-::-webkit-scrollbar-corner { background-color: #646464;}
-::-webkit-resizer { background-color: #666;}
+html.light::-webkit-scrollbar { width: 8px; height: 3px;}
+html.light::-webkit-scrollbar-button {  background-color: #666; }
+html.light::-webkit-scrollbar-track {  background-color: #646464;}
+html.light::-webkit-scrollbar-track-piece { background-color: #f1f1f1;}
+html.light::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+html.light::-webkit-scrollbar-corner { background-color: #646464;}
+html.light::-webkit-resizer { background-color: #666;}
+
+html.dark::-webkit-scrollbar { width: 8px; height: 3px;}
+html.dark::-webkit-scrollbar-button {  background-color: rgb(38, 38, 38); }
+html.dark::-webkit-scrollbar-track {  background-color: #181818;}
+html.dark::-webkit-scrollbar-track-piece { background-color: #840202;}
+html.dark::-webkit-scrollbar-thumb { height: 50px; background-color: rgb(223, 13, 13); border-radius: 3px;}
+html.dark::-webkit-scrollbar-corner { background-color: #646464;}
+html.dark::-webkit-resizer { background-color: #666;}
+
 .calender__year__changeing__left {
   width: 1.5vw;
   height: 2.5vw;

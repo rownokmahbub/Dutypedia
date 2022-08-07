@@ -30,10 +30,25 @@ const StartingServiceOffer = ({ services, price }) => {
       <div>
         <p>Delivery time</p>
         <div className="flex items-center gap-4">
-          <input type="date" className="input input-bordered" />
+          <input
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+            type="date"
+            className="input input-bordered"
+          />
           <span>To</span>
-          <input type="date" className="input input-bordered" />
+          <input
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+            type="date"
+            className="input input-bordered"
+          />
         </div>
+      </div>
+      <div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
       </div>
     </>
   );
