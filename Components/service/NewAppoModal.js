@@ -14,6 +14,7 @@ const NewAppoModal = ({ isOpen, closeModal, serviceId }) => {
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { uiDispatch } = useContext(GlobalContext);
+  const minDate = new Date();
 
   const handelSubmit = async (e) => {
     e.preventDefault();
@@ -86,6 +87,7 @@ const NewAppoModal = ({ isOpen, closeModal, serviceId }) => {
                         required
                         type="date"
                         value={date}
+                        min={minDate.toISOString().split("T")[0]}
                         onChange={(e) => setDate(e.target.value)}
                       />
                     </div>

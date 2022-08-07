@@ -14,10 +14,11 @@ const CreateAppoinmentOffline = ({ member, closeModal }) => {
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { uiDispatch } = useContext(GlobalContext);
+  const minDate = new Date();
 
   const handelSubmit = async (e) => {
     e.preventDefault();
-   
+
     try {
       setIsLoading(true);
       const { data } = await axios.post(
@@ -71,6 +72,7 @@ const CreateAppoinmentOffline = ({ member, closeModal }) => {
               required
               type="date"
               value={date}
+              min={minDate.toISOString().split("T")[0]}
               onChange={(e) => setDate(e.target.value)}
             />
           </div>
@@ -100,7 +102,7 @@ const CreateAppoinmentOffline = ({ member, closeModal }) => {
             <input
               required
               className="border w-full border-primary focus:outline-primary rounded-md px-2 py-1.5 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
-              type="text" 
+              type="text"
               maxlength="100"
               value={title}
               onChange={(e) => setTitle(e.target.value)}

@@ -14,6 +14,7 @@ const CreateAppoinmentOnline = ({ member, closeModal }) => {
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { uiDispatch } = useContext(GlobalContext);
+  const minDate = new Date();
 
   const handelSubmit = async (e) => {
     e.preventDefault();
@@ -79,6 +80,7 @@ const CreateAppoinmentOnline = ({ member, closeModal }) => {
               required
               type="date"
               value={date}
+              min={minDate.toISOString().split("T")[0]}
               onChange={(e) => setDate(e.target.value)}
             />
           </div>

@@ -1,3 +1,4 @@
+import OfferButton from "@components/service/OfferButton";
 import useMediaQuery from "@lib/hooks/useMediaQuery";
 import { Truncate } from "@lib/utils";
 import Image from "next/image";
@@ -29,6 +30,8 @@ const ServiceDesc = ({
   price,
   serviceType,
   additionalData,
+  viewAs,
+  services,
 }) => {
   const [readAll, setReadAll] = useState(false);
   const [limit, setLimit] = useState(450);
@@ -181,6 +184,13 @@ const ServiceDesc = ({
           )}
         </div>
         <div>{displayPrice()}</div>
+        {viewAs == "USER" && (
+          <OfferButton
+            serviceType={serviceType}
+            services={services}
+            price={price}
+          />
+        )}
       </div>
     </div>
   );
