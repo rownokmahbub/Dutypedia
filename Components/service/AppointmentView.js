@@ -47,7 +47,8 @@ const AppointmentView = ({ serviceId }) => {
           </Tab.List>
           <Tab.Panels className="pt-4 dark:text-white">
             {Tabs.map((item, index) => (
-              <Tab.Panel>{item.content}</Tab.Panel>
+              <Tab.Panel className=''>
+                {item.content}</Tab.Panel>
             ))}
           </Tab.Panels>
         </Tab.Group>

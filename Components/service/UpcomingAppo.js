@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState, useContext, useEffect } from "react";
 import { GlobalContext } from "@lib/globalContext";
 import AppoItem from "@components/user_profile/AppoItem";
+import { Wrapper } from "styles/Scrollbar";
 
 const UpcomingAppo = ({ serviceId }) => {
   const [appointments, setAppointments] = useState([]);
@@ -38,10 +39,13 @@ const UpcomingAppo = ({ serviceId }) => {
   }
 
   return (
-    <div className="grid gap-4">
+    <div className="grid gap-4 h-[200px] overflow-y-auto">
+      <Wrapper>
       {appointments.map((item, idx) => (
         <AppoItem key={idx} item={item} />
       ))}
+      </Wrapper>
+    
     </div>
   );
 };

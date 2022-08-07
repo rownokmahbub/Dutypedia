@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState, useContext, useEffect } from "react";
 import { GlobalContext } from "@lib/globalContext";
 import AppoItem from "@components/user_profile/AppoItem";
+import { Wrapper } from "styles/Scrollbar";
 
 const PreviousAppo = ({ serviceId }) => {
   const [appointments, setAppointments] = useState([]);
@@ -38,10 +39,13 @@ const PreviousAppo = ({ serviceId }) => {
   }
 
   return (
-    <div>
+    <div className="h-[200px] overflow-y-auto">
+      <Wrapper>
       {appointments.map((item) => (
         <AppoItem key={item.id} item={item} />
       ))}
+      </Wrapper>
+    
     </div>
   );
 };
