@@ -6,7 +6,8 @@ import React from 'react'
 const Amount = () => {
   return (
     <div>
-     <DutyPediaTransaction/>
+     <AllTransaction/>
+     
     
     </div>
   )
