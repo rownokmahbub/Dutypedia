@@ -5,7 +5,7 @@ export const Wrapper = styled('div')`
     
     .routine-table-body-section {
       
-      height: 400px;
+      max-height: 400px;
   }
   /* Scrollbar customization */
 
