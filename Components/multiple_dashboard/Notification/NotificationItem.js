@@ -139,7 +139,13 @@ const NotificationItem = ({ item }) => {
 
   if (item.notificationType === "NEW_ORDER") {
     return (
-      <Link href={`/dashboard/multiple/orders?orderId=${item.entityId}`}>
+      <Link
+        href={
+          item.availableFor == "VENDOR"
+            ? `/dashboard/multiple/orders?orderId=${item.entityId}`
+            : `/profile/${user.username}`
+        }
+      >
         <a className="flex items-start gap-4 p-3">
           <span
             className={`w-10 relative aspect-square rounded-full flex justify-center items-center text-white ${item.bg}`}
