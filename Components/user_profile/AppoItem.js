@@ -46,7 +46,7 @@ const AppoItem = ({ item, type }) => {
     <>
       <div className="flex justify-between">
         <div className="flex gap-2 items-center">
-          <span className="w-8 aspect-square rounded-full shadow-md flex justify-center items-center dark:bg-gray-600 text-primary">
+          <span className="w-8 aspect-square rounded-full shadow-md flex justify-center items-center dark:bg-gray-600 text-primary flex-shrink-0">
             <BsFillBellFill />
           </span>
           <div

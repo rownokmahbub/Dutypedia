@@ -42,7 +42,7 @@ const AppointmentsTab = () => {
             <Image src={search} width={16} height={16} alt="search" />
           </div>
         </div>
-        <div className="flex flex-shrink-0 items-center gap-4 sm:mt-5 md:mt-0">
+        <div className="flex flex-shrink-0 relative items-center gap-4 sm:mt-5 md:mt-0">
           <p className="sm:block hidden">Filter By</p>
 
           <input
@@ -50,7 +50,10 @@ const AppointmentsTab = () => {
             type="date"
             onChange={(date) => {}}
           />
-         
+          <div className="bg-primary  px-2 py-2 items-center rounded-r-md absolute right-0">
+          <img className="w-6" src="/Assets/icon/calendar.svg" alt="" />
+          </div>
+      
         </div>
       </div>
       <Tab.Group>

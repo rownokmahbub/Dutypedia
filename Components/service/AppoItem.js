@@ -5,12 +5,13 @@ import moment from "moment";
 const AppoItem = ({ item }) => {
   return (
     <div>
-      <div className="flex gap-2 items-center">
-        <span className="w-8 aspect-square rounded-full shadow-md flex justify-center items-center dark:bg-gray-600 text-primary">
+      <div className="flex gap-2 items-center ">
+        <span className="w-8 aspect-square rounded-full shadow-md flex justify-center items-center dark:bg-gray-600 text-primary flex-shrink-0">
           <BsFillBellFill />
         </span>
+        
         <div>
-          <p className="text-xs">
+          <p className="text-xs ">
             {format(new Date(item.date), "dd MMM yyyy")},{" "}
             {moment(item.startTime, ["HH:mm"]).format("h:mm A")}
           </p>

@@ -133,7 +133,7 @@ const ExpensesList = () => {
             <p className="text-[16px] md:text-xl">Amount</p>
           </div>
           <Wrapper className="pl-3">
-            <div className="routine-table-body-section md:pr-3">
+            <div className=" md:pr-[22px] max-h-96">
               {filteredExpenses.map((item, i) => (
                 <div className="grid grid-cols-3 divide-x dark:divide-[#515150] border dark:border-[#515150] border-b  px-2 py-2">
                   <p className="items-center flex justify-center text-[16px] md:text-xl text-[#666666] dark:text-white">

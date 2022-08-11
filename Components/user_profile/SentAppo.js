@@ -3,6 +3,7 @@ import AuthContext from "@lib/authContext";
 import { GlobalContext } from "@lib/globalContext";
 import axios from "axios";
 import { useState, useContext, useEffect } from "react";
+import { Wrapper } from "styles/Scrollbar";
 import AppoItem from "./AppoItem";
 
 const SentAppoUser = () => {
@@ -42,10 +43,13 @@ const SentAppoUser = () => {
   }
 
   return (
-    <div className="grid gap-4">
+    <div className="grid gap-4 h-[300px] overflow-y-auto">
+      <Wrapper>
       {appointments.map((item) => (
         <AppoItem item={item} />
       ))}
+      </Wrapper>
+  
     </div>
   );
 };
