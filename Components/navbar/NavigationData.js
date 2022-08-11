@@ -21,25 +21,8 @@ export const multipleDashboardData = [
   },
   {
     icon: <GiCog />,
-    title: "Service",
-    dropdownList: [
-      {
-        title: "Employee List",
-        link: "/multiple_dashboard/appoinment",
-      },
-      {
-        title: "Employee Attendance",
-        link: "/multiple_dashboard/appoinment",
-      },
-      {
-        title: " Employee Salary ",
-        link: "/multiple_dashboard/appoinment",
-      },
-      {
-        title: "Company Holiday",
-        link: "/multiple_dashboard/appoinment",
-      },
-    ],
+    title: "Orders",
+    link: "/dashboard/multiple/orders",
   },
   {
     icon: <AiOutlineUser />,

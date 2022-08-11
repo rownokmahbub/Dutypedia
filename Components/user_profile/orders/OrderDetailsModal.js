@@ -1,8 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import EditNotice from "./EditNotice";
+import OrderDetailsStarting from "./OrderDetailsStarting";
 
-const EditNoticeModal = ({ isOpen, closeModal, notice, onSuccess }) => {
+const OrderDetailsModal = ({ isOpen, closeModal, order, isVendor }) => {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -30,12 +30,10 @@ const EditNoticeModal = ({ isOpen, closeModal, notice, onSuccess }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-screen-xl transform overflow-hidden rounded-2xl bg-white dark:bg-bg-200 p-6 text-left align-middle shadow-xl transition-all">
-                  <EditNotice
-                    onSuccess={onSuccess}
-                    notice={notice}
-                    closeModal={closeModal}
-                  />
+                <Dialog.Panel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white dark:bg-bg-200 p-6 text-left align-middle shadow-xl transition-all">
+                  {order.type === "STARTING" && (
+                    <OrderDetailsStarting order={order} isVendor={isVendor} />
+                  )}
                 </Dialog.Panel>
               </Transition.Child>
             </div>
@@ -46,4 +44,4 @@ const EditNoticeModal = ({ isOpen, closeModal, notice, onSuccess }) => {
   );
 };
 
-export default EditNoticeModal;
+export default OrderDetailsModal;

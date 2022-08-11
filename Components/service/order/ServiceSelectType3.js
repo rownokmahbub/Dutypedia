@@ -1,21 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import OptionItem from "./OptionItem";
 
-const ServiceSelectType3 = ({ data }) => {
+const ServiceSelectType3 = ({ data, onChange }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const addToSelectedOptions = (id, title) => {
     setSelectedOptions([...selectedOptions, { id, title }]);
   };
-  const removeFromSelectedOptions = (id, title) => {
+  const removeFromSelectedOptions = (id) => {
     setSelectedOptions(selectedOptions.filter((item) => item.id !== id));
   };
   const toggleSelectedOptions = (id, title) => {
     if (selectedOptions.find((item) => item.id === id)) {
-      removeFromSelectedOptions(id, title);
+      removeFromSelectedOptions(id);
     } else {
       addToSelectedOptions(id, title);
     }
   };
+
+  useEffect(() => {
+    onChange(selectedOptions);
+  }, [selectedOptions]);
   return (
     <>
       {Object.keys(data.options).map(
@@ -45,24 +50,31 @@ const ServiceSelectType3 = ({ data }) => {
                             <div className="flex flex-wrap gap-4 mb-8 mt-2">
                               {multipleItem.selectedOptions?.map(
                                 (item, index) => (
-                                  <span
-                                    onClick={() =>
-                                      toggleSelectedOptions(item.id, item.title)
+                                  <OptionItem
+                                    key={item.id}
+                                    item={item}
+                                    onClick={(data) =>
+                                      toggleSelectedOptions(data.id, data.title)
                                     }
-                                    className={`sm:px-8 text-primary px-4 py-2 border-2 text-sm sm:text-base rounded-full min-w-[70] sm:min-w-[150px] cursor-pointer`}
-                                  >
-                                    # {item.title}
-                                  </span>
+                                    selected={selectedOptions.find(
+                                      (data) => data.id === item.id
+                                    )}
+                                  />
                                 )
                               )}
 
                               {multipleItem.customOptions?.map(
                                 (item, index) => (
-                                  <span
-                                    className={`sm:px-8 text-primary px-4 py-2 border-2 text-sm sm:text-base rounded-full min-w-[70] sm:min-w-[150px] cursor-pointer`}
-                                  >
-                                    # {item.title}
-                                  </span>
+                                  <OptionItem
+                                    key={item.id}
+                                    item={item}
+                                    onClick={(data) =>
+                                      toggleSelectedOptions(data.id, data.title)
+                                    }
+                                    selected={selectedOptions.find(
+                                      (data) => data.id === item.id
+                                    )}
+                                  />
                                 )
                               )}
                             </div>
@@ -72,19 +84,29 @@ const ServiceSelectType3 = ({ data }) => {
                   ) : (
                     <div className="flex flex-wrap gap-4 mb-8">
                       {rootItem.selectedOptions?.map((item, index) => (
-                        <span
-                          className={`sm:px-8 text-primary px-4 py-2 border-2 text-sm sm:text-base rounded-full min-w-[70] sm:min-w-[150px] cursor-pointer`}
-                        >
-                          # {item.title}
-                        </span>
+                        <OptionItem
+                          key={item.id}
+                          item={item}
+                          onClick={(data) =>
+                            toggleSelectedOptions(data.id, data.title)
+                          }
+                          selected={selectedOptions.find(
+                            (data) => data.id === item.id
+                          )}
+                        />
                       ))}
 
                       {rootItem.customOptions?.map((item, index) => (
-                        <span
-                          className={`sm:px-8 text-primary px-4 py-2 border-2 text-sm sm:text-base rounded-full min-w-[70] sm:min-w-[150px] cursor-pointer`}
-                        >
-                          # {item.title}
-                        </span>
+                        <OptionItem
+                          key={item.id}
+                          item={item}
+                          onClick={(data) =>
+                            toggleSelectedOptions(data.id, data.title)
+                          }
+                          selected={selectedOptions.find(
+                            (data) => data.id === item.id
+                          )}
+                        />
                       ))}
                     </div>
                   )}

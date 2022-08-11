@@ -121,7 +121,7 @@ const NotiIcon = () => {
           ) : (
             notifications.map((item, idx) => (
               <Menu.Item key={idx}>
-                <NotificationItem item={item} />
+                <NotificationItem viewer="USER" item={item} />
               </Menu.Item>
             ))
           )}
