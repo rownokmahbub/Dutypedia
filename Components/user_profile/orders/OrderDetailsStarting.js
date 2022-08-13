@@ -133,7 +133,7 @@ const OrderDetailsStarting = ({ order, isVendor }) => {
       uiDispatch({ type: "DO_REFRESH" });
     } catch (error) {
       console.log(error);
-      toast.error("Something went wrong!");
+      toast.error(error.response?.data?.msg);
     } finally {
       setIsLoading(false);
       setCancelIsLoading(false);
