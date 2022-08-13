@@ -1,6 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import AuthContext from "@lib/authContext";
 import { GlobalContext } from "@lib/globalContext";
+import { isBefore } from "@lib/utils";
 import axios from "axios";
 import { Fragment, useContext, useRef, useState } from "react";
 import toast from "react-hot-toast";
@@ -18,6 +19,10 @@ const NewAppoModal = ({ isOpen, closeModal, serviceId }) => {
 
   const handelSubmit = async (e) => {
     e.preventDefault();
+    if (!isBefore(startTime, endTime)) {
+      toast.error("Start time must be before end time");
+      return;
+    }
     try {
       setIsLoading(true);
       const { data } = await axios.post(

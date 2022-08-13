@@ -1,5 +1,6 @@
 import AuthContext from "@lib/authContext";
 import { GlobalContext } from "@lib/globalContext";
+import { isBefore } from "@lib/utils";
 import axios from "axios";
 import Image from "next/image";
 import { useContext, useState } from "react";
@@ -18,7 +19,10 @@ const CreateAppoinmentOffline = ({ member, closeModal }) => {
 
   const handelSubmit = async (e) => {
     e.preventDefault();
-
+    if (!isBefore(startTime, endTime)) {
+      toast.error("Start time must be before end time");
+      return;
+    }
     try {
       setIsLoading(true);
       const { data } = await axios.post(
