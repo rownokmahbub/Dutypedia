@@ -22,7 +22,8 @@ const PreviousAppoDashboard = ({ searchTerm }) => {
         .includes(searchTerm.toLowerCase()) ||
       appointment.user?.lastName
         .toLowerCase()
-        .includes(searchTerm.toLowerCase())
+        .includes(searchTerm.toLowerCase()) ||
+      appointment.date.toLowerCase().includes(searchTerm.toLowerCase())
     );
   });
   useEffect(() => {

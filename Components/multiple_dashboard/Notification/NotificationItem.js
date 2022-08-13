@@ -171,6 +171,32 @@ const NotificationItem = ({ item }) => {
     );
   }
 
+  if (item.notificationType === "NEW_APPOINTMENT") {
+    return (
+      <a className="flex items-start gap-4 p-3">
+        <span
+          className={`w-10 relative aspect-square rounded-full flex justify-center items-center text-white ${item.bg}`}
+        >
+          <Image
+            src={
+              item.userFrom?.profilePhoto || "/Assets/images/service/user.svg"
+            }
+            layout="fill"
+            objectFit="cover"
+          />
+        </span>
+        <div>
+          <p className="text-gray-400 text-xs">
+            {format(new Date(item.createdAt), "MM-dd-yyyy h:mm a")}
+          </p>
+          <h4 className="font-medium text-sm text-gray-700 line-clamp-2">
+            {item.message}
+          </h4>
+        </div>
+      </a>
+    );
+  }
+
   return <></>;
 };
 
