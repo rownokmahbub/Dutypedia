@@ -116,7 +116,7 @@ const OrderDetailsStarting = ({ order, isVendor }) => {
       } else {
         setIsLoading(true);
       }
-      await axios.put(
+      const { data } = await axios.put(
         `${process.env.NEXT_PUBLIC_API_URL}/orders/change-status-${requestBy}`,
         {
           orderId: order.id,

@@ -9,17 +9,18 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import AuthContext from "@lib/authContext";
 import { GlobalContext } from "@lib/globalContext";
+import { emitNotification } from "@lib/socket";
 
 const AppoItem = ({ item }) => {
   const [showAppoDetails, setShowAppoDetails] = useState(false);
   const [selectedAppo, setSelectedAppo] = useState(null);
-  const { token } = useContext(AuthContext);
+  const { token, user } = useContext(AuthContext);
   const { uiDispatch } = useContext(GlobalContext);
 
   const handelAppoStatusChange = async (status) => {
     const Request = async () => {
       try {
-        await axios.put(
+        const { data } = await axios.put(
           `${process.env.NEXT_PUBLIC_API_URL}/appointment/change-status`,
           {
             appointmentId: item.id,
@@ -31,6 +32,7 @@ const AppoItem = ({ item }) => {
             },
           }
         );
+        emitNotification(data.userToId, user);
         uiDispatch({ type: "DO_REFRESH" });
         return "Successfully done!";
       } catch (error) {

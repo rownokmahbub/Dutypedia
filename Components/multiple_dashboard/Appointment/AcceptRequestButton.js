@@ -1,4 +1,5 @@
 import { GlobalContext } from "@lib/globalContext";
+import { emitNotification } from "@lib/socket";
 import axios from "axios";
 import { useContext, useState } from "react";
 import toast from "react-hot-toast";
@@ -7,11 +8,12 @@ const AcceptRequestButton = ({ token, appoId, status }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const { uiDispatch } = useContext(GlobalContext);
+  const { user } = useContext(GlobalContext);
 
   const handleCancelRequest = async () => {
     try {
       setIsLoading(true);
-      await axios.put(
+      const { data } = await axios.put(
         `${process.env.NEXT_PUBLIC_API_URL}/appointment/change-status`,
         {
           appointmentId: appoId,
@@ -23,6 +25,7 @@ const AcceptRequestButton = ({ token, appoId, status }) => {
           },
         }
       );
+      emitNotification(data.userToId, user);
       toast.success("Request approved successfully!");
       setIsSuccess(true);
       uiDispatch({ type: "DO_REFRESH" });
