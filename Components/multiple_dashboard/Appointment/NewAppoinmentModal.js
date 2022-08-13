@@ -1,20 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
-import AuthContext from "@lib/authContext";
-import axios from "axios";
-import { Fragment, useContext, useRef, useState } from "react";
-import toast from "react-hot-toast";
-import { date } from "yup/lib/locale";
+import { Fragment } from "react";
 import SelectMember from "./SelectMember";
 
 const NewAppoModalDashboard = ({ isOpen, closeModal, serviceId }) => {
-  const { token } = useContext(AuthContext);
-  const [date, setDate] = useState("");
-  const [startTime, setStartTime] = useState("");
-  const [endTime, setEndTime] = useState("");
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>

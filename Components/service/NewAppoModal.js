@@ -1,13 +1,14 @@
 import { Dialog, Transition } from "@headlessui/react";
 import AuthContext from "@lib/authContext";
 import { GlobalContext } from "@lib/globalContext";
+import { emitNotification } from "@lib/socket";
 import { isBefore } from "@lib/utils";
 import axios from "axios";
 import { Fragment, useContext, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
 const NewAppoModal = ({ isOpen, closeModal, serviceId }) => {
-  const { token } = useContext(AuthContext);
+  const { token, user } = useContext(AuthContext);
   const [date, setDate] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
@@ -41,6 +42,7 @@ const NewAppoModal = ({ isOpen, closeModal, serviceId }) => {
           },
         }
       );
+      emitNotification(data.userToId, user);
       toast.success("Appointment created successfully!");
       uiDispatch({ type: "DO_REFRESH" });
       closeModal();
