@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 const DeliveredButton = ({ orderId }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const { token } = useContext(AuthContext);
+  const { token, user } = useContext(AuthContext);
   const { uiDispatch } = useContext(GlobalContext);
   const yesIDelivered = async () => {
     try {

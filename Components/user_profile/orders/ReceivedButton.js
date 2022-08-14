@@ -7,13 +7,13 @@ import toast from "react-hot-toast";
 
 const ReceivedButton = ({ orderId }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const { token } = useContext(AuthContext);
+  const { token, user } = useContext(AuthContext);
   const { uiDispatch } = useContext(GlobalContext);
 
   const yesIRecieved = async () => {
     setIsLoading(true);
     try {
-      await axios.post(
+      const { data } = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/orders/received`,
         {
           orderId: orderId,
