@@ -182,7 +182,7 @@ const EditNotice = ({ closeModal, notice, onSuccess }) => {
               </div>
             </div>
 
-            <div className="flex  flex-row absolute right-12 flex-shrink mt-60">
+            <div className="flex flex-row absolute right-12 flex-shrink mt-60">
               <button
                 type="submit"
                 className={`btn btn-primary w-[100px] lg:w-[130px] h-[45px] bg-[#E22424] text-white cursor-pointer outline-none border-none rounded-lg mr-5 ${

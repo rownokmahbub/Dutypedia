@@ -50,9 +50,7 @@ const AppointmentsTab = () => {
             type="date"
             onChange={(date) => {}}
           />
-          <div className="bg-primary  px-2 py-2 items-center rounded-r-md absolute right-0">
-          <img className="w-6" src="/Assets/icon/calendar.svg" alt="" />
-          </div>
+       
       
         </div>
       </div>

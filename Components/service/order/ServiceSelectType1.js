@@ -11,7 +11,8 @@ const ServiceSelectType1 = ({ data }) => {
           <span
             className={`sm:px-8 text-primary px-4 py-2 border-2 text-sm sm:text-base rounded-full min-w-[70] sm:min-w-[150px]`}
           >
-            # {item.title}
+             {item.title}
+             {data.category}
           </span>
         ))}
 

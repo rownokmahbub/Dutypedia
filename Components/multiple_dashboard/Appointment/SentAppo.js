@@ -158,7 +158,7 @@ const SentAppoDashboard = ({ searchTerm }) => {
               </div>
               <div
                 onClick={() => setSelectedAppo(item)}
-                className=" cursor-pointer"
+                className=" cursor-pointer w-52"
               >
                 <p className="text-xs">
                   {format(new Date(item.date), "dd MMM yyyy")},{" "}

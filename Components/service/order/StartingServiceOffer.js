@@ -15,38 +15,42 @@ const StartingServiceOffer = ({ services, price }) => {
         {services.type == 2 && <ServiceSelectType2 data={services} />}
         {services.type == 3 && <ServiceSelectType3 data={services} />}
       </div>
-      <div>
-        <p>Starting price : {price}৳</p>
-        <p>Your offer</p>
+      <p className="flex justify-center">Starting price : {price}৳</p>
+      <div className="flex gap-5">
+      <div className="">
+      
+      <p className="py-3">Your offer</p>
+      <input
+        value={offerPrice}
+        onChange={(e) => setOfferPrice(e.target.value)}
+        type="number"
+        min={1}
+        max={price}
+        className="input input-bordered w-40 h-10 dark:bg-bg-300 dark:border-[#515150] dark:text-white"
+      />
+    </div>
+    <div>
+      <p className="py-3">Delivery time</p>
+      <div className="flex items-center gap-4">
         <input
-          value={offerPrice}
-          onChange={(e) => setOfferPrice(e.target.value)}
-          type="number"
-          min={1}
-          max={price}
-          className="input input-bordered w-48"
+          value={startDate}
+          onChange={(e) => setStartDate(e.target.value)}
+          type="date"
+          className="input input-bordered h-10 dark:bg-bg-300 border-[#515150] dark:text-white"
+        />
+        <span>To</span>
+        <input
+          value={endDate}
+          onChange={(e) => setEndDate(e.target.value)}
+          type="date"
+          className="input input-bordered h-10 dark:bg-bg-300 border-[#515150] dark:text-white"
         />
       </div>
-      <div>
-        <p>Delivery time</p>
-        <div className="flex items-center gap-4">
-          <input
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-            type="date"
-            className="input input-bordered"
-          />
-          <span>To</span>
-          <input
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-            type="date"
-            className="input input-bordered"
-          />
-        </div>
+    </div>
       </div>
-      <div>
-        <button type="submit" className="btn btn-primary">
+    
+      <div className="flex justify-center">
+        <button type="submit" className="btn btn-sm btn-primary mt-5">
           Submit
         </button>
       </div>

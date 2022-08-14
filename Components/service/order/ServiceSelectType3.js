@@ -62,6 +62,7 @@ const ServiceSelectType3 = ({ data }) => {
                                     className={`sm:px-8 text-primary px-4 py-2 border-2 text-sm sm:text-base rounded-full min-w-[70] sm:min-w-[150px] cursor-pointer`}
                                   >
                                     # {item.title}
+                                    {data.category}
                                   </span>
                                 )
                               )}

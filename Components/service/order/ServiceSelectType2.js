@@ -38,6 +38,7 @@ const ServiceSelectType2 = ({ data }) => {
                     <OptionItem
                       key={item.id}
                       item={item}
+                      parent={rootItem.title}
                       onClick={(data) =>
                         toggleSelectedOptions(data.id, data.title)
                       }
@@ -51,6 +52,7 @@ const ServiceSelectType2 = ({ data }) => {
                     <OptionItem
                       key={item.id}
                       item={item}
+                      parent={rootItem.title}
                       onClick={(data) =>
                         toggleSelectedOptions(data.id, data.title)
                       }
@@ -68,6 +70,7 @@ const ServiceSelectType2 = ({ data }) => {
                 <OptionItem
                   key={item.id}
                   item={item}
+                  parent={rootItem.title}
                   onClick={(data) => toggleSelectedOptions(data.id, data.title)}
                   selected={selectedOptions.find((data) => data.id === item.id)}
                 />
@@ -77,6 +80,7 @@ const ServiceSelectType2 = ({ data }) => {
                 <OptionItem
                   key={item.id}
                   item={item}
+                  parent={rootItem.title}
                   onClick={(data) => toggleSelectedOptions(data.id, data.title)}
                   selected={selectedOptions.find((data) => data.id === item.id)}
                 />
