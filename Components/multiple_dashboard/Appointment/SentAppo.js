@@ -29,7 +29,8 @@ const SentAppoDashboard = ({ searchTerm }) => {
         .includes(searchTerm.toLowerCase()) ||
       appointment.user?.lastName
         .toLowerCase()
-        .includes(searchTerm.toLowerCase())
+        .includes(searchTerm.toLowerCase()) ||
+      appointment.date.toLowerCase().includes(searchTerm.toLowerCase())
     );
   });
   useEffect(() => {
@@ -76,7 +77,8 @@ const SentAppoDashboard = ({ searchTerm }) => {
             <div className="flex gap-2 items-center justify-between">
               <div className="flex gap-4 items-center">
                 <div className="w-12 aspect-square rounded-md relative flex-shrink-0">
-                  <img className="w-10"
+                  <img
+                    className="w-10"
                     src={
                       item.online
                         ? item.user.profilePhoto ||
@@ -158,7 +160,7 @@ const SentAppoDashboard = ({ searchTerm }) => {
               </div>
               <div
                 onClick={() => setSelectedAppo(item)}
-                className=" cursor-pointer w-52"
+                className=" cursor-pointer"
               >
                 <p className="text-xs">
                   {format(new Date(item.date), "dd MMM yyyy")},{" "}

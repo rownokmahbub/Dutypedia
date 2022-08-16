@@ -45,8 +45,8 @@ const RatingRender = ({
       onClick={() => alert(`${whole}, ${decimal}, ${remainder}`)}
       className="flex space-x-1 items-center"
     >
-      {stars.map((star, index,i) => (
-        <span key={i}>{star.icon}</span>
+      {stars.map((star, index) => (
+        <span key={index}>{star.icon}</span>
       ))}
     </div>
   );

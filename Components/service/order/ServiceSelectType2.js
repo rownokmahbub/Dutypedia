@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OptionItem from "./OptionItem";
 
-const ServiceSelectType2 = ({ data }) => {
+const ServiceSelectType2 = ({ data, onChange }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const addToSelectedOptions = (id, title) => {
@@ -17,6 +17,10 @@ const ServiceSelectType2 = ({ data }) => {
       addToSelectedOptions(id, title);
     }
   };
+
+  useEffect(() => {
+    onChange(selectedOptions);
+  }, [selectedOptions]);
 
   return (
     <>

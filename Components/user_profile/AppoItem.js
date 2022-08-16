@@ -9,16 +9,17 @@ import { useContext, useState } from "react";
 import { GlobalContext } from "@lib/globalContext";
 import AuthContext from "@lib/authContext";
 import AppoDetailsModal from "@components/multiple_dashboard/Appointment/AppoDetailsModal";
+import { emitNotification } from "@lib/socket";
 
 const AppoItem = ({ item, type }) => {
-  const { token } = useContext(AuthContext);
+  const { token, user } = useContext(AuthContext);
   const { uiDispatch } = useContext(GlobalContext);
   const [selectedAppo, setSelectedAppo] = useState(null);
 
   const handelAppoStatusChange = async (status) => {
     const Request = async () => {
       try {
-        await axios.put(
+        const { data } = await axios.put(
           `${process.env.NEXT_PUBLIC_API_URL}/appointment/change-status`,
           {
             appointmentId: item.id,
@@ -30,6 +31,7 @@ const AppoItem = ({ item, type }) => {
             },
           }
         );
+        emitNotification(data.userToId, user);
         uiDispatch({ type: "DO_REFRESH" });
         return "Successfully done!";
       } catch (error) {

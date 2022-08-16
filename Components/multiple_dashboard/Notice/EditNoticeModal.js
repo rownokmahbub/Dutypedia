@@ -1,6 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import CreateNotice from "./CreateNotice";
 import EditNotice from "./EditNotice";
 
 const EditNoticeModal = ({ isOpen, closeModal, notice, onSuccess }) => {

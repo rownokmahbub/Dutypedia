@@ -1,8 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import SelectMember from "./SelectMember";
+import OrderDetailsStarting from "./OrderDetailsStarting";
 
-const NewAppoModalDashboard = ({ isOpen, closeModal, serviceId }) => {
+const OrderDetailsModal = ({ isOpen, closeModal, order, isVendor }) => {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -30,8 +30,10 @@ const NewAppoModalDashboard = ({ isOpen, closeModal, serviceId }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-xl transform overflow-hidden rounded-2xl bg-white dark:bg-bg-200 p-6 text-left align-middle shadow-xl transition-all">
-                  <SelectMember closeModal={closeModal} />
+                <Dialog.Panel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white dark:bg-bg-200 p-6 text-left align-middle shadow-xl transition-all">
+                  {order.type === "STARTING" && (
+                    <OrderDetailsStarting order={order} isVendor={isVendor} />
+                  )}
                 </Dialog.Panel>
               </Transition.Child>
             </div>
@@ -42,4 +44,4 @@ const NewAppoModalDashboard = ({ isOpen, closeModal, serviceId }) => {
   );
 };
 
-export default NewAppoModalDashboard;
+export default OrderDetailsModal;
